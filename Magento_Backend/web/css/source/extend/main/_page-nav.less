@@ -1,0 +1,189 @@
+//
+//  Variables
+//  _____________________________________________
+
+@admin__page-nav__background-color: transparent;
+@admin__page-nav__border-color: transparent;
+
+@admin__page-nav-title__color: @neutral-20;
+@admin__page-nav-title__border-color: transparent;
+@admin__page-nav-title__collapsible__background-color: transparent;
+@admin__page-nav-title__collapsible__active__background-color: @neutral-90;
+@admin__page-nav-title__font-size: 1.4rem;
+
+// @admin__page-nav-item__border-color: transparent;
+// @admin__page-nav-item__margin-vertical: 1.3rem;
+@admin__page-nav-item__margin-horizontal: 0;
+@admin__page-nav-item__active__color: @blue-50;
+@admin__page-nav-item__hover__background-color: @neutral-90;
+
+@admin__page-nav-link__color: @neutral-20;
+@admin__page-nav-link__padding: 1rem 1.6rem;
+@admin__page-nav-link__hover__color: @neutral-10;
+@admin__page-nav-link__changed__color: @green-60;
+
+@admin__page-nav-icon-up__content: @icon-arrowup__content;
+@admin__page-nav-icon-down__content: @icon-arrowdown__content;
+@admin__page-nav-icon-changed__content: @icon-edit__content;
+// @admin__page-nav-icon-error__content: @icon-warning__content;
+@admin__page-nav-icon-error__color: @red-50;
+
+// @admin__page-nav-item-message-loader__font-size: 2rem;
+// @admin__page-nav-tooltip-message__width: 27rem;
+@admin__page-nav-tooltip__background: @neutral-95;
+// @admin__page-nav-tooltip__border-color: @color-gray75;
+@admin__page-nav-tooltip__box-shadow: @shadow-level-2;
+// @admin__page-nav-tooltip__z-index1: @field-tooltip__z-index;
+
+@admin__page-nav-transition: @smooth__background-color, @smooth__color;
+
+//
+//  Page nav (can be simple and collapsed)
+//  _____________________________________________
+
+.admin__page-nav {
+    background: @admin__page-nav__background-color;
+    border: 0;
+    margin-bottom: @indent__s;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &._collapsed {
+        &:first-child {
+            border-bottom: none;
+        }
+
+        &._show {
+            border-bottom: 0;
+
+            ._collapsible {
+                color: @admin__page-nav-title__active__color;
+            }
+        }
+    }
+}
+
+//
+//  Page nav
+//  _____________________________________________
+
+.admin__page-nav-title {
+    background: @admin__page-nav-title__collapsible__active__background-color;
+    color: @admin__page-nav-title__active__color;
+
+    padding: 1rem @indent__base;
+    border-bottom: 0;
+    border-radius: @radius__xl;
+    line-height: 2rem;
+    margin: 0;
+    text-transform: unset;
+
+    strong {
+        color: @admin__page-nav-title__active__color;
+        font-weight: @font-weight__heavier;
+    }
+
+    &._collapsible {
+        padding-right: @indent__xl;
+
+        + .admin__page-nav-items {
+            margin-top: 0;
+        }
+
+        &::after {
+            font-size: .8rem;
+            top: @indent__base;
+            right: @indent__base;
+        }
+
+        &:hover {
+            background: @admin__page-nav-title__collapsible__hover__background-color;
+            color: @admin__page-nav-title__hover__color;
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}
+
+// Page nav item
+.admin__page-nav-item {
+    border-left: 0;
+
+    &:hover {
+        border-color: transparent;
+    }
+
+    &._active,
+    &.ui-state-active {
+
+        .admin__page-nav-link {
+            border-right: 0;
+            margin-right: 0;
+        }
+    }
+
+    &._active,
+    &.ui-state-active {
+        .admin__page-nav-link {
+            background: @admin__page-nav-item__hover__background-color;
+            font-weight: @font-weight__regular;
+        }
+    }
+}
+
+// Page nav link
+.admin__page-nav-link {
+    border: 0;
+    border-radius: @radius__xl;
+    font-weight: @font-weight__regular;
+    line-height: 2rem;
+    margin: 0;
+    padding: @admin__page-nav-link__padding;
+}
+
+// Page nav items
+.admin__page-nav-items {
+    padding: @indent__s 0 @indent__base 0;
+}
+
+//
+//  Page nav message, tooltip
+//  _____________________________________________
+
+//  Messages in tooltip
+.admin__page-nav-item-messages {
+    line-height: 1;
+    vertical-align: middle;
+
+    .admin__page-nav-item-message-tooltip {
+        border-radius: @radius__m;
+        padding: @indent__m @indent__base;
+        border: 0;
+        left: 0;
+
+        &::after,
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.admin__page-nav-item-message {
+    margin-left: @indent__base;
+
+    .admin__page-nav-item-message-icon {
+        padding-left: 0;
+    }
+}
+
+//  Spinner
+.admin__page-nav-item-message-loader .spinner {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-top: @indent__2xs;
+    margin-right: @indent__base;
+}

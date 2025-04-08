@@ -1,0 +1,40 @@
+//
+//  Variables
+//  _____________________________________________
+
+// @color-light-blue: #e6f0f4;
+// @color-light-rose: #ffe6dd;
+// @color-medium-blue: #529cdb;
+// @color-red: #f00;
+
+//
+//  Image uploader PageBuilder stage UI component
+//  _____________________________________________
+
+.pagebuilder-image-uploader-container {
+    .file-uploader-button {
+        padding: @button__padding-top @button__large__padding-horizontal @button__padding-bottom @button__large__padding-horizontal;
+        line-height: 1.8;
+        min-height: 4rem;
+        box-shadow: @shadow-level-2;
+        margin-left: @indent__base;
+        margin-right: @indent__base;
+        width: 18rem;
+    }
+
+    .pagebuilder-options {
+        top: 5.2rem;
+
+        .pagebuilder-options-links {
+            gap: @indent__base;
+        }
+        
+        .pagebuilder-options-link {
+            &:last-child {
+                .file-uploader-button {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

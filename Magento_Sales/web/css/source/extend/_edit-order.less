@@ -1,0 +1,49 @@
+//
+//  Variables
+//  _____________________________________________
+
+// @edit-order-comment-notes__border-color: @color-gray65;
+@edit-order-comment-notes__font-size: @font-size__base;
+
+//
+//  Edit order tables
+//  _____________________________________________
+
+.edit-order-table {
+    margin-bottom: 0;
+
+    .product-title {
+        font-weight: @font-weight__semibold;
+    }
+}
+
+.order-subtotal-table {
+    tfoot {
+        tr {            
+            &:first-child {
+                td {
+                    font-size: @font-size__xl;
+                }
+            }
+
+            td {
+                padding-bottom: @indent__s;
+
+                strong {
+                    font-weight: @font-weight__heavier;
+                }
+
+            }
+        }
+
+        tr + tr {
+            td {
+                padding-top: @indent__s;
+            }
+        }
+    }
+}
+
+.order-history-block {
+    margin: 0 0 @indent__xl;
+}

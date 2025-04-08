@@ -1,0 +1,37 @@
+//
+//  Style modal and grid slide out panel
+//  _____________________________________________
+
+.preview-image-preview {
+    .preview-image-preview-image {
+        border: unset;
+        margin-top: 0;
+        padding: 0;
+    }
+}
+
+.pagebuilder_stage_template_pagebuilder_stage_template_modal_pagebuilder_stage_template_grid,
+.pagebuilder-template-index .admin__data-grid-wrap {
+    .data-grid td.data-grid-preview-image-cell {
+        .thumbnail-wrapper {
+            display: block;
+            width: 20rem;
+            height: 20rem;
+            overflow: hidden;
+            border: .1rem solid @neutral-90;
+            transition: @smooth__border-color;
+            border-radius: @radius__xs;
+            background: @color-white;
+
+            &:hover {
+                border-color: @blue-50;
+            }
+        }
+
+        img {
+            max-height: unset;
+            border: unset;
+            padding: unset;
+        }
+    }
+}

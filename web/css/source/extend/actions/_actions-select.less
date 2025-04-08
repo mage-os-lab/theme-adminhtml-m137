@@ -1,0 +1,56 @@
+//
+//  Actions -> Action select
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+// @_dropdown__padding-right: @action__height;
+// @_triangle__height: @button-marker-triangle__height;
+// @_triangle__width: @button-marker-triangle__width;
+
+//  Action select have the same visual styles and functionality as native <select>
+.action-select-wrap {
+    .action-select {
+        padding-left: @field-control__padding-horizontal;
+        border: @field-control__border-width solid @field-control__border-color;
+
+        &:active,
+        &:focus {
+            box-shadow: @focus-shadow;
+            border-color: @field-control__active__border-color;
+
+            &::before {
+                border-color: @field-control__active__border-color;
+            }
+        }
+
+        //  Toggle action
+        &::before {
+            background-color: transparent;
+            border: 0;
+            border-radius: unset;
+        }
+    }
+
+    &._active {
+        .action-select {
+            box-shadow: @focus-shadow;
+            border-color: @field-control__active__border-color;
+
+            &::before {
+                border-color: @field-control__active__border-color;
+            }
+        }
+    }
+}
+
+//  Action dropdown in grid
+.data-grid {
+    td {
+        .action-select-wrap {
+            position: relative;
+        }
+    }
+}

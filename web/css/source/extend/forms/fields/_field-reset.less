@@ -1,0 +1,26 @@
+//
+//  Variables
+//  _____________________________________________
+
+@field-fallback-reset-icon__margin-left: 0;
+@field-fallback-reset-icon__size: 1.6rem;
+@field-fallback-reset-text__font-size: @font-size__base;
+@field-fallback-reset__margin-left: 0;
+@field-fallback-reset__margin-top: 0;
+@field-fallback-reset__width: auto;
+
+//
+//  Form Fields
+//  _____________________________________________
+
+.admin__field-fallback-reset {
+   &:extend(.abs-action-tertiary all);
+    padding-left: 0;
+    padding-right: 0;
+
+    &::before {
+        position: relative;
+        top: .1rem;
+        font-weight: @font-weight__semibold;
+    }
+}

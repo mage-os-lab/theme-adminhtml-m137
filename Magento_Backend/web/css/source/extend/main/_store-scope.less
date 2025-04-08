@@ -1,0 +1,114 @@
+//
+//  Store Scope
+//  _____________________________________________
+
+.tree-store-scope {
+    [class*='field-w'] {
+        &.admin__field {
+            margin-bottom: 0 !important;
+
+            .admin__field-label {
+                margin-bottom: -@indent__s;
+            }
+        }
+    }
+    
+    [class*='field-w'],
+    [class*='field-sg'] {
+        .admin__field-label {
+            span {
+                font-weight: @font-weight__regular;
+            }
+        }
+    }
+}
+
+.store-scope {
+    .admin__legend {
+        .admin__field-tooltip {
+            margin-left: @indent__base;
+        }
+    }
+}
+
+.admin__scope-old {
+    .tree-store-scope {
+        > .admin__field {
+
+            > .admin__field-control {
+                #mix-grid .column(@field-control-grid__column, @field-grid__columns);
+            }
+    
+            > .admin__field-label {
+                #mix-grid .column(@field-label-grid__column, @field-grid__columns);
+
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+
+                &::before {
+                    margin-left: -.4rem !important;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Quotes
+//  _____________________________________________
+
+#sales-rule-form-tab-coupons {
+    .admin__fieldset {
+        > .admin__field {
+            #mix-grid .row();
+
+            > .admin__field-control {
+                #mix-grid .column(@field-control-grid__column, @field-grid__columns);
+            }
+
+            > .admin__field-label {
+                #mix-grid .column(@field-label-grid__column, @field-grid__columns);
+                
+                padding-right: 0;
+
+                span {
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        top: 0;
+
+                        color: @validation__color;
+                        font-size: @font-size__base;
+                        font-weight: @font-weight__semibold;
+                        margin-left: @indent__xs;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .admin__field-control {
+        .admin__control-text {
+            width: 100%;
+        }
+    }
+
+    .admin__data-grid-header {
+        &.admin__data-grid-toolbar {
+            .admin__data-grid-header-row {
+                & + .admin__data-grid-header-row {
+                    margin-top: @indent__l;
+                }
+            }
+        }
+    }
+
+    .field-generate_button {
+        .action-default.generate {
+           &:extend(.abs-action-primary all);
+           margin-bottom: @indent__base;
+        }
+    }
+}

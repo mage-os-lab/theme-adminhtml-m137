@@ -1,0 +1,52 @@
+
+//
+//  Components -> Url Input
+//  _____________________________________________
+
+.url-input-container {
+    .type-selector-input-container {
+        .url-input-select {
+            width: auto;
+        }
+    }
+
+    .url-input-element-linked-element {
+        .admin__action-multiselect-menu-inner {
+            .action-menu-item {
+                .admin__action-multiselect-label {
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        left: -@indent__m;
+                        right: -@indent__m;
+                        top: -.6rem;
+                        bottom: -.6rem;
+                        border-radius: @indent__l;
+                        color: inherit;
+                        content: '';
+                        display: block;
+                        z-index: -1;
+                        transition: @smooth__background-color;
+                    }
+
+                    &:hover {
+                        &::after {
+                            background-color: @neutral-90;
+                        }
+                    }
+                }
+
+                &._selected {
+                    .admin__action-multiselect-label {
+                        color: @neutral-10;
+
+                        &::after {
+                            background-color: @neutral-90;
+                        }
+                    }
+                }
+            }    
+        }
+    }
+}

@@ -1,0 +1,404 @@
+//
+//  Imports
+//  _____________________________________________
+
+@import './fields/_control-collapsible.less';
+@import './fields/_control-table.less';
+@import './fields/_field-tooltips.less';
+@import './fields/_field-reset.less';
+
+//
+//  Extends
+//  _____________________________________________
+
+.abs-field-size-x-small {
+    width: 100%;
+    min-width: @field-size__xs;
+}
+
+.abs-field-size-small {
+    width: 100%;
+    min-width: @field-size__s;
+}
+
+.abs-field-size-medium {
+    width: 100%;
+    min-width: @field-size__m;
+}
+
+.abs-field-size-large {
+    width: 100%;
+    min-width: @field-size__l;
+}
+
+.admin__field {
+    .admin__field-control {
+        .admin__control-select,
+        .admin__control-multiselect {
+            &:extend(.abs-field-size-small all);
+        }
+
+        .widget-option-label {
+            padding-top: @indent__s;
+            display: inline-block;
+        }
+    }
+}
+
+//
+//  Extend fields
+//  _____________________________________________
+
+//
+//  Fieldset
+//  ---------------------------------------------
+
+.admin__fieldset {
+    & + .admin__fieldset {
+        padding-top: @indent__xl;
+    }
+}
+
+//
+//  Field
+//  ---------------------------------------------
+
+.admin__field {
+    & + & {
+        margin-top: @indent__base;
+    }
+
+    .admin__fieldset > & {
+        margin-bottom: @indent__xl;
+
+        &.field-import_file {
+            .input-file {
+                margin-top: @indent__s;
+            }
+        }
+    }
+
+    .admin__control-text {
+        &[aria-invalid='true'] {
+            border-color: @field-error-control__border-color;
+        }
+    }
+}
+
+.admin__field-control {
+    //  If there is a tooltip
+    &._with-tooltip {
+        > .admin__control-addon,
+        > .admin__field-option,
+        > .admin__control-select,
+        > .admin__control-text,
+        > .admin__control-textarea {
+            max-width: unset;
+        }
+    }
+}
+
+.admin__form-field-control,
+.admin__field-control {
+    .admin__control-text,
+    .admin__control-textarea {
+        box-sizing: border-box;
+    }
+
+    input[type='text'] {
+        &.input-text,
+        &.admin__control-text {
+            width: 100%;
+        }
+    }
+}
+
+//
+//  Label
+//  ---------------------------------------------
+
+.admin__field-label {
+    .required > &,
+    ._required > & {
+        span {
+            &::after {
+                color: @validation__color;
+                font-size: @font-size__base;
+                font-weight: @font-weight__semibold;
+                margin-left: @indent__xs;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+//
+//  If there is a fallback reset button
+//  ---------------------------------------------
+
+.admin__field-control {
+    &._with-reset {
+        .admin__field-fallback-reset {
+            margin-left: @field-fallback-reset__margin-left;
+            margin-top: @field-fallback-reset__margin-top;
+        }
+    }
+}
+
+//
+//  Field messages
+//  ---------------------------------------------
+
+//  Field error message
+.admin__field-error {
+    border: 0;
+    line-height: @line-height__s;
+    margin: @indent__s 0 0 0;
+    padding: 0;
+}
+
+//  Field notice message
+.admin__field-note {
+    margin: @indent__s 0 0 0;
+}
+
+//
+//  Stores > | Settings | Configuration
+//  ---------------------------------------------
+
+.main-col {
+    .admin__scope-old {
+        .form-inline {
+            background-color: @color-white;
+            padding: @indent__l;
+            border-radius: @radius__l;
+        }
+    }
+}
+
+//
+//  Stores > | Taxes | Tax Rules, Tax Zones and Rates
+//  ---------------------------------------------
+
+.admin__old {
+    .form-inline {
+        .admin__fieldset.admin__scope-old.form-inline {
+            background-color: unset;
+            padding: 0;
+            border-radius: unset;
+
+            > .legend {
+                margin-left: 0;
+            }
+
+            .messages + .admin__field {
+                margin-top: @indent__s;
+            }
+        }
+    }
+}
+
+//
+//  Content > | Elements | Widgets
+//  ---------------------------------------------
+
+.main-col {
+    .admin__scope-old {
+        .form-inline {
+            .form-inline {
+                background-color: unset;
+                padding: 0;
+                border-radius: unset;
+
+                .fieldset {
+                    padding-top: 0;
+                    padding-bottom: @indent__xl;
+
+                    &:last-child {
+                        padding-bottom: @indent__s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  System > | Permissions | User Roles
+//  ---------------------------------------------
+
+.main-col {
+    .admin__scope-old {
+        .form-inline {
+            .fieldset {
+                &:last-of-type {
+                    padding-bottom: @indent__s !important;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Sales > | Sales | Order > Address > Edit
+//  ---------------------------------------------
+
+.admin__old {
+    .main-col {
+        .form-inline {
+            background-color: @color-white;
+            padding: @indent__l;
+            border-radius: @radius__l;
+        }
+    }
+}
+
+//
+//  Catalog > | Catalog | Categories
+//  ---------------------------------------------
+
+.main-col {
+    .admin__old {
+        .form-inline {
+            background-color: @color-white;
+            padding: @indent__l;
+            border-radius: @radius__l;
+        }
+    }
+}
+
+//
+//  Marketing > | Promotions | Catalog Price Rule
+//  ---------------------------------------------
+
+.admin__collapsible-content {
+    .admin__scope-old {
+        .form-inline {
+            background-color: unset;
+            padding: 0;
+            border-radius: unset;
+        }
+    }
+}
+
+//
+//  Field containing multiple fields
+//  _____________________________________________
+
+//  In line
+[class*='admin__control-grouped'] {
+    & > .admin__field {
+
+        //  Stretch group column size to control
+        &.admin__field-default,
+        &.admin__field-x-small,
+        &.admin__field-small,
+        &.admin__field-medium,
+        &.admin__field-large {
+            width: unset;
+        }
+    }
+}
+
+.admin__fieldset {
+    > .admin__field {
+        &.admin__field-x-small {
+            .admin__field-control {
+                width: unset;
+            }
+        }
+
+        > .admin__field-control {
+            input[type='checkbox'] {
+                margin-top: .9rem;
+            }
+        }
+    }
+}
+
+//  Additional field for group
+[class*='admin__control-grouped'] {
+    .admin__field-group-additional {
+        &.admin__field-default,
+        &.admin__field-x-small,
+        &.admin__field-small,
+        &.admin__field-medium,
+        &.admin__field-large {
+            width: 1px;
+        }
+    }
+}
+
+.admin__field-group-additional {
+    .action-basic {
+        width: unset;
+    }
+}
+
+//  Group of date fields
+.admin__control-grouped-date {
+    & > .admin__field-date {
+        width: unset;
+    }
+
+    .admin__field-date {
+        &[data-index='news_from_date'],
+        &[data-index='news_to_date'],
+        &[data-index='custom_design_from'],
+        &[data-index='custom_design_to'] {
+            width: 50%;
+        }
+    
+        &[data-index='news_to_date'],
+        &[data-index='custom_design_to'],
+        &[data-index='special_to_date'] {
+            position: relative;
+
+            > .admin__field-label {
+                position: absolute;
+                z-index: 1;
+                font-weight: @font-weight__regular;
+                line-height: @field-control__line-height;
+                padding-top: @field-control__padding-top;
+                padding-right: 0;
+                padding-bottom: @field-control__padding-bottom;
+                left: @field-group-label__padding + @field-control__padding-horizontal;
+                top: 50%;
+                transform: translateY(-50%);
+                color: @neutral-50;
+            }
+
+            > .admin__field-control {
+                .admin__control-text {
+                    padding-left: 4rem;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Complex field
+//  _____________________________________________
+
+.admin__field-complex {
+    .admin__field-complex-elements {
+        button {
+            margin-left: @indent__base;
+        }
+    }
+}
+
+//
+//  Nesting structure (messages)
+//  _____________________________________________
+
+.admin__fieldset {
+    .admin__field + .messages {
+        .message {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

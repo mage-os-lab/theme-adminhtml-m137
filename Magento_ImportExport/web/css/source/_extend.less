@@ -1,0 +1,216 @@
+﻿//
+//  Extend Import
+//  _____________________________________________
+
+.adminhtml-import-index {
+    .admin__fieldset {
+        &:last-child {
+            .admin__field {
+                &:last-of-type {
+                    margin-bottom: @indent__s;
+                }
+            }
+        }
+    }
+
+    .input-file {
+        margin-right: 0 !important;
+        color: @neutral-40;
+        cursor: pointer;
+    
+        &::file-selector-button {
+           &:extend(.abs-action-secondary all);
+            margin-right: @indent__base;
+            cursor: pointer;
+        }
+    }
+
+    #sample-file-link {
+        margin-top: @indent__s;
+        display: inline-block;
+    }
+}
+
+//
+//  Checkbox
+//  ---------------------------------------------
+
+#basic_behaviorfields_enclosure,
+#fields_enclosure {
+    &:extend(.abs-control-checkbox all);
+    margin-top: .9rem;
+}
+
+//
+//  Section
+//  ---------------------------------------------
+
+.entry-edit.fieldset {
+    background-color: @color-white;
+    padding: @indent__l;
+    border-radius: @radius__l;
+
+    .fieldset-legend {
+        &:extend(.abs-fieldset-legend all);
+    }
+
+    > br {
+        display: block;
+        content: '';
+    }
+
+    .messages {
+        .message {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+//
+//  Note gaps
+//  ---------------------------------------------
+
+.admin__field-note {
+    br {
+        display: block;
+        content: '';
+        
+        & + br {
+            margin-top: @indent__s;
+        }
+    }
+}
+
+//
+//  Extend Export
+//  _____________________________________________
+
+.adminhtml-export-index {
+    .admin__data-grid-outer-wrap {
+        .data-grid-cell-content {
+            display: inline;
+        }
+    }
+}
+
+#export_filter_container {
+    margin-top: @indent__l;
+
+    .admin__legend {
+        margin-bottom: @indent__s;
+    }
+
+    > br {
+        display: block;
+        content: '';
+    }
+
+    > button.action- {
+        &:extend(.abs-action-primary all);
+        margin-top: @indent__base;
+        margin-bottom: @indent__s;
+    }
+
+    // Table Checkbox
+    .data-grid-checkbox-cell-inner {
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: 0;
+    }
+
+    //
+    //  Table Fields
+    //  ---------------------------------------------
+
+    // Field Label
+    .col-filter {
+        line-height: 1rem;
+
+        .admin__control-support-text {
+            margin-left: 0;
+            margin-right: @indent__base;
+            width: 4.8rem;
+
+            &:nth-of-type(2) {
+                padding-left: @indent__base;
+                text-align: right;
+            }
+        }
+        
+        .input-text-range,
+        .admin__control-text._has-datepicker {
+            width: ~'calc(((100% - 1.1rem) / 2) - 4.8rem - @{indent__base})';
+            margin-left: 0;
+        }
+    }
+
+    // Input, Select
+    .admin__control-text,
+    .admin__control-select,
+    .multiselect {
+        width: 100%;
+    }
+
+    // Multiselect
+    .multiselect {
+        &:extend(.abs-form-control-pattern all);
+        padding: @indent__s;
+
+        option,
+        optgroup {
+            padding: @indent__s 0;
+            border-radius: @radius__xs;
+            margin-bottom: .1rem;
+    
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    
+        optgroup {
+            font-weight: @font-weight__heavier;
+        }
+    
+        option {
+            padding-left: @indent__m;
+            padding-right: @indent__m;
+            transition: @smooth__background-color;
+    
+            &:hover {
+                background-color: @neutral-90;
+            }
+    
+            &:checked {
+                background: @blue-50 linear-gradient(0deg, @blue-50 0%, @blue-50 100%);
+                color: @color-white;
+                -webkit-text-fill-color: @color-white;
+            }
+        }
+    
+        &:focus {
+            option {
+                &:checked {
+                    background: @blue-50 linear-gradient(0deg, @blue-50 0%, @blue-50 100%);
+                    color: @color-white;
+                    -webkit-text-fill-color: @color-white;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Import History
+//  _____________________________________________
+
+.col-imported_file {
+    &.a-center {
+        text-align: unset;
+    }
+
+    p {
+        margin-bottom: @indent__xs;
+    }
+}

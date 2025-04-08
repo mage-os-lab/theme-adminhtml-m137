@@ -1,0 +1,99 @@
+//
+//  Magento Marketplace
+//  _____________________________________________
+
+.page-partners {
+    border-top: 0;
+    padding-top: @indent__base;
+
+    .partners-block {
+        border-radius: @radius__l;
+        padding: @indent__xl;
+        background-color: @color-white;
+        gap: @indent__xl;
+    }
+
+    .partner {
+        margin-bottom: 0;
+        padding: 0;
+        width: ~'calc(100% / 3 - @{indent__xl})';
+    }
+}
+
+.partner-title {
+    font-size: @h4__font-size;
+    font-weight: @h4__font-weight;
+    margin-bottom: @h4__margin-bottom;
+}
+
+.partner-image {
+    margin-top: 0;
+}
+
+.partner-description {
+    margin-bottom: 0;
+
+    a {
+        &:first-of-type {
+            margin-top: @indent__l;
+        }
+
+        margin-top: @indent__s;
+        display: inline-block;
+    }
+}
+
+.partners-footer {
+    border-radius: @radius__l;
+    padding: @indent__xl;
+    background-color: @color-white;
+
+    &.row-gutter {
+        margin-left: 0;
+        margin-right: 0;
+    }
+                
+    [class*='col-'] {
+        width: ~'calc(100% / 2 - @{indent__xl} / 2)';
+        padding: 0;
+
+        &:nth-child(1) {
+            float: left;
+        }
+        
+        &:nth-child(2) {
+            float: right;
+        }
+        
+        &:nth-child(3) {
+            float: right;
+            clear: right;
+        }
+    }
+
+    .magento-marketplace-logo {
+        margin-bottom: @indent__l;
+        height: 6rem;
+        float: left;
+    }
+
+    .action-secondary {
+        margin-top: @indent__l;
+    }
+}
+
+.partners-search {
+    padding-left: 0;
+
+    &::before {
+        display: inline-block;
+        font-size: 6rem;
+        left: 0;
+        position: unset;
+        margin-bottom: @indent__l;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}

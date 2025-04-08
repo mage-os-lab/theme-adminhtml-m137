@@ -1,0 +1,130 @@
+//
+//  UI -> Data Grid -> Header -> Action Default View
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+@action-dropdown-menu__font-size: 1.4rem;
+
+// @action-dropdown-menu-item__background-color: @page-wrapper__background-color;
+@action-dropdown-menu-item__padding-vertical: 1rem;
+@action-dropdown-menu-item__padding-left: 1.6rem;
+@action-dropdown-menu-item__hover__background-color: @neutral-90;
+
+@action-dropdown-menu-item-actions__size: 1.6rem;
+@action-dropdown-menu-item-actions__width: 3.6rem;
+
+@action-dropdown-menu-item-action-icon__padding-horizontal: 1.6rem;
+@action-dropdown-menu-item-action-icon__padding-vertical: 1rem;
+
+//
+//  Extend
+//  _____________________________________________
+
+.admin__data-grid-action-bookmarks {
+    .admin__action-dropdown {
+        &::before {
+            font-size: @action-dropdown-toggle-icon__font-size;
+        }
+    }
+
+    .admin__action-dropdown-menu {
+        padding: @action-menu__padding;
+
+        > li {
+            &:hover {
+                background-color: @action-dropdown-menu-item__hover__background-color;
+                color: @neutral-20;
+            }
+
+            &._edit {
+                &:hover {
+                    background: transparent;
+                }
+            }
+            
+            &:last-of-type {
+                &._edit {
+                    .admin__control-text {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .action-dropdown-menu-item-edit {
+            padding: @action-menu-item__padding;
+        }
+
+        //  Menu actions
+        .action-dropdown-menu-action {
+            padding-left: @action-dropdown-menu-item__padding-left;
+
+            &.action-dropdown-menu-item-last {
+                padding-top: @action-dropdown-menu-item__padding-vertical;
+                padding-bottom: @action-dropdown-menu-item__padding-vertical;
+                border-top: .1rem solid @neutral-90;
+                margin-top: 0;
+                border-top: .1rem solid @neutral-90;
+
+                a {
+                    color: @action-menu-item__hover__color;
+                    text-decoration: none;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+
+                    &::before {
+                        &:extend(.abs-icon all);
+                        font-size: @font-size__l;
+                        content: @icon-plus__content;
+                        font-weight: @font-weight__bold;
+                        margin-right: @indent__s;
+                    }
+                }
+            }
+        }
+
+        //  Edit state
+        ._edit {
+            .action-dropdown-menu-item-edit {
+                padding-right: 0;
+            }
+        }
+
+        //  Edit item
+        .admin__control-text {
+            width: ~'calc(100% - @{action-dropdown-menu-item-actions__width})';
+            min-width: unset;
+        }
+
+        .action-dropdown-menu-item-actions {
+            border-left: .1rem solid @action-menu__background-color;
+        }
+
+        .action-dropdown-menu-link {
+            padding: @action-menu-item__padding;
+            line-height: 1.8rem;
+        }
+    }
+
+    //  Icon actions
+    .action-submit,
+    .action-delete,
+    .action-edit {
+        padding: 1rem;
+        line-height: .8;
+    }
+
+    .action-delete {
+        &::before {
+            font-weight: @font-weight__bold;
+        }
+    }
+
+    .action-edit {
+        padding-top: @action-dropdown-menu-item-action-icon__padding-vertical;
+    }
+}

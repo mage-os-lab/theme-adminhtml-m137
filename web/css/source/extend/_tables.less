@@ -1,0 +1,79 @@
+//
+//  Variables
+//  _____________________________________________
+
+@table__color: @text__color;
+@table__border-color: @neutral-90;
+
+// @table-th__border-color: @table__border-color;
+
+@table-td__border-color: @table__border-color;
+
+// @table-tfoot__background-color: @color-white-fog;
+
+@admin__table-primary__font-size: 1.4rem;
+@admin__table-primary__padding-vertical: 1.2rem;
+@admin__table-primary__padding-horizontal: .8rem;
+
+@admin__table-secondary__padding-vertical: 1.2rem;
+@admin__table-secondary__padding-horizontal: 0;
+// @admin__table-secondary-caption__font-size: 1.8rem;
+@admin__table-secondary-cell__odd__color: transparent;
+@admin__table-secondary-th__color: @text__color;
+
+//
+//  Tables
+//  _____________________________________________
+
+.admin__table-primary {
+    th,
+    td {
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    thead {
+        th {
+            color: @admin__table-primary-th__color;
+            font-weight: @font-weight__heavier;
+        }
+    }
+
+    th {
+        font-weight: @font-weight__heavier;
+    }
+}
+
+.admin__table-secondary {
+    thead {
+        th {
+            background-color: @admin__table-secondary-th__background-color;
+        }
+    }
+
+    tbody {
+        tr {
+            th,
+            td {
+                border-bottom: .1rem solid @table-td__border-color;
+            }
+
+            &:last-child {
+                th,
+                td {
+                    border-bottom: 0;
+                }   
+            }
+        }
+    }
+
+    th {
+        font-weight: @admin__table-secondary-th__font-weight;
+    }
+
+    th,
+    td {
+        padding: @admin__table-secondary__padding-vertical @admin__table-secondary__padding-horizontal;
+    }
+}

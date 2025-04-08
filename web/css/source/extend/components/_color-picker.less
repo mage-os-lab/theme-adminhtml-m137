@@ -1,0 +1,35 @@
+//
+//  Extend
+//  _____________________________________________
+
+.sp-replacer {
+    border-color: @field-control__border-color;
+    border-radius: @field-control__border-radius;
+    background: unset;
+    margin-right: @indent__base;
+    padding: 0;
+
+    &:hover {
+        border-color: @field-control__hover__border-color;
+    }
+
+    &:focus {
+        border-color: @field-control__focus__border-color;
+    }
+
+    .sp-preview {
+        width: 3.4rem;
+        height: 3.4rem;
+        border: 0;
+    }
+
+    .sp-clear-display {
+        background-size: 3.4rem;
+    }
+}
+
+.admin__field-control {
+    .sp-replacer + .colorpicker-input {
+        width: calc(~'100% - 4rem -  @{indent__base}') !important;
+    }
+}

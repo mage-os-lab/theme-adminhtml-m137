@@ -1,0 +1,154 @@
+//
+//  Extend
+//  _____________________________________________
+
+//
+//  Collapsible Block
+//  ---------------------------------------------
+
+.page-columns {
+    .paypal-top-section {
+        > .admin__collapsible-block {
+            > a {
+                .__collapsible-title-pattern();
+
+                text-transform: unset;
+
+                &::before {
+                    content: @icon-expand-open__content !important;
+                    border: unset;
+                    width: unset;
+                    height: unset;
+                }
+            }
+        }
+        
+        &.active {
+            > .admin__collapsible-block {
+                > a {
+                    &::before {
+                        content: @icon-expand-close__content !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Configuration Fields
+//  ---------------------------------------------
+
+.paypal-top-section {
+    [id*='reports_time'] {
+        td.value {
+            select {
+                width: 30% !important;
+            }
+    
+            .time-separator {
+                width: 5%;
+                display: inline-block;
+                text-align: center;
+                margin-left: -@indent__2xs;
+                margin-right: -@indent__2xs;
+            }
+        }
+    }
+
+    > .entry-edit-head.admin__collapsible-block {
+        border-color: @collapsible__border-color !important;
+    }
+
+    &.active {
+        > .entry-edit-head.admin__collapsible-block {
+            border-bottom: 0 !important;
+        }
+    }
+
+    .paypal-express-section .heading {
+        background-position: 0 50%;
+        background-size: 10rem;
+        padding-left: 13.2rem;
+    }
+
+    .paypal-all-in-one-section,
+    .paypal-gateways-section {
+        > .entry-edit-head {
+            background-position: 0 50%;
+            background-size: 10rem;
+            padding-left: 13.2rem;
+    
+            > a {
+                border-radius: @radius__m;
+                
+                &::before {
+                    left: @indent__base !important;
+                    right: auto !important;
+                }
+            }
+        } 
+    }
+
+    .paypal-express-section .config-alt {
+        background-size: 8rem;
+        width: 8rem;
+        height: 1.4rem;
+        margin-top: @indent__s;
+    }
+
+    button.button {
+       &:extend(.abs-action-secondary all);
+    }
+
+    .pp-buttons-container {
+        > div {
+            margin-top: 0;
+        }
+
+        .action-default {
+           &:extend(.abs-action-secondary all);
+            margin-top: 0;
+            margin-right: @indent__base;
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .form-list {
+        .payflow-settings-notice {
+            margin-top: 0;
+        }
+    }
+
+    .form-list {
+        .form-list {
+            .form-list {
+                .config.admin__collapsible-block {
+                    padding-left: @indent__base;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td[colspan='1'] {
+                    padding-top: 0;
+
+                    .note {
+                        a {
+                            font-size: @font-size__base;
+                        }
+                    }
+                }
+
+                td[colspan='4'] {
+                    .section-config {
+                        &:first-child {
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

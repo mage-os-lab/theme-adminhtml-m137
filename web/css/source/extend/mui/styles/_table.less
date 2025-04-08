@@ -1,0 +1,96 @@
+//
+//  Extend
+//  _____________________________________________
+
+.data-table {
+    th {
+        .style2();
+
+        background: @grid-td-light;
+    }
+
+    thead th {
+        border-color: @data-table-th-border-color;
+        padding: @indent__s;
+    }
+
+    td,
+    tbody tr th,
+    tbody tr td {
+        background: @data-table-td-background-color;
+        padding: @indent__m @indent__s;
+
+        transition: @smooth__background-color;
+    }
+
+    tbody {
+        tr {
+            td,
+            th {
+                border-bottom: .1rem solid @neutral-90;
+            }
+        }
+
+        button.action-.delete {
+            padding: 0 !important;
+            top: -.1rem !important;
+            right: unset;
+
+            &::before {
+                color: inherit !important;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            &:nth-child(odd) {
+                th,
+                td {
+                    background-color: @data-table-td-background-color-odd;
+                }
+            }
+
+            &:hover {
+                th,
+                td {
+                    background-color: @neutral-95;
+                }
+            }
+        }
+    }
+
+    tfoot {
+        .col-actions-add {
+            padding: @indent__m;
+        }
+
+        button.add {
+           &:extend(.abs-action-secondary all);
+        }
+    }
+}
+
+//
+//  Inputs and selects in tables
+// --------------------------------------
+
+.grid,
+.data-table {
+    tbody {
+        td,
+        th {
+            input[type='text'],
+            .input-text {
+                padding-left: @field-control__padding-horizontal;
+            }
+
+            input[type='text'],
+            .input-text,
+            select,
+            .select {
+                width: 100%;
+            }
+        }
+    }
+}

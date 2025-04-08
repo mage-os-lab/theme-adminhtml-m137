@@ -1,0 +1,46 @@
+//
+//  Stores > | Currency | Currency Rates, Currency Symbols
+//  _____________________________________________
+
+.main-col {
+    > #rate-form {
+        background-color: @color-white;
+        padding: @indent__l;
+        border-radius: @radius__l;
+    }    
+}
+
+#currency-symbols-form,
+.import-service {
+    background-color: @color-white;
+    padding: @indent__l;
+    border-radius: @radius__l;
+}
+
+.import-service {
+    .admin__fieldset {
+        padding-top: @indent__s;
+    }
+}
+
+.import-service {
+    margin-bottom: @indent__l;
+
+    .action-default {
+       &:extend(.abs-action-secondary all);
+    }
+}
+
+.admin__fieldset-import-service {
+    margin-bottom: @indent__s;
+}
+
+#rate-form {
+    .admin__control-table {
+        tbody {
+            td {
+                vertical-align: top;
+            }
+        }
+    }
+}

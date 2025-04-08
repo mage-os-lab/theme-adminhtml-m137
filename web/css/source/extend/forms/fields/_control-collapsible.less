@@ -1,0 +1,114 @@
+//
+//  Variables
+//  _____________________________________________
+
+@control-collapsible__border-color: @neutral-90;
+
+@collapsible-title__font-size: 1.6rem;
+@collapsible-title__padding-top: 1.6rem;
+@collapsible-title__color: @neutral-20;
+@collapsible-title__padding-bottom: 1.6rem;
+@collapsible-title__hover__color: @neutral-10;
+// @collapsible-title__disabled__color: lighten(@collapsible-title__color, 30%);
+
+@control-collapsible-title-icon-open__size: 1.6rem;
+@control-collapsible-title-icon-remove__size: 1.8rem;
+@control-collapsible-title__background-color: @neutral-95;
+// @control-collapsible-title__padding-left: @control-collapsible-title-icon-open__size + @control-collapsible-title__padding__horizontal * 2;
+// @control-collapsible-title__padding-right: @control-collapsible-title-icon-remove__size + @control-collapsible-title__padding__horizontal * 2;
+@control-collapsible-title__padding__horizontal: @indent__base;
+// @control-collapsible-title__padding__vertical: 1.6rem;
+
+@control-collapsible-content__padding: 0;
+
+@control-collapsible-row__dragging__background-color: @neutral-90;
+
+@control-collapsible-horizontal-dragover-mark__color: @blue-50;
+@control-collapsible-horizontal-dragover-mark__height: .2rem;
+
+//
+//  Table with collapsible panel
+//  _____________________________________________
+
+.admin__control-collapsible {
+    ._dragged {
+        .admin__collapsible-block-wrapper {
+            .admin__collapsible-title {
+                border-radius: @radius__xl;
+            }
+        }
+    }
+
+    ._dragover-top {
+        .admin__collapsible-block-wrapper {
+            &::before {
+                top: -.5rem;
+            }
+        }    
+    }
+
+    ._dragover-bottom {
+        .admin__collapsible-block-wrapper {
+            &::before {
+                bottom: .5rem;
+            }
+        }
+    }
+
+    .admin__collapsible-block-wrapper {
+        position: relative;
+
+        &.fieldset-wrapper {
+            .fieldset-wrapper-title {
+                border-radius: @radius__xl;
+                border: none;
+            }
+        }
+
+        .fieldset-wrapper-title {
+            .admin__collapsible-title {
+                font-weight: @font-weight__heavier;
+
+                &::before {
+                    top: @indent__base;
+                }
+
+                span {
+                    min-height: @indent__base;
+                    display: inline-block;
+                    position: relative;
+                    top: @indent__2xs;
+                }
+            }
+
+            .action-delete {
+                top: .7rem;
+                right: .7rem;
+                width: 3.6rem;
+                height: 3.6rem;
+                padding: 0;
+                line-height: 1;
+            }
+
+            .draggable-handle {
+                margin-top: 0;
+                margin-right: @indent__base;
+                padding-right: 0;
+            }
+        }
+    }
+
+    .admin__collapsible-content {
+        border-radius: @radius__base;
+        
+        > .fieldset-wrapper {
+            border: none;
+        }
+    }
+
+    .admin__collapsible-content {
+        .admin__collapsible-block-wrapper {
+            padding-top: @indent__base;
+        }
+    }
+}

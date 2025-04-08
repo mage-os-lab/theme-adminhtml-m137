@@ -1,0 +1,100 @@
+﻿//
+//  Variables
+//  _____________________________________________
+
+@rating-star__font-size: 2.4rem;
+@rating-star__height: 2.4rem;
+@rating-star__width: 2.4rem;
+
+//
+//  Reviews
+//  _____________________________________________
+
+.field-detailed-rating {
+    .admin__field-rating {
+        width: ~'calc((100% - @{indent__l} * 3) / 4)';
+        min-width: 12rem;
+        margin-top: 0;
+
+        .admin__field-label {
+            display: block;
+            width: 100%;
+        }
+
+        .admin__field-control {
+            margin-top: @indent__s;
+            width: 12rem;
+
+            label {
+                font-size: 0;
+                transition: @smooth__color;
+
+                .lib-icon-font(
+                @icon-star__content,
+                @icons-admin__font-name,
+                @_icon-font-size: 2.4rem,
+                @_icon-font-line-height: 1,
+                @_icon-font-color: inherit
+                );
+
+                &:hover {
+                    color: @neutral-20 !important;
+                }
+            }
+        }
+    }
+
+    #detailed-rating {
+        width: 100%;
+    }
+
+    #rating_detail {
+        display: flex;
+        flex-wrap: wrap;
+        gap: @indent__l;
+
+        .admin__field-label {
+            &::before {
+                margin-left: -@indent__xs;
+            }
+        }
+    }
+}
+
+.field-summary-rating {
+    .admin__field-value {
+        padding-top: 0;
+        min-height: 3.2rem;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .rating-box {
+        background: url('@{baseDir}images/rating-bg.svg') repeat-x 0 0;
+        margin-top: 0;
+
+        .rating {
+            background: url('@{baseDir}images/rating-bg.svg') repeat-x 0 -@rating-star__height;
+        }
+    }
+}
+
+//
+//  Rating
+//  _____________________________________________
+
+.review-rating-edit {
+    .field-stores {
+        .admin__field-control {
+            width: 60% !important;
+        }
+    }
+
+    #rating_tabs_form_section_content {
+        .admin__fieldset {
+            &:last-child {
+                padding-bottom: @indent__s;
+            }
+        }
+    }
+}

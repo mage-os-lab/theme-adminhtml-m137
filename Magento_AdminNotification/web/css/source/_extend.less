@@ -1,0 +1,106 @@
+//
+//  Variables
+//  _____________________________________________
+
+@message-system__background-color: @color-white;
+@message-system__border-color: transparent;
+// @message-system__border-width: .1rem;
+// @message-system__color: @color-gray20;
+@message-system-short__padding-vertical: 1.2rem;
+@message-system-short-wrapper__height: 4.3rem;
+
+//  Triangle marker
+@message-system-triangle__height: .8rem;
+@message-system-triangle__padding-right: @message-system-triangle__height * 2;
+// @message-system-triangle__width: .8rem;
+
+//
+//  Message system
+//  _____________________________________________
+
+.message-system-inner {
+    box-shadow: @message-system__box-shadow;
+    border-radius: @message-system__border-radius;
+    margin: @message-system__margin;
+    padding: @message-system__padding;
+
+    .message {
+        background: none;
+        overflow: hidden;
+        padding: @alert__padding;
+        padding-left: @alert__padding-left + @alert-icon__font-size + @indent__s;
+        margin: 0;
+
+        &::before {
+            left: @alert__padding-left;
+        }
+    }
+}
+
+.message-system-list {
+    border-bottom: 0;
+    border-top: 0;
+    margin: 0;
+}
+
+.message-system-short-wrapper {
+    padding: 0 @indent__base 0 0;
+}
+
+.message-system-collapsible {
+    border: 0;
+    left: 0;
+    padding: 0;
+    right: 0;
+
+    &::before {
+        background-color: @message-system__background-color;
+        content: '';
+        height: .2rem;
+        display: block;
+        position: absolute;
+        top: -@indent__2xs;
+        left: 0;
+        right: 0;
+    }
+
+    ._active & {
+        margin-top: -@message-system-short__padding-vertical;
+        box-shadow: @message-system__box-shadow;
+        border-radius: @message-system__border-radius;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+.message-system-action-dropdown {
+    margin: @message-system-short__margin;
+    
+    &::after {
+        right: 0;
+    }
+}
+
+.message-system-summary {
+    padding: @indent__s @indent__base @indent__m @indent__base;
+
+    .action__message-log {
+        border-right: 0;
+        margin: 0 @indent__l 0 0;
+        padding-right: 0;
+    }
+}
+
+//
+//  Toolbar button
+//  _____________________________________________
+
+.adminhtml-notification-index {
+    .admin__data-grid-toolbar {
+        .admin__grid-massaction-form {
+            .action-default.scalable {
+               &:extend(.abs-action-secondary all);
+            }
+        }
+    }
+}

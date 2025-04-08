@@ -1,0 +1,138 @@
+
+//
+//  Main elements -> Actions bar
+//  _____________________________________________
+
+//
+//  Imports
+//  _____________________________________________
+
+@import './actions-bar/_store-switcher.less';
+
+//
+//  Variable
+//  _____________________________________________
+
+@page-main-actions__background-color: @body__background-color;
+@page-main-actions__border-color: transparent;
+@page-main-actions__padding: @indent__l;
+
+
+//
+//  Page main actions
+//  _____________________________________________
+
+.page-main-actions:not(._hidden),
+.page-actions._fixed {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.page-main-actions:not(._hidden) {
+    padding-top: 0;
+}
+
+.page-actions._fixed {
+    padding-top: @indent__base;
+    padding-bottom: @indent__base;
+}
+
+.page-main-actions {
+    margin: 0;
+}
+
+//
+//  Page actions group
+//  _____________________________________________
+
+.page-actions {
+    @_page-action__indent: 0;
+    margin-left: auto;
+    order: 2;
+
+    &.floating-header {
+        &:extend(.page-actions-buttons all);
+    }
+
+    .page-main-actions & {
+        &._fixed {
+            left: @page-wrapper__indent-left;
+            position: fixed;
+            right: @page-content__padding-horizontal;
+            top: 0;
+            z-index: @page-actions__fixed__z-index + 101;
+
+            .page-actions-inner {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+
+                &::before {
+                    .lib-heading(h2);
+
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .actions-split {
+        .dropdown-menu {
+            min-width: 18.5rem;
+            right: 0;
+            left: unset;
+        }
+    }
+
+    > button,
+    .page-actions-buttons > button,
+    .page-actions-buttons > .action {
+        &:extend(.abs-action-quaternary all);
+        margin-left: @_page-action__indent;
+    }
+
+    .page-actions-buttons {
+        .action-default {
+            &.primary {
+                margin-left: @indent__base;
+            }
+
+            &.task {
+                &:extend(.abs-action-l all);
+                &:extend(.abs-action-primary all);
+            }
+        }
+
+        .action- {
+            &.primary,
+            &.action-secondary {
+                margin-left: @indent__base;
+            }
+        }
+
+        > .action-element {
+            margin-left: @_page-action__indent;
+        }
+    }
+
+    .actions-split {
+        margin-left: @_page-action__indent;
+    }
+}
+
+//
+//  Modal
+//  _____________________________________________
+
+.page-main-actions {
+    .page-actions {
+        .action- {
+            &.primary {
+                margin-left: @indent__base;
+            }
+        }
+
+    }
+}

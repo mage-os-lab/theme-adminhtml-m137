@@ -1,0 +1,163 @@
+//
+//  Transformation to rows form layout
+//  _____________________________________________
+
+.abs-field-rows[class] {
+    &:not(.admin__field-option) {
+        > .admin__field-label {
+            margin-bottom: @indent__s;
+            margin-top: 0;
+        }
+    }
+}
+
+.abs-control-qty {
+    min-width: 0;
+    width: 100%;
+}
+
+.abs-fieldset-legend {
+    font-size: 1.6rem;
+    font-weight: @font-weight__semibold;
+    margin-bottom: @indent__l;
+}
+
+//
+//  Other
+//  _____________________________________________
+
+//  Clearfixes
+.abs-clearfix-reset {
+    .lib-clearfix-reset();
+}
+
+//
+//  Center
+//  _____________________________________________
+
+@abs-center-x: {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+};
+
+.abs-center-x {
+    @abs-center-x();
+}
+
+
+@abs-center-y: {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+};
+
+.abs-center-y {
+    @abs-center-y();
+}
+
+//
+//  Draggable handle with an icon
+//  _____________________________________________
+
+.abs-draggable-handle {
+    margin-top: 0;
+
+    &::before {
+        color: inherit;
+    }
+
+    &:hover {
+        &::before {
+            color: inherit;
+        }   
+    }
+}
+
+//
+//  Control checkbox (scope old)
+//  _____________________________________________
+
+.abs-control-checkbox {
+    .lib-css(appearance, none, 1);
+
+    border-radius: @radius__xs;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 @indent__s 0 0;
+    position: relative;
+    background-color: @control-checkbox-radio__background-color;
+    color: @control-checkbox-radio-mark__color;
+    border: .1rem solid @field-control__border-color;
+    height: @control-checkbox-radio__size;
+    width: @control-checkbox-radio__size;
+        
+    &:focus {
+        border-color: @control-checkbox-radio__focus__background-color;
+        color: @control-checkbox-radio-mark__focus__color;
+        box-shadow: none;
+        outline: 0;
+    }
+
+    &::after {
+        text-align: center;
+        vertical-align: top;
+        color: inherit;
+    }
+
+    &[disabled] {
+        background-color: @field-control__disabled__background-color;
+        border-color: @field-control__border-color;
+        opacity: .5;
+
+        &.admin__control-checkbox,
+        &.admin__control-radio {
+            opacity: .01;
+        }
+    }
+
+    &:checked {
+        background-color: @control-checkbox-radio__focus__background-color;
+        border-color: @control-checkbox-radio__focus__background-color;
+        color: @control-checkbox-radio-mark__focus__color;
+
+        &::after {
+            font-family: 'Admin Icons';
+            content: '\e62d';
+            display: inline-block;
+            width: unset;
+            height: unset;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0;
+            background-color: inherit;
+            color: inherit;
+            -webkit-font-smoothing: antialiased;
+            font-size: 1.1rem;
+            line-height: 130%;
+            text-align: center;
+            font-weight: 400;
+        }
+    }
+}
+
+//
+//  Table form list (td.value) 3 columns
+//  _____________________________________________
+
+.abs-table-form-list-col-3 {
+    select {
+        width: 30% !important;
+    }
+
+    .time-separator {
+        width: 5%;
+        display: inline-block;
+        text-align: center;
+        margin-left: -@indent__2xs;
+        margin-right: -@indent__2xs;
+    }
+}

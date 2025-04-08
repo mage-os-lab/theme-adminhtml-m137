@@ -1,0 +1,671 @@
+//
+//  Imports
+//  _____________________________________________
+
+.admin__scope-old {
+    @import './mui/styles/_vars.less';
+    @import './mui/styles/_table.less';
+    @import './mui/styles/_abstract.less';
+}
+
+//
+//  Extend old styles
+//  _____________________________________________
+
+.admin__scope-old {
+    input[type=text],
+    input[type=password],
+    input[type=datetime],
+    input[type=datetime-local],
+    input[type=date],
+    input[type=month],
+    input[type=time],
+    input[type=week],
+    input[type=number],
+    input[type=range],
+    input[type=email],
+    input[type=url],
+    input[type=search],
+    input.search,
+    input[type=tel],
+    input[type=color],
+    textarea,
+    select {
+        &:extend(.abs-form-control-pattern all);
+    }
+
+    .select.multiselect,
+    .select .admin__control-multiselect {
+        padding: @indent__s;
+    }
+
+    select {
+        &:not([multiple]) {
+            background-image+: url('../images/arrows-bg.svg');
+            background-image+: linear-gradient(@color-white, @color-white);
+            background-position+: ~'calc(100% - 12px)' -33px;
+            border-color: @field-control__border-color;
+            border-radius: @field-control__border-radius;
+            font-size: @field-control__font-size;
+            line-height: @field-control__line-height;
+            color: @field-control__color;
+            font-weight: 400;
+            height: auto;
+            padding-right: @indent__xl;
+
+            &:active {
+                background-image+: url('../images/arrows-bg.svg');
+                background-image+: linear-gradient(@color-white, @color-white);
+                border-color: @field-control__focus__border-color;
+            }
+
+            &:focus {
+                border-color: @field-control__focus__border-color;
+            }
+
+            &[disabled] {
+                background-color: @field-control__disabled__background-color !important;
+
+                &:active {
+                    background-position+: ~'calc(100% - 12px)' -33px !important;
+                }
+
+                &:active,
+                &:focus {
+                    border-color: @field-control__border-color;
+                }
+            }
+        }
+    }
+
+    input[type='radio'],
+    input[type='checkbox'] {
+        &:extend(.abs-control-checkbox all);
+    }
+
+    input[disabled],
+    select[disabled],
+    textarea[disabled],
+    input[readonly],
+    select[readonly],
+    textarea[readonly] {
+        background-color: @field-control__disabled__background-color;
+        border-color: @field-control__border-color;
+        color: @field-control__color;
+    }
+
+    select[disabled] option[selected] {
+        background: @blue-50 linear-gradient(0deg, @blue-50 0%, @blue-50 100%);
+        color: @color-white;
+        -webkit-text-fill-color: @color-white;
+    }
+
+    .use-default {
+        input[type='radio'],
+        input[type='checkbox'] {
+            margin-top: -@indent__2xs;
+        }
+
+        label.inherit {
+            margin-top: @indent__s;
+            display: inline-block;
+        }
+    }
+
+    //  Draggable handle
+    .fieldset-wrapper .draggable-handle,
+    .fieldset .draggable-handle {
+        vertical-align: middle;
+        line-height: 1;
+        width: 1.8rem;
+        height: 1.8rem;
+        color: @neutral-30;
+        background: none;
+
+        &::after {
+            &:extend(.abs-icon all);
+            content: @icon-gripper__content;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+    }
+
+    //  Stores > | Settings | Configuration
+    .fieldset-wrapper > .fieldset-wrapper-title,
+    .fieldset > .legend {
+        border-bottom: 0;
+        margin-bottom: @indent__l;
+        
+        .title {
+            &:extend(h3);
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    .fieldset-wrapper > .fieldset-wrapper-title .title,
+    .fieldset > .legend {
+        &:extend(.abs-fieldset-legend all);
+    }
+
+    .fieldset-wrapper > .fieldset-wrapper-title .title,
+    .fieldset > .legend span {
+        padding: 0;
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+
+    .data-grid {
+        .col-action {
+            a {
+                display: inline-block;
+            }
+
+            br + a {
+                margin-top: @indent__s;
+            }
+        }
+    }
+
+    //
+    //  Tree store scope
+    //  ---------------------------------------------
+
+    .tree-store-scope {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .field {
+            margin-bottom: @indent__base;
+
+            .admin__field-control  {
+                input[type='text'] {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.admin__old {
+    .fieldset-wrapper > .fieldset-wrapper-title,
+    .fieldset > .legend {
+        border-bottom: 0;
+        margin-bottom: @indent__l;
+        padding: 0;
+        
+        .title,
+        span.title {
+            &:extend(h3);
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    .admin__data-grid-header {
+        &.admin__data-grid-toolbar {
+            .admin__data-grid-header-row {
+                & + .admin__data-grid-header-row {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .admin__data-grid-pager {
+        .admin__control-text {
+            width: 4.2rem;
+        }
+    }
+
+    .admin__data-grid-header {
+        &.admin__data-grid-toolbar {
+            .admin__filter-actions {
+                .admin__control-select {
+                    margin-right: @indent__base;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Content > | Elements | Widgets
+//  _____________________________________________
+
+.form-inline {
+    .ui-widget-content {
+        padding-top: 0;
+
+        .form-inline {
+            .admin__fieldset {
+                &:last-child {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
+
+                .admin__field-control {
+                    width: 60%;
+
+                    .admin__control-text,
+                    .admin__control-multiselect {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .action-default.save {
+            &:extend(.abs-action-secondary all);
+        }
+
+        .fieldset {
+            .field {
+                margin-bottom: @indent__xl;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .admin__field-control {
+            .widget-option-label {
+                margin-top: 0 !important;
+            }
+
+            .btn-chooser {
+                &:extend(.abs-action-secondary all);
+            }
+        }
+    }
+}
+
+//
+//  Reports > | Sales | Orders
+//  _____________________________________________
+
+.reports-content {
+    .admin__fieldset {
+        > .admin__field.admin__field-small {
+            > .admin__field-control {
+                #mix-grid .column(@field-control-grid__column, @field-grid__columns);
+            }
+        }
+    }
+
+    & ~ div {
+        padding-top: @indent__l;
+    }
+}
+
+//
+//  Collapsible fieldset wrapper
+//  _____________________________________________
+
+.admin__scope-old {
+    //  Fieldset styles in another fieldset
+    .fieldset .fieldset-wrapper,
+    .fieldset-wrapper .fieldset-wrapper {
+        border: 0;
+    }
+
+    .fieldset .fieldset-wrapper .fieldset-wrapper-title,
+    .fieldset-wrapper .fieldset-wrapper .fieldset-wrapper-title {
+        background: @neutral-95;
+        border-radius: @radius__xl;
+        padding: 0 @indent__l;
+        margin-bottom: @indent__m;
+        font-weight: 500;
+    }
+
+    .fieldset .fieldset-wrapper.opened .fieldset-wrapper-title,
+    .fieldset-wrapper .fieldset-wrapper.opened .fieldset-wrapper-title {
+        border-bottom: 0;
+    }
+
+    .fieldset .fieldset-wrapper .fieldset-wrapper-content,
+    .fieldset-wrapper .fieldset-wrapper .fieldset-wrapper-content {
+        padding-left: @indent__base;
+        padding-right: @indent__base;
+    }
+}
+
+//
+//  Content > | Elements | Widgets
+//  _____________________________________________
+
+.admin__scope-old {
+    .widget-layout-updates .fieldset-wrapper,
+    .widget-layout-updates .data-table {
+        margin-bottom: @indent__l;
+    }
+
+    .widget-layout-updates .fieldset-wrapper-title label {
+        &:not(.mage-error) {
+            padding-top: @indent__m;
+        }
+    }
+
+    .widget-layout-updates .fieldset-wrapper-title select {
+        margin: 1rem @indent__base;
+        border: 0;
+        border-radius: @radius__xl;
+    }
+
+    .widget-layout-updates .data-table th,
+    .widget-layout-updates .data-table tbody td {
+        color: @data-grid-th__color;
+        font-size: @font-size__base;
+        font-weight: @font-weight__heavier;
+        padding: @indent__xs @indent__s;
+    }
+
+    .widget-layout-updates {
+        .action-add {
+            &:extend(.abs-action-secondary all);
+        }
+    }
+    
+    .fieldset-wrapper,
+    .fieldset {
+        padding-top: 0;
+        padding-bottom: @indent__xl;
+    }
+
+    .page_group_container {
+        .group_container {
+            .chooser_container {
+                .chooser {
+                    .admin__data-grid-wrap {
+                        border-radius: unset;
+                        padding: 0;
+                        background-color: unset;
+                        margin-bottom: 0;
+                    }
+
+                    .admin__data-grid-header {
+                        .admin__data-grid-header-row {
+                            padding-left: 0;
+                            padding-right: 0;
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+
+            .chooser_container {
+                > p {
+                    a {
+                        margin-left: @indent__base;
+                    }
+
+                    .widget-option-chooser {
+                        .lib-icon-font(
+                            @icon-list-menu__content,
+                            @_icon-font: @icons-admin__font-name,
+                            @_icon-font-size: 2.4rem,
+                            @_icon-font-line-height: 3.6rem,
+                            @_icon-font-color: @neutral-10,
+                            @_icon-font-color-hover: @neutral-20,
+                            @_icon-font-color-active: @neutral-20,
+                            @_icon-font-position: after
+                        );
+                         
+                        color: @neutral-20;
+                        width: 3.6rem;
+                        height: 3.6rem;
+                        text-align: center;
+                
+                        img {
+                            display: none;
+                        }
+                    }
+            
+                    a[id*='widget-apply'] {
+                        .lib-icon-font(
+                            @icon-check-mage__content,
+                            @_icon-font: @icons-admin__font-name,
+                            @_icon-font-size: 1.4rem,
+                            @_icon-font-line-height: 1,
+                            @_icon-font-position: after
+                        );
+                        
+                        &:extend(.abs-action-secondary all);
+                
+                        img {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+//
+//  Nesting structure (Product Attribute)
+//  _____________________________________________
+
+.admin__scope-old {
+    .admin__collapsible-block-wrapper {
+        &.fieldset-wrapper {
+            padding: 0;        
+        }
+    }
+}
+
+//
+//  Action delete icon
+//  _____________________________________________
+
+.admin__scope-old {
+    .data-table .action-.delete,
+    .data-table .action-delete,
+    .image .action-delete,
+    .fieldset-wrapper-title .actions .action-delete,
+    .admin__control-table .action-.delete {
+        .lib-icon-font(
+            @icon-delete__content,
+            @icons-admin__font-name,
+            @_icon-font-size: 1.8rem,
+            @_icon-font-line-height: 1,
+            @_icon-font-color: @neutral-10,
+            @_icon-font-color-hover: @neutral-20,
+            @_icon-font-color-active: @neutral-20,
+            @_icon-font-text-hide: true
+        );
+
+        background: unset;
+        border-radius: @radius__l;
+        width: 3.6rem;
+        height: 3.6rem;
+        padding: 0;
+        position: relative;
+        top: @indent__2xs;
+        right: -@indent__m;
+    }
+
+    .admin__control-table .action-.delete {
+        right: unset;
+        top: -.1rem;
+    }
+}
+
+//
+//  Form validation
+//  _____________________________________________
+
+.admin__scope-old {
+    label.mage-error {
+        &:extend(.admin__field-error);
+    }
+
+    .admin__field-control {
+        [aria-invalid='true'] {
+            border-color: @field-error-control__border-color;
+        }
+    }
+
+    .ui-tabs-panel {
+        padding-top: 0;
+    }
+}
+
+//
+//  Content > | Design | Schedule
+//  _____________________________________________
+
+.admin__scope-old {
+    .ui-widget-content {
+        .form-inline {
+            .admin__fieldset {
+                &:last-child {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
+
+                .admin__field-control {
+                    width: 60%;
+
+                    .admin__control-text,
+                    .admin__control-multiselect {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .control {
+        ._has-datepicker {            
+            &:extend(._has-datepicker all);
+        }
+    }
+
+    .form-inline div:not([class*='fields-group']) > .field > .label,
+    .form-inline .fieldset > .field > .label {
+        font-weight: @font-weight__heavier;
+    }
+}
+
+//
+//  Product image placeholders
+//  _____________________________________________
+
+#catalog_placeholder .input-file,
+#catalog_placeholder .delete-image > input,
+#row_sales_identity_logo .input-file,
+#row_sales_identity_logo_html .input-file {
+    margin-right: 0 !important;
+    color: @neutral-40;
+    cursor: pointer;
+
+    &::file-selector-button {
+        &:extend(.abs-action-secondary all);
+        margin-right: @indent__base;
+        cursor: pointer;
+    }
+}
+
+//
+//  Default view for fields: Labels are above the controls
+//  ---------------------------------------------
+
+.form-inline .with-tooltip:not(.choice) {
+    // padding-top: @indent__l;
+}
+
+//
+//  Stores > | Settings | Configuration > Payment Methods
+//  _____________________________________________
+
+.adminhtml-system-config-edit,
+.adminhtml-system_config-edit {
+    .admin__scope-old {
+        .payflow-settings-notice {
+            border: 0;
+            padding-top: @indent__base;
+            padding: @indent__m @indent__base;
+            background-color: @blue-90;
+            border-radius: @radius__s;
+
+            .important-label {
+                color: @red-50;
+                font-weight: @font-weight__heavier;
+            }
+
+            ul.options-list {
+                margin-top: @indent__s;
+                margin-bottom: 0;
+
+                strong {
+                    color: @text__color;
+                    font-weight: @font-weight__heavier;
+                }
+            } 
+        }
+    }
+}
+
+//
+//  Edit attribute set
+//  _____________________________________________
+
+.admin__scope-old {
+    .attribute-set-col {
+        .admin__fieldset {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        &.fieldset-wrapper {
+            background-color: @color-white;
+            padding: @indent__l;
+            border-radius: @radius__l;
+
+            .action-default {
+                &:extend(.abs-action-secondary all);
+                margin-right: @indent__s;
+            }
+
+            .note-block {
+                background-color: @color-white;
+                margin-top: @indent__s;
+                margin-bottom: -@indent__base;
+                padding-bottom: @indent__base;
+                position: relative;
+                z-index: 2;
+            }
+            
+            .x-tree {
+                margin-top: 0 !important;
+            }
+        }
+
+        .fieldset-wrapper-title {
+            font-size: @font-size__l;
+            font-weight: @font-weight__semibold;
+        }
+    }
+
+    .attribute-set-tree {
+        height: 46.3rem;
+    }
+}
+
+//
+//  System > | Permissions | User Roles
+//  _____________________________________________
+
+.admin__scope-old {
+    .fieldset-wrapper .fieldset:last-of-type,
+    .fieldset .fieldset:last-of-type,
+    .fieldset .field:last-of-type {
+        margin-bottom: 0;
+    }
+}

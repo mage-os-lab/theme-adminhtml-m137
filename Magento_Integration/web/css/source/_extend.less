@@ -1,0 +1,51 @@
+//
+//  Integration
+//  _____________________________________________
+
+//
+//  Grid
+//  ---------------------------------------------
+
+.adminhtml-integration-index {
+    .data-grid {
+        .action {
+            &[disabled] {
+                color: @neutral-10;
+            }
+
+            &:hover {
+                &::before {
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+    .security-notice {
+        color: @red-50;
+    }
+}
+
+//
+//  Edit
+//  ---------------------------------------------
+
+.adminhtml-integration-edit {
+    .form-inline.entry-edit {
+        &.fieldset {
+            margin-top: 0;
+        }
+        
+        .admin__fieldset {
+            padding-bottom: @indent__xl !important;
+
+            &:last-of-type {
+                padding-bottom: @indent__s !important;
+            }
+        }
+    }
+
+    #all_resources {
+        width: 100%;
+    }
+}

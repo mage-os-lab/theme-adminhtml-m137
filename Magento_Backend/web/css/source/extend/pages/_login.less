@@ -1,0 +1,94 @@
+//
+//  Variables
+//  _____________________________________________
+
+@login-box__background-color: @color-white;
+@login-box__border: 0;
+@login-box__max-width: 48rem;
+@login-box__min-height: 61rem;
+@login-box__shadow: none;
+@login-page__background-color: @neutral-95;
+
+//
+//  Login box
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-layout-admin-login {
+        .admin__legend {
+            font-size: @h2__font-size;
+            line-height: @h2__line-height;
+            font-weight: @h2__font-weight;
+            color: @neutral-20;
+            margin: 0 0 @indent__xl 0;
+        }
+
+        .page-wrapper {
+            border-radius: @radius__l;
+        }
+    }
+
+    .login-header {
+        text-align: center;
+        margin-bottom: 5.7rem;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-layout-admin-login {
+        .page-wrapper {
+            padding: 4rem;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-layout-admin-login {
+        .page-wrapper {
+            padding: 8rem;
+        }
+    }   
+}
+
+//
+//  Login page features
+//  _____________________________________________
+
+.adminhtml-auth-login {
+    .form-actions {
+        margin-top: 0;
+        width: 100%;
+
+        .actions {
+            padding-top: @indent__xl;
+        }
+
+        .action-primary {
+            width: 100%;
+        }
+    }
+}
+
+//
+//  Footer
+//  _____________________________________________
+
+.login-footer {
+    font-size: @font-size__s;
+    color: @neutral-50;
+    margin: 8.5rem 0 0 0;
+
+    .link-copyright {
+        width: 100%;
+        display: inline-block;
+        margin-top: @indent__xs;
+    }
+}

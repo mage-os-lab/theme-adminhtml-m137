@@ -1,0 +1,163 @@
+//
+//  Page header -> Action group -> Notifications
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+@notifications__font-size: @font-size__s;
+// @notifications__color: @color-gray20;
+
+// @notifications-action__color: @text__color;
+@notifications-action__padding-bottom: .3rem;
+@notifications-action__padding-side: .2rem;
+@notifications-action__padding-top: .3rem;
+// @notifications-action__hover__color: darken(@action-dropdown__color, 20%);
+@notifications-action-icon__size: 2.4rem;
+// @notifications-action-menu__z-index: @header__z-index;
+
+@notifications-close__color: @button-quaternary__color;
+@notifications-counter__background-color: @red-50;
+@notifications-entry__padding-top: 1rem;
+@notifications-entry__hover__background-color: @action__hover__background-color;
+// @notifications-list__width: 32rem;
+@notifications-title__color: @action-dropdown__color;
+@notifications-time__color: @action-dropdown__color;
+
+//
+//  Notifications
+//  _____________________________________________
+
+.notifications-wrapper {
+    margin-left: @indent__xl;
+
+    &.active {
+        .notifications-action {
+            box-shadow: unset;
+
+            &::after {
+                height: 0;
+            }
+        }
+    }
+}
+
+.notifications-action {
+    transition: @smooth__color;
+
+    &::before {
+        margin-right: 0;
+    }
+
+    &:active {
+        &::before {
+            top: unset;
+        }
+    }
+
+    .notifications-counter {
+        background-color: @notifications-counter__background-color;
+        border-radius: 1em;
+        color: @color-white;
+        font-size: .8rem;
+        font-weight: @font-weight__bold;
+        height: 1.4rem;
+        line-height: 1.4rem;
+        margin-left: 0;
+        margin-top: 0;
+        padding-left: @indent__xs;
+        padding-right: @indent__xs;
+        min-width: 1.4rem;
+        left: unset;
+        right: .3rem;
+        top: .3rem;
+    }
+}
+
+.notifications-entry {
+    line-height: @line-height__base;
+    padding: @notifications-entry__padding-top @indent__base;
+
+    &:hover {
+        background-color: @notifications-entry__hover__background-color;
+    }
+
+    &.notifications-entry-last {
+        margin: 0;
+        padding: @notifications-entry__padding-top @indent__base;
+        text-align: center;
+
+        &:hover {
+            background-color: transparent;
+        }
+
+        .action-more {
+           &:extend(.abs-action-tertiary all);
+            font-size: @font-size__s;
+            display: inline-block;
+            padding: 0;
+        }
+    }
+
+    + .notifications-entry-last {
+        border-top: unset;
+        padding-bottom: @notifications-entry__padding-top;
+    }
+
+    //  Case with cutted message description
+    ._cutted {
+        cursor: pointer;
+
+        .notifications-entry-description-start {
+            &::after {
+                content: '...';
+            }
+        }
+    }
+}
+
+.notifications-entry-title {
+    color: @notifications-title__color;
+    line-height: @line-height__l;
+    margin-bottom: @indent__s;
+    margin-right: @indent__xl;
+}
+
+.notifications-entry-description {
+    line-height: @line-height__l;
+    margin-bottom: @indent__s;
+    margin-right: @indent__xl;
+}
+
+.notifications-entry-time {
+    color: @notifications-time__color;
+    font-size: @font-size__xs;
+    margin-right: @indent__xl;
+}
+
+.notifications-close {
+    line-height: 0;
+    padding: .5rem;
+    right: @indent__m;
+    top: @indent__xs;
+    color: @notifications-close__color;
+
+    &::before {
+        color: inherit;
+        transition: @smooth__color;
+        line-height: 1;
+    }
+
+    &:hover {
+        color: @button-quaternary__hover__color;
+
+        &::before {
+            color: inherit;
+        }
+    }
+
+    &:active {
+        transform: unset;
+    }
+}

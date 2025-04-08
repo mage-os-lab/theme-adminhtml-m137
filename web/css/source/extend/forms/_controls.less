@@ -1,0 +1,80 @@
+//
+//  Imports
+//  _____________________________________________
+
+@import './controls/_checkbox-radio.less';
+
+//
+//  Basic controls
+//  _____________________________________________
+
+//  Control pattern
+.__form-control-pattern__disabled() {
+    &:hover {
+        cursor: not-allowed;
+    }
+
+    &:active,
+    &:focus {
+        border-color: @field-control__border-color;
+    }
+}
+
+//  Select styles
+.admin__control-select {
+    background-image+: url('../images/arrows-bg.svg');
+    background-position+: ~'calc(100% - 12px)' -33px;
+    background-image+: linear-gradient(@color-white, @color-white);
+    padding-right: @indent__xl;
+
+    &:active {
+        background-image+: url('../images/arrows-bg.svg');
+        background-image+: linear-gradient(@color-white, @color-white);
+    }
+}
+
+//  Multiple select
+.admin__control-multiselect {
+    padding: @indent__s;
+
+    option,
+    optgroup {
+        padding: @indent__s 0;
+        border-radius: @radius__xs;
+        margin-bottom: .1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    optgroup {
+        font-weight: @font-weight__heavier;
+    }
+
+    option {
+        padding-left: @indent__m;
+        padding-right: @indent__m;
+        transition: @smooth__background-color;
+
+        &:hover {
+            background-color: @neutral-90;
+        }
+
+        &:checked {
+            background: @blue-50 linear-gradient(0deg, @blue-50 0%, @blue-50 100%);
+            color: @color-white;
+            -webkit-text-fill-color: @color-white;
+        }
+    }
+
+    &:focus {
+        option {
+            &:checked {
+                background: @blue-50 linear-gradient(0deg, @blue-50 0%, @blue-50 100%);
+                color: @color-white;
+                -webkit-text-fill-color: @color-white;
+            }
+        }
+    }
+}

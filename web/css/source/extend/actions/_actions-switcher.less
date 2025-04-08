@@ -1,0 +1,60 @@
+//
+//  Variables
+//  _____________________________________________
+
+@actions-switcher-speed: .1s;
+@actions-switcher__background-color: @color-white;
+
+// @actions-switcher__border-radius: 12px;
+@actions-switcher__border: .2rem solid @neutral-70;
+@actions-switcher__height: 24px;
+@actions-switcher__width: 44px;
+
+// @actions-switcher-control__background-color: @color-white; // Not used anywhere
+
+@actions-switcher-handler__background-color: @color-white;
+// @actions-switcher-handler__height: @actions-switcher__height;
+// @actions-switcher-handler__width: @actions-switcher__height;
+
+//
+//  Switch checkbox
+//  _____________________________________________
+
+.admin__actions-switch-checkbox {
+    &:extend(.abs-visually-hidden all);
+
+    &:checked {
+        + .admin__actions-switch-label {
+            &::before {
+                background: @actions-switcher-handler__active__background-color;
+            }
+
+            &::before,
+            &::after {
+                border-color: @actions-switcher__active__border-color;
+            }
+
+            &::after {
+                background: @actions-switcher__active__background-color;
+            }
+        }
+
+        &:focus {
+            + .admin__actions-switch-label {
+                &::before,
+                &::after {
+                    border-color: @actions-switcher__active__border-color;
+                }
+            }
+        }
+    }
+
+    &:focus {
+        + .admin__actions-switch-label {
+            &::before,
+            &::after {
+                border-color: @neutral-70;
+            }
+        }
+    }
+}

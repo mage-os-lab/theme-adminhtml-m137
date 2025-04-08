@@ -1,0 +1,187 @@
+//
+//  Forms -> Dropdown element
+//  _____________________________________________
+
+//
+//  Action dropdown
+//  _____________________________________________
+
+.admin__action-dropdown-wrap {
+    &.active,
+    &._active {
+        .admin__action-dropdown {
+            box-shadow: none;
+        }
+
+        //  Dropdown helper to prevent box shadow unnecessary appearing
+        .admin__action-dropdown-text {
+            &::after {
+                height: 0;
+            }
+        }
+    }
+}
+
+.admin__action-dropdown {
+    background-color: transparent;
+    border: none;
+    color: @action-dropdown-toggle__color;
+    font-weight: @font-weight__heavier;
+    letter-spacing: unset;
+    line-height: 1;
+    border-radius: @radius__xl;
+    display: flex;
+    align-items: center;
+
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        color: @action-dropdown-toggle__hover__color;
+    }
+
+    //  Icon
+    &::before {
+        margin-right: @indent__s;
+        overflow: hidden;
+        display: inline-block;
+    }
+}
+
+.admin__action-dropdown-menu {
+    background-color: @action-dropdown__background-color;
+    border: none;
+    border-radius: @radius__xs;
+    margin-top: @indent__xs;
+}
+
+//
+//  Select menu
+//  ---------------------------------------------
+
+.selectmenu {
+    padding: @field-control__padding-top @indent__xl @field-control__padding-bottom  @field-control__padding-horizontal;
+
+    &._active {
+        box-shadow: @focus-shadow;
+    }
+
+    .action-delete {
+        &::before {
+            font-weight: @font-weight__bold;
+        }
+    }
+
+    .action-save,
+    .action-edit,
+    .action-delete {
+        border-radius: 0;
+        font-size: @font-size__l;
+        line-height: 1;
+        padding: .7rem 1rem;        
+    }
+}
+
+.selectmenu-toggle {
+    padding-right: 0;
+
+    &::before {
+        background-color: transparent;
+        border: 0;
+    }
+}
+
+.selectmenu-items {
+    background-color: @select-menu__background-color;
+    border: @select-menu__border-size @select-menu__border-style @select-menu__border-color;
+    border-radius: @select-menu__border-radius;
+    box-shadow: @component__box-shadow__base;
+    margin: @select-menu__margin;
+    padding: @select-menu__padding;
+    line-height: 1.8rem;
+
+    li {
+        transition: @smooth__background-color;
+
+        &._edit {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+
+        &:hover {
+            background-color: @select-menu-item__hover__background-color;
+            color: @select-menu-item__hover__color;
+        }
+
+        &:last-child {
+            border-top: .1rem solid @neutral-90;
+
+            &:hover {
+                background-color: transparent;
+            }
+
+            .selectmenu-item-action {
+                .lib-vendor-prefix-display(flex);
+                display: flex;
+                align-items: center;
+                color: @select-menu-item__color;
+
+                &:hover {
+                    color: @select-menu-item__hover__color;
+                    text-decoration: none;
+                }
+
+                &::before {
+                    &:extend(.abs-icon all);
+                    font-size: @font-size__l;
+                    content: @icon-plus__content;
+                    font-weight: @font-weight__bold;
+                    margin-right: @indent__s;
+                }
+            }
+        }
+    }
+}
+
+.selectmenu-item-edit {
+    padding-top: @indent__s;
+    padding-bottom: @indent__s;
+    padding-left: @indent__s;
+
+    li:last-child & {
+        margin-bottom: -@indent__s;
+    }
+
+    .admin__control-text {
+        height: 3.2rem;
+    }
+}
+
+.selectmenu-item-action {
+    border-radius: 0;
+    transition: @smooth__background-color;
+    padding: @action-menu-item__padding;
+    line-height: 1.8rem;
+
+    &:hover,
+    &:focus {
+        background-color: @select-menu-item__hover__background-color;
+        color: @select-menu-item__hover__color;
+    }
+}
+
+//  Generic select lists
+.selectmenu {
+    .selectmenu-item-edit {
+        .admin__control-text {
+            width: 5.4rem;
+        }
+    }
+}
+
+.selectmenu-value {
+    input[type='text'] {
+        padding: 0;
+    }
+}

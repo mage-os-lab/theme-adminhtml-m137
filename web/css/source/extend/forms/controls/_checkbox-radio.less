@@ -1,0 +1,109 @@
+//
+//  Variables
+//  _____________________________________________
+
+//  Checkbox & radio
+.admin__control-radio,
+.admin__control-checkbox {
+    + label {
+        &::before {
+            border-radius: @radius__xs;
+            transition: @smooth__background-color, @smooth__border-color, @smooth__color;
+            color: @control-checkbox-radio-mark__color;
+        }
+    }
+
+    //  Checked state
+    &:checked {
+        + label {
+            &::before {
+                background-color: @control-checkbox-radio__focus__background-color;
+                border-color: @control-checkbox-radio__focus__background-color;
+                color: @control-checkbox-radio-mark__focus__color;
+            }
+        }
+
+        &:hover {
+            + label {
+                &::before {
+                    border-color: @control-checkbox-radio__focus__background-color;
+                } 
+            } 
+        }
+    }
+}
+
+//  Radio
+.admin__control-radio {
+    + label {
+        &::before {
+            border-radius: @radius__l;
+        }
+    }
+
+    //  Radio checked state
+    &:checked {
+        + label {
+            &::after {
+                height: 6px;
+                left: 5px;
+                top: 6px;
+                width: 6px;
+            }
+        }
+
+        &:not([disabled]),
+        &:not(.disabled) {
+            //  Prevent hover effects for checked radio
+            &:hover {
+                + label {
+                    &::before {
+                        border-color: @control-checkbox-radio__focus__background-color;
+                    }
+                } 
+            } 
+        }
+    }
+}
+
+//  Checkbox
+.admin__control-checkbox {
+    + label {
+        &::before {
+            font-size: 1.1rem;
+        }
+    }
+
+    &:checked {
+        + label {
+            &::before {
+                line-height: 137%;
+            }
+        }
+    }
+}
+
+
+//
+//  Data grid input checkbox, radio
+//  ---------------------------------------------
+
+.admin__scope-old {
+    .action-multicheck-wrap {
+        input[type='radio'],
+        input[type='checkbox'] {
+            &.admin__control-checkbox {
+                position: absolute;
+            }
+        }
+    }
+
+    .data-grid-checkbox-cell-inner {
+        input[type='radio'],
+        input[type='checkbox'] {
+            &.admin__control-checkbox {
+                position: absolute;
+            }
+        }
+    }
+}

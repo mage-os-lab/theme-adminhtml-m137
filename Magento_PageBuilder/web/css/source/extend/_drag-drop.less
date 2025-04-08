@@ -1,0 +1,34 @@
+//
+//  Variables
+//  _____________________________________________
+
+// @color-gray_light: #ccc;
+@color-phoenix: @blue-50;
+
+//
+//  Extend
+//  _____________________________________________
+
+.pagebuilder-drop-indicator {
+    border-bottom: 0;
+    height: .2rem;
+    background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(90deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .15));
+    background-size: 1.2rem .2rem, 100% .2rem;
+    margin: -@indent__2xs 0 0 0;
+    width: 100%;
+}
+
+.pagebuilder-sortable-placeholder {
+    border-radius: @radius__base;
+    height: .2rem;
+    margin: -@indent__2xs 0 0 0;
+    width: 100%;
+
+    &::before {
+        border-radius: @radius__base;
+        height: 1.2rem;
+        left: 0;
+        top: -.5rem;
+        width: 1.2rem;
+    }
+}

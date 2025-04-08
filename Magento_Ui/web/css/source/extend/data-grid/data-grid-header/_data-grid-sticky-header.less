@@ -1,0 +1,181 @@
+//
+//  Variables
+//  _____________________________________________
+
+@data-grid-sticky-header__background-color: @color-white;
+@data-grid-sticky-header__border-color: transparent;
+@data-grid-sticky-header__box-shadow: none;
+
+// @data-grid-sticky-header-actions__background-color: @color-white;
+// @data-grid-sticky-header-actions__border-color: @action__border-color;
+// @data-grid-sticky-header-actions__box-shadow: @component__box-shadow__base;
+@data-grid-sticky-header-actions__margin: 0 @indent__xl 0 0;
+@data-grid-sticky-header-actions__padding: .9rem;
+@data-grid-sticky-header-actions__z-index: 210;
+
+// @data-grid-sticky-header-action-select__width: percentage((2 / @grid-columns));
+
+//
+//  Sticky header
+//  _____________________________________________
+
+.sticky-header {
+    padding: @indent__l 0 0 0;
+    margin-top: 0;
+    left: @page-wrapper__indent-left;
+    right: @page-content__padding-horizontal;
+    top: 7.3rem;
+
+    .admin__data-grid-header {
+        padding-bottom: @indent__base;
+    }
+
+    .admin__data-grid-wrap {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    [data-bind*='setStickyToolbarNode'] {
+        padding: 0 @indent__l;
+    }
+
+    .admin__data-grid-header {
+        padding-bottom: 0;
+    }
+
+    //  Default view & columns
+    .admin__data-grid-actions-wrap {
+        padding-right: 0;
+
+        .admin__action-dropdown-wrap {
+            margin-left: @indent__base;
+            margin-right: 0;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+        .admin__action-dropdown {
+            min-width: unset;
+        }
+    }
+
+    .admin__action-dropdown-wrap {
+        .admin__action-dropdown {
+            padding-top: @data-grid-sticky-header-actions__padding;
+            padding-bottom: @data-grid-sticky-header-actions__padding;
+        }
+    }
+
+    .data-grid-filters-actions-wrap {
+        .action-default {
+            min-width: unset;
+            border: 0;
+            padding-top: @data-grid-sticky-header-actions__padding;
+            padding-bottom: @data-grid-sticky-header-actions__padding;
+        }
+    }
+
+    .data-grid-search-control-wrap {
+        .data-grid-search-label {
+            min-width: unset;
+            line-height: 1rem;
+            padding-top: @data-grid-sticky-header-actions__padding;
+            padding-bottom: @data-grid-sticky-header-actions__padding;
+        }
+    }
+
+    .admin__data-grid-action-bookmarks {
+        .admin__action-dropdown {
+            padding-top: @data-grid-sticky-header-actions__padding;
+            padding-bottom: @data-grid-sticky-header-actions__padding;
+
+            &::before {
+                top: 0;
+            }
+        }
+    }
+
+    .admin__data-grid-action-columns {
+        .admin__action-dropdown {
+            padding-top: @data-grid-sticky-header-actions__padding;
+            padding-bottom: @data-grid-sticky-header-actions__padding;
+        }
+    }
+
+    .admin__data-grid-pager-wrap {
+        .selectmenu {
+            vertical-align: top;
+        }
+    }
+
+    //  Filters
+    .filters-active {
+        background-color: @notifications-counter__background-color;
+        padding: 0 @indent__xs;
+
+        border-radius: 1em;
+        color: @color-white;
+        font-size: .8rem;
+        font-weight: @font-weight__bold;
+        height: 1.4rem;
+        line-height: 1.4rem;
+        min-width: 1.4rem;
+        right: @indent__xs;
+        top: @indent__xs;
+        text-align: center;
+        z-index: @data-grid-sticky-header-actions__z-index + 1;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    .admin__data-grid-filters-current {
+        margin-top: 0;
+        margin-bottom: @indent__base;
+        padding-left: 0;
+        padding-right: 0;
+
+        .action-clear {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.data-grid-cap-left,
+.data-grid-cap-right {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: @page-wrapper__background-color;
+
+    &::before {
+        width: 2.4rem;
+        height: 2.4rem;
+        display: block;
+        content: '';
+        background-color: @color-white;
+    }
+}
+
+.data-grid-cap-left {
+    top: 0;
+    bottom: unset;
+
+    &::before {
+        border-radius: @radius__l 0 0 0;
+    }
+}
+
+.data-grid-cap-right {
+    top: 0;
+    right: 0;
+    bottom: unset;
+    transform: unset !important;
+
+    &::before {
+        border-radius: 0 @radius__l 0 0;
+    }
+}

@@ -1,0 +1,72 @@
+//
+//  Visual Select less
+//  _____________________________________________
+
+.admin__fieldset-visual-select-large {
+    border-bottom: none;
+}
+
+.admin__field-visual-select {
+    ol {
+        li {
+            transition: @smooth__border-color, @smooth__box-shadow;
+            margin-bottom: @indent__2xs / 2;
+            margin-right: @indent__l;
+            border-radius: @radius__xs;
+
+            &.active {
+                outline: unset;
+                box-shadow: 0 0 0 .1rem @field-control__active__border-color;
+            }
+        }
+    }
+
+    .message {
+        margin-top: @indent__base;
+        margin-bottom: 0;
+    }
+}
+
+.admin__field-visual-select {
+    .admin__field-visual-select-large {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: @indent__xs;
+
+        br {
+            display: none;
+        }
+    }
+}
+
+.admin__field-visual-select-large {
+    min-height: 20rem;
+    width: 20rem;
+
+    img {
+        max-height: 11.2rem;
+        object-fit: contain;
+    }
+}
+
+.admin__field-visual-select {
+    .admin__field-visual-select-small {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: @indent__s;
+    }
+}
+
+.admin__field-visual-select-small {
+    height: 5rem;
+    min-width: unset;
+    width: 25%;
+    width: calc(~'(100% - @{indent__l} * 3)/4');
+
+    img {
+        margin-right: unset;
+        width: 2.4rem;
+    }
+}

@@ -1,0 +1,70 @@
+//
+//  UI -> Data Grid -> Header -> Action Columns
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+@data-grid-action-columns-menu__padding-horizontal: @indent__xl;
+
+@data-grid-action-columns-menu-item__column: 3;
+@data-grid-action-columns-menu-item__margin-bottom: @indent__base;
+@data-grid-action-columns-menu-item__width: 18rem;
+// @data-grid-action-columns-menu-item__height: round((@font-size__base * @line-height__base), 1);
+
+// @data-grid-action-columns-menu-items-to-scroll: 18;
+@data-grid-action-columns-menu-scroll__width: 1.8rem;
+
+//
+//  Extend
+//  _____________________________________________
+
+.admin__data-grid-action-columns {
+    .admin__action-dropdown {
+        &::before {
+            font-size: @action-dropdown-toggle-icon__font-size;
+            margin-right: @indent__s;
+        }
+    }
+}
+
+.admin__data-grid-action-columns-menu {
+    font-size: @font-size__base;
+    padding: @indent__l @data-grid-action-columns-menu__padding-horizontal @indent__m;
+
+    //  State with scroll when .admin__field-option > @data-grid-action-columns-menu-items-to-scroll
+    &._overflow {
+        .admin__action-dropdown-menu-content {
+            width: @data-grid-action-columns-menu-item__width * @data-grid-action-columns-menu-item__column + @data-grid-action-columns-menu-scroll__width;
+            padding-top: @indent__l;
+            padding-bottom: @indent__s;
+        }
+
+        .admin__action-dropdown-menu-footer {
+            padding-top: @indent__m;
+        }
+    }
+
+    .admin__action-dropdown-menu-content {
+        max-height: 24.5rem;
+        padding-top: @indent__s;
+    }
+
+    .admin__field-option {
+        margin-bottom: @data-grid-action-columns-menu-item__margin-bottom;
+        padding: 0 @indent__l 0 0;
+    }
+    
+    .admin__action-dropdown-menu-header {
+        padding-bottom: @indent__l;
+    }
+
+    .admin__action-dropdown-menu-footer {
+        padding: @indent__m 0 0 0;
+    }
+
+    .admin__action-dropdown-footer-main-actions {
+        margin-right: -@button__padding-horizontal;
+    }
+}

@@ -1,0 +1,50 @@
+//
+//  Actions -> Actions split
+//  _____________________________________________
+
+//  Actions split is a button aggregator with dropdown element
+
+//
+//  Extends
+//  _____________________________________________
+
+.abs-actions-split-xl {
+    @_dropdown__padding-right: 4rem;
+    @_action-toggle__width: @_dropdown__padding-right;
+    @_triangle__height: @button-marker-triangle__height__xl;
+    @_triangle__right: (@_dropdown__padding-right / 2) - (@_triangle__width / 2);
+    @_triangle__width: @button-marker-triangle__width__xl;
+    @_triangle__height: @button-marker-triangle__height__xl;
+
+    .action-default {
+        margin-right: @_action-toggle__width;
+    }
+
+    .action-toggle {
+        padding-right: @_dropdown__padding-right;
+
+        &::after {
+            border-width: 0;
+            margin-top: -((@_triangle__width / 2));
+            right: @_triangle__right;
+            width: @_triangle__width;
+            height: @_triangle__height;
+            font-size: @_triangle__width;
+        }
+    }
+}
+
+//  Double button action
+.actions-split {
+    .action-default {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .action-toggle {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left-width: 2px;
+        border-left-color: @button-primary__hover__border-color;
+    }
+}

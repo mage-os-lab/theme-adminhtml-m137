@@ -1,0 +1,14 @@
+<svg width="182" height="136" viewBox="0 0 182 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#full-bleed)">
+        <path d="M8 0H4V8H8V0Z" fill="#303030"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16H4V18C1.79086 18 0 19.7909 0 22V114C0 116.209 1.79086 118 4 118L4 120H8V118H174V120H178V118C180.209 118 182 116.209 182 114V22C182 19.7909 180.209 18 178 18V16H174V18H8V16ZM178 24H174V32H178V24ZM174 40V48H178V40H174ZM178 56H174V64H178V56ZM174 72V80H178V72H174ZM178 88H174V96H178V88ZM174 104V112H178V104H174ZM8 112V104H4V112H8ZM4 96H8V88H4V96ZM4 80H8V72H4V80ZM4 64H8V56H4V64ZM4 48H8V40H4V48ZM4 32H8V24H4V32Z" fill="#303030"/>
+        <path d="M4 128H8V136H4V128Z" fill="#303030"/>
+        <path d="M178 0H174V8H178V0Z" fill="#303030"/>
+        <path d="M178 128H174V136H178V128Z" fill="#303030"/>
+    </g>
+    <defs>
+        <clipPath id="full-bleed">
+            <rect width="182" height="136" fill="#ffffff"/>
+        </clipPath>
+    </defs>
+</svg>

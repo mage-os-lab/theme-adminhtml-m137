@@ -1,0 +1,73 @@
+//
+//  Variables
+//  _____________________________________________
+
+@b3: #b3b3b3;
+
+//
+//  Default appearance styles
+//  _____________________________________________
+
+.pagebuilder-content-type {
+    &.pagebuilder-slider {
+        padding: .1rem 0;
+    }
+}
+
+[data-content-type='slider'],
+.pagebuilder-content-type.pagebuilder-slider {
+    .slider-controls {
+
+        .slider-navigation {
+            line-height: unset;
+        }
+    }
+}
+
+[data-content-type='slider'],
+.pagebuilder-content-type.pagebuilder-slider {
+    .slider-controls {
+        .slider-navigation {
+            padding: 0 @indent__base;
+
+            .navigation-dot {
+                height: 4rem;
+                width: 4rem;
+                background-color: @color-white;
+                border: .1rem solid transparent;
+                border-radius: @radius__xs;
+                margin-left: @indent__2xs;
+                margin-right: @indent__2xs;
+
+                .navigation-dot-anchor {
+                    &::after {
+                        height: 1.5rem;
+                        top: @indent__s;
+                        transform: translate(-50%, 0);
+                        width: 1.5rem;
+                    }
+
+                    &::before {
+                        color: @neutral-20;
+                        bottom: @indent__2xs;
+                    }
+                }
+
+                &.sortable-placeholder {
+                    &::after {
+                        border-radius: @radius__base;
+                        height: 1.6rem;
+                        width: 1.6rem;
+                    }
+                }
+
+                &.focus {
+                    outline: unset;
+                    background-color: @color-white;
+                    border-color: @blue-50;
+                    box-shadow: 0 0 0 .1rem @field-control__active__border-color;
+                }
+            }
+        }
+    }
+}

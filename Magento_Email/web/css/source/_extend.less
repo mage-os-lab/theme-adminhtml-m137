@@ -1,0 +1,38 @@
+//
+//  Email
+//  _____________________________________________
+
+.adminhtml-email_template-edit,
+.newsletter-template-edit {
+    .main-col {
+        form + form {
+            > .entry-edit.form-inline {
+                margin-top: @indent__l;
+            }
+        }
+    }
+    
+    .admin__fieldset {
+        .admin__field {
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            .admin__field-control {
+                button.action-default {
+                   &:extend(.abs-action-secondary all);
+                }
+            }
+        }
+    }
+
+    .field-insert_variable {
+        #insert_variable {
+            padding-top: 0;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+//
+//  Grouped Product
+//  _____________________________________________
+
+[data-index='associated'] {
+    [data-index='positionCalculated'] {
+        .position {
+            width: 11rem;
+        }
+
+        .position-widget-input {
+            &:extend(.abs-form-control-pattern all);
+            width: 4.8rem;
+        }
+
+        .icon-rearrange-position {
+            margin: @indent__s 0 0 0;
+            padding: @indent__xs;
+            color: @neutral-20;
+
+            &:hover {
+                color: @neutral-30;
+            }
+
+            &::before {
+                font-size: 1.6rem;
+                color: inherit;
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+
+//
+//  System > | Permissions | Locked Users
+//  _____________________________________________
+
+.adminhtml-locks-index {
+    .admin__data-grid-toolbar {
+        .admin__grid-massaction-form {
+            .action-default.scalable {
+               &:extend(.abs-action-secondary all);
+            }
+        }
+    }
+}
+
+//
+//  System > | Permissions | All Users
+//  _____________________________________________
+
+.adminhtml-user-edit {
+    .entry-edit.form-inline {
+        .admin__data-grid-header {
+            .admin__data-grid-header-row {
+                padding-top: 0;
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .admin__data-grid-wrap {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .col-assigned_user_role {
+        select {
+            min-width: 8.5rem;
+        }
+    }
+}
+
+//
+//  Edit User Role
+//  _____________________________________________
+
+.adminhtml-user_role-editrole {
+    #role_info_tabs_roles_content {
+        background-color: @color-white;
+        padding: @indent__l;
+        border-radius: @radius__l;
+
+        .admin__data-grid-header {
+            .admin__data-grid-header-row {
+                padding-top: 0;
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        .admin__data-grid-wrap {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+
+        > .fieldset {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+    
+    select#all {
+        width: 100%;
+    }
+}

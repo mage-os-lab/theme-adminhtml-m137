@@ -1,0 +1,176 @@
+//
+//  Extend
+//  _____________________________________________
+
+.mselect-list {
+    .mselect-items-wrapper {
+        border-color: @field-control__border-color;
+        border-radius: @field-control__border-radius;
+        margin-top: @indent__s;
+        padding: @indent__s;
+    }
+
+    .mselect-list-item {
+        margin: 0;
+        transition: @smooth__background-color;
+        border-radius: @radius__xs;
+        margin-bottom: .1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            background-color: @neutral-90;
+        }
+
+        label {
+            > span {
+                padding: 1rem 9.6rem 1rem 2.6rem;
+                line-height: 1.6rem;
+                font-size: @font-size__base;
+                border-radius: @radius__xs;
+                transition: @smooth__background-color;
+
+                form {
+                    margin: 0 -9.6rem 0 0;
+
+                    input {
+                        &:extend(.abs-form-control-pattern all);
+                    }
+                }
+            }
+        }
+
+        .mselect-checked,
+        input:checked {
+            & + span {
+                .lib-icon-font(
+                    @icon-check-mage__content,
+                    @icons-admin__font-name,
+                    @_icon-font-size: 1.2rem,
+                    @_icon-font-line-height: 1,
+                    @_icon-font-color: inherit,
+                    @_icon-font-margin: 0
+                );
+
+                background-color: @blue-50;
+                color: @color-white;
+                display: block;
+
+                &::before {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: @indent__s;
+                }
+            } 
+        }
+    }
+
+    //  Buttons
+    .mselect-cancel,
+    .mselect-edit,
+    .mselect-delete,
+    .mselect-save {
+        .lib-icon-font(
+            @icon-check-mage__content,
+            @icons-admin__font-name,
+            @_icon-font-size: 1.4rem,
+            @_icon-font-line-height: 1,
+            @_icon-font-color: inherit,
+            @_icon-font-margin: 0
+        );
+
+        width: unset;
+        height: unset;
+        display: block;
+        top: 50%;
+        right: @indent__s;
+        transform: translateY(-50%);
+        padding: @indent__xs 1rem;
+        line-height: 1.6rem;
+        background-color: @color-white;
+        color: @neutral-20;
+        border-radius: @radius__base;
+
+        &:hover {
+            background-color: @color-white;
+            color: @neutral-10;
+
+            &::before {
+                color: inherit;
+            }
+        }
+    }
+
+    .mselect-cancel:before {
+        content: @icon-error__content;
+    }
+    
+    .mselect-edit {
+        right: 4.6rem;
+
+        &::before {
+            content: @icon-edit__content;
+        }
+    }
+    
+    .mselect-delete {
+        &::before {
+            content: @icon-delete__content;
+            font-weight: @font-weight__semibold;
+        }
+    }
+    
+    .mselect-save,
+    .mselect-save:hover,
+    .mselect-save:focus {
+        right: 4.6rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    footer.block-footer {
+        padding-top: @indent__base;
+        padding-bottom: 0;
+    }
+
+    .block-footer {
+        .mselect-button-add {
+            &:extend(.abs-action-secondary all);
+        }
+    }
+
+    .mselect-input-container {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-right: 14.2rem;
+
+        .mselect-input {
+            &:extend(.abs-form-control-pattern all);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .mselect-save {
+            &:extend(.abs-action-primary all);
+            top: 50%;
+            right: 7rem;
+            line-height: 1;
+
+            &::before {
+                line-height: @button__line-height;
+            }
+        }
+
+        .mselect-cancel {
+            &:extend(.abs-action-default all);
+            right: 0; 
+            line-height: 1;
+
+            &::before {
+                line-height: @button__line-height;
+            }
+        }
+    }
+}

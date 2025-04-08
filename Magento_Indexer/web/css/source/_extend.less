@@ -1,0 +1,65 @@
+//
+//  Indexer
+//  _____________________________________________
+
+.indexer-indexer-list {
+    .admin__grid-massaction {
+        .action-default {
+            &:extend(.abs-action-secondary all);
+        }
+
+        .action-select-multiselect {
+            + label {
+                &::before {
+                    border-radius: @radius__xs;
+                    transition: @smooth__background-color, @smooth__border-color, @smooth__color;
+                    color: @control-checkbox-radio-mark__color;
+                    height: 1.8rem;
+                    width: 1.8rem;
+                    line-height: 1.8rem;
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+                
+                &::after {
+                    border-width: 0;
+                    content: @icon-arrowdown__content !important;
+                    border: 0;
+                    width: .8rem;
+                    height: .8rem;
+                    margin-top: -.3rem;
+                    right: .4rem;
+                    transition: @smooth__rotate !important;
+                }
+            }
+
+            &:focus {
+                + label {
+                    &::after {
+                        margin-top: -.4rem;
+                    }
+                }
+            }
+        
+            //  Checked state
+            &:checked,
+            &._checked {
+                + label {
+                    &::before {
+                        background-color: @control-checkbox-radio__focus__background-color;
+                        border-color: @control-checkbox-radio__focus__background-color;
+                        color: @control-checkbox-radio-mark__focus__color;
+                    }
+                }
+        
+                &:hover {
+                    + label {
+                        &::before {
+                            border-color: @control-checkbox-radio__focus__background-color;
+                        } 
+                    } 
+                }
+            }
+        }
+    }
+}

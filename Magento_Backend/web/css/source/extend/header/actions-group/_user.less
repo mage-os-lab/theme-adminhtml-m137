@@ -1,0 +1,100 @@
+
+//
+//  Page header -> Actions group -> User menu
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+@user-account__padding-bottom: .3rem;
+@user-account__padding-left: .2rem;
+@user-account__padding-top: .3rem;
+@user-account__padding-right: .2rem;
+
+@user-account-menu__min-width: 20rem;
+// @user-account-menu__z-index: @notifications-action-menu__z-index - 10;
+@user-account-menu__hover__background-color: @action__hover__background-color;
+@user-account-menu__active__background-color: darken(@color-blue-clear-sky, 5%);
+
+@user-account-action__color: @neutral-10;
+@user-account-action__hover__color: @neutral-20;
+
+//
+//  User Menu
+//  _____________________________________________
+
+.admin-user {
+    margin-left: 2.7rem;
+
+    &._active,
+    &.active {
+        //  User account action
+        .admin__action-dropdown {
+            border-color: transparent;
+            box-shadow: none;
+        }
+    }
+
+    //  User account action
+    a.admin__action-dropdown,
+    .admin__action-dropdown-text {
+        .lib-vendor-prefix-display(flex);
+
+        align-items: center;
+    }
+    .admin__action-dropdown {
+        height: @page-header-action__height;
+        padding-bottom: @user-account__padding-bottom;
+        padding-left: @user-account__padding-left;
+        padding-top: @user-account__padding-top;
+        transition: @smooth__color;
+        
+        &::after {
+            margin-top: 0;
+            margin-left: @indent__s;
+            position: static;
+        }
+
+        &::before {
+            font-size: 2.4rem;
+            margin-top: 0;
+
+            color: @action-dropdown-toggle__color;
+            position: unset;
+        }
+
+        &:hover {
+            &::before {
+                color: @action-dropdown-toggle__hover__color;
+            }
+        }
+    }
+    
+    //  User account menu
+    .admin__action-dropdown-menu {
+        @_user-menu__indent-side: 0;
+
+        line-height: 1.8rem;
+        min-width: @user-account-menu__min-width;
+        padding: @indent__s 0;
+        margin-top: @indent__xs;
+
+        > li {
+            > a {
+                padding: 1rem @indent__base;
+
+                &:hover {
+                    background-color: @user-account-menu__hover__background-color;
+                    color: @action-dropdown__hover__color;
+                }
+
+                &:active {
+                    background-color: @user-account-menu__active__background-color;
+                    bottom: -.1rem;
+                    position: relative;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+//
+//  Variables
+//  _____________________________________________
+
+@steps-wizard-gallery-image__background-color: transparent;
+// @steps-wizard-gallery-image__padding: 14px @indent__base;
+
+//
+//  Steps wizard
+//  _____________________________________________
+
+.steps-wizard {
+    .steps-wizard-section-list {
+        > li {
+            margin: 0 0 @indent__base;
+        }
+
+        .admin__field-option {
+            padding-top: 0;
+        }
+
+        input[type='checkbox'],
+        input[type='radio'] {
+            &.admin__control-radio {
+                margin: 0;
+                position: absolute;
+            }
+        }
+    }
+
+    .steps-wizard-section {
+        padding: @indent__l @indent__l @indent__s @indent__l;
+        border-radius: @radius__base;
+        max-width: unset;
+        background: @steps-wizard-attribute-entity__background;
+        border: .1rem solid @steps-wizard-attribute-entity__border-color;
+        margin: 0 0 @indent__l;
+        transition: @steps-wizard-attribute-entity__transition;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        .admin__field-control {
+            .admin__control-select {
+                min-width: 100%;
+            }
+        }
+    }
+
+    .steps-wizard-section-title {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: @indent__l;
+        font-weight: @h4__font-weight;
+    }
+
+    .attribute-image-selector {
+        .attributes-selector-list {
+            border: none;
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        .attribute-label {
+            font-size: @h6__font-size;
+            font-weight: @h6__font-weight;
+
+        }
+    }
+}

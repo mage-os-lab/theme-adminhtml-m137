@@ -1,0 +1,47 @@
+//
+//  Extend
+//  _____________________________________________
+
+[class*='catalog-product_attribute-']{
+    .admin__collapsible-block-wrapper {
+        &.fieldset-wrapper {
+            .fieldset-wrapper-content {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .fieldset-wrapper {
+        &:last-child {
+            .admin__fieldset {
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+
+    #base_fieldset {
+        .field {
+            &:last-child {
+                margin-bottom: @indent__xl;
+            }
+        }
+    }
+}
+
+//
+//  Customizable Options
+//  _____________________________________________
+
+[data-index='options'] {
+    .admin__fieldset {
+        > .admin__field {
+            margin-bottom: @indent__base;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

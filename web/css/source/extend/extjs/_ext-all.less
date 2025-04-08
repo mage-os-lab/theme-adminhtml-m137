@@ -1,0 +1,29 @@
+//
+//  Extend
+//  _____________________________________________
+
+.x-tree-node {
+    div.x-tree-drag-insert-below {
+        border-bottom: .2rem dashed @blue-50;
+    }
+}
+
+.x-tree-node {
+    div.x-tree-drag-insert-above {
+        border-top: .2rem dashed @blue-50;
+    }
+}
+
+.x-editor {
+    padding: @indent__xs;
+}
+
+.x-form-text {
+    &:extend(.abs-form-control-pattern all);
+    font-size: 1.3rem;
+
+    &.x-form-invalid {
+        border-color: @field-error-control__border-color;
+        background-color: @field-control__background-color;
+    }
+}

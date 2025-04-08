@@ -1,0 +1,29 @@
+//
+//  Bundle Product
+//  _____________________________________________
+
+[data-index='bundle-items'] {
+    .admin__dynamic-rows {
+        .data-row {
+            &:last-child {
+                .admin__fieldset {
+                    button.action-basic {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+[data-index='product_bundle_container'] {
+    .admin__fieldset {
+        > .admin__field {
+            margin-bottom: @indent__base;
+        }
+
+        button.action-basic {
+            margin-bottom: @indent__l;
+        }
+    }
+}

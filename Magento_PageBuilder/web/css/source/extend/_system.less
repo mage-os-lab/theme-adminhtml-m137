@@ -1,0 +1,24 @@
+//
+//  Extend
+//  _____________________________________________
+
+#row_cms_pagebuilder_google_maps_api_key_validator {
+    td.value {
+        button {
+           &:extend(.abs-action-secondary all);
+
+           &[disabled],
+           &.disabled {
+               cursor: default;
+               opacity: @disabled__opacity;
+               pointer-events: none;
+           }
+
+            span {
+                display: inline-flex;
+                align-items: center;
+                gap: @indent__s;
+            }
+        }
+    }
+}

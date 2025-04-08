@@ -1,0 +1,150 @@
+//
+//  _panel contains less for the left panel
+//  _____________________________________________
+
+.pagebuilder-draggable-content-type {
+    border-radius: @radius__l;
+    transition: @smooth__background-color;
+
+    a {
+        background: transparent;
+        border-bottom: none;
+        color: @neutral-20;
+        border-radius: @radius__l;
+        transition: @smooth__background-color;
+        transition: @smooth__color;
+        padding: 1rem @indent__base;
+        line-height: 2rem;
+
+        i {
+            color: @neutral-20;
+            margin-right: @indent__base;
+            font-size: 2rem;
+            line-height: 1;
+
+            &::before {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+        &:hover {
+            background-color: @neutral-90;
+        }
+    }
+
+    &:hover {
+        background-color: @neutral-90;
+        display: block;
+    }
+}
+
+body {
+    > .pagebuilder-draggable-content-type {
+        background-color: @neutral-95;
+        box-shadow: @shadow-level-2;
+    }
+}
+
+.pagebuilder-panel-wrapper {
+    width: 24rem;
+    padding-left: @indent__base;
+
+    .pagebuilder-panel {
+        background: transparent;
+    }
+}
+
+.pagebuilder-panel-wrapper {
+    .pagebuilder-panel {
+        .search-content-types {
+            margin-top: 2rem;
+            margin-bottom: @indent__base;
+
+            label {
+                color: @field-control__color;
+                font-size: 1.8rem;
+            }
+
+            input {
+                background: @field-control__background-color;
+                border: solid @field-control__border-width @field-control__border-color;
+                border-radius: @field-control__border-radius;
+                color: @field-control__color;
+                font-size: @field-control__font-size;
+                line-height: @field-control__line-height;
+                padding-top: @field-control__padding-top;
+                padding-bottom: @field-control__padding-bottom;
+            }
+            
+            a {
+                font-size: 1.4rem;
+                color: @neutral-20;
+
+                &:hover {
+                    color: @neutral-10;
+                }
+
+                &.close {
+                    padding: 1rem;
+                    right: 0;
+                    top: 0;
+                }
+            }
+        }
+
+        .panel-controls {
+            a {
+                color: @neutral-20;
+            }
+        }
+    }
+
+    .pagebuilder-panel-menu-sections {
+        li {
+            .menu-section-title {
+                border-bottom: none;
+                padding: 1rem @indent__l 1rem @indent__base;
+                background-color: @neutral-90;
+                border-radius: @radius__l;
+                margin-bottom: @indent__s;
+
+                :before {
+                    content: @icon-arrowup__content;
+                    font-size: .8rem;
+                    top: @indent__base;
+                    right: @indent__base;
+                    margin-top: 0;
+                }
+
+                h4 {
+                    color: @neutral-10;
+                    font-size: @font-size__base;
+                    line-height: 2rem;
+                    font-weight: @font-weight__semibold;
+                }
+            }
+
+            .pagebuilder-panel-menu-sections-child {
+                padding-bottom: @indent__base;
+            }
+
+            &.active {
+                .menu-section-title {
+                    h4 {
+                        color: @neutral-10;
+                    }
+
+                    :before {
+                        content: @icon-arrowup__content;
+                        transform: rotate(180deg);
+                    }
+                }
+
+                .pagebuilder-panel-menu-sections-child {
+                    background: transparent;
+                }
+            }
+        }
+    }
+}

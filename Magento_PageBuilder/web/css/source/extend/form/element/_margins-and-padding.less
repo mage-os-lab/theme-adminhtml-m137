@@ -1,0 +1,66 @@
+//
+//  Extend
+//  _____________________________________________
+
+.admin__field-design-options {
+    .layout-onion {
+        width: 100%;
+        height: 37.6rem;
+
+        .layout-onion-layer {
+            width: auto !important;
+            border-radius: @indent__xs;
+            
+            &.layout-margin {
+                background: @neutral-98;
+                height: 37.6rem;
+            }
+
+            &.layout-border {
+                background: @neutral-95;
+                border: 0;
+                left: 12.8rem;
+                right: 12.8rem;
+                top: 8.4rem;
+                height: 20.8rem;
+
+                &::after {
+                    background: @color-white;
+                    border-radius: @indent__xs;
+                    position: absolute;
+                    height: 4rem;
+                    content: '';
+                    display: block;
+                    left: 12.8rem;
+                    right: 12.8rem;
+                    top: 8.4rem;
+                }
+            }
+
+            span.label {
+                left: @indent__l;
+                top: @indent__m;
+            }
+
+            .layout-onion-top {
+                top: @indent__l;
+            }
+
+            .layout-onion-right {
+                right: @indent__l;
+            }
+
+            .layout-onion-bottom {
+                bottom: @indent__l;
+            }
+
+            .layout-onion-left {
+                left: @indent__l;
+            }
+        }
+
+        input.admin__control-text {
+            width: 8rem;
+        }
+    }
+}

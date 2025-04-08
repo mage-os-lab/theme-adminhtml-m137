@@ -1,0 +1,64 @@
+//
+//  Toolbar options panel
+//  _____________________________________________
+
+//  Don't display the hover state when the stage is being interacted with
+.pagebuilder-stage.interacting .pagebuilder-content-type.pagebuilder-toolbar-active:hover {
+    outline: solid .2rem rgba(0, 0, 0, .25);
+}
+
+.pagebuilder-toolbar-active {
+    &.pagebuilder-content-type {
+        outline: solid .2rem rgba(0, 0, 0, .25);
+        box-shadow: none;
+    }
+
+    .pagebuilder-toolbar-options {
+        top: -.1rem;
+    }
+}
+
+.pagebuilder-toolbar-options {
+    border: .2rem solid @neutral-70;
+    padding: @indent__s;
+    top: 0 !important;
+
+    .pagebuilder-toolbar-options-wrapper {
+        .pagebuilder-toolbar-options-links {
+            &:not(:first-child):before {
+                background-color: @neutral-90;
+                margin: @indent__s @indent__s @indent__s 0;
+            }
+
+            .pagebuilder-toolbar-options-link {
+                margin: 0 @indent__s 0 0;
+
+                > a {
+                    height: 3.6rem;
+                    width: 3.6rem;
+                    border-radius: @radius__xs;
+
+                    &:hover {
+                        border-color: @blue-50;
+                        background-color: @color-white;
+                    }
+
+                    &.toolbar-active {
+                        background-color: @color-white;
+                        border-color: @blue-50;
+                        box-shadow: 0 0 0 .1rem @field-control__active__border-color;
+                    }
+
+                    i {
+                        line-height: 3.3rem;
+                    }
+
+                    span {
+                        font-size: @font-size__base;
+                        line-height: 3.4rem;
+                    }
+                }
+            }
+        }
+    }
+}

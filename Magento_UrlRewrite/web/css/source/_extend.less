@@ -1,0 +1,32 @@
+//
+//  URL Rewrite
+//  _____________________________________________
+
+.adminhtml-url_rewrite-edit {
+    .main-col {
+        .form-inline {
+            + .form-inline {
+                margin-top: @indent__base;
+            }
+            
+            + [data-ui-id='category-selector'] {
+                background-color: @color-white;
+                padding: @indent__l;
+                border-radius: @radius__l;
+                margin-top: @indent__base;
+            }
+        }
+    }
+}
+
+.admin__fieldset {
+    .field-entity-type-selector {
+        margin-bottom: 0;
+    }
+
+    > .admin__field {
+        &:last-child {
+            margin-bottom: @indent__s;
+        }
+    }
+}

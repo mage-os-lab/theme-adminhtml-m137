@@ -1,0 +1,141 @@
+//
+//  Variables
+//  _____________________________________________
+
+@steps-wizard-attribute-entity__background: @neutral-98;
+@steps-wizard-attribute-entity__border-color: transparent;
+// @steps-wizard-attribute-entity__active__border-color: @color-blue1;
+@steps-wizard-attribute-entity__transition: border-color .3s;
+
+@steps-wizard-attribute-entity-title__font-size: @h4__font-size;
+
+// @steps-wizard-attribute-entity-action-remove__content: @icon-delete__content;
+// @steps-wizard-attribute-entity-action-save__content: @icon-arrow-right__content;
+// @steps-wizard-attribute-entity-action-save__hover__content: @color-very-dark-gray-black2;
+
+// @steps-wizard-attribute-option-width: 100%/3;
+
+//
+//  Steps wizard
+//  _____________________________________________
+
+.steps-wizard {
+    .attribute-entity {
+        padding: @indent__l @indent__l @indent__s @indent__l;
+        border-radius: @radius__base;
+        max-width: unset;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .action-select-all,
+        .action-deselect-all {
+            margin: 0.3rem 0 0 @indent__m;
+            padding: 0;
+        }
+
+        .action-remove-all {
+            margin-left: @indent__m;
+        }
+
+        input[type='checkbox'],
+        input[type='radio'] {
+            &.admin__control-checkbox {
+                margin: 0;
+                position: absolute;
+            }
+        }
+
+        .admin__field-option {
+            padding-top: 0;
+        }
+    }
+
+    .attribute-entity-top {
+        margin: 0 0 @indent__l;
+    }
+
+    .attribute-entity-title {
+        font-weight: @h4__font-weight;
+    }
+
+    .attribute-options {
+        margin: 0;
+    }
+
+    .attribute-option {
+        padding: 0 @indent__l @indent__base 0;
+
+        .admin__field-label {
+            width: auto;
+        }
+    }
+
+    //
+    //  Extend child elements
+    //  ---------------------------------------------
+    
+    // Items per page, pagination
+    .admin__collapsible-block-wrapper {
+        &.fieldset-wrapper {
+            margin-bottom: 0;
+        }
+        
+        .fieldset-wrapper-content {
+            &:extend(.abs-clearfix all);
+            padding-bottom: 0;
+
+            .data-grid-configurable {
+                margin-top: @indent__l;
+            }
+        }
+    }
+
+    // Fieldset
+    .fieldset-wrapper,
+    .fieldset {
+        padding: 0;
+        border-top: 0;
+    }
+
+    // Filters (on Products page)
+    .admin__data-grid-filters-wrap {
+        .admin__data-grid-filters {
+            input[type='text'] {
+                width: 100%;
+            }
+        }
+    }
+
+    .steps-wizard-section {
+        .admin__fieldset {
+            .admin__field {
+                margin-bottom: @indent__l;
+
+                input[type='text'] {
+                    width: 100%;
+                }
+            }
+        }
+
+        .attributes-values-form {
+            .admin__fieldset {
+                .admin__field {
+                    &:last-child {
+                        margin-bottom: 0;
+                    } 
+                }
+            }
+        }
+    }
+
+    // Message
+    .messages {
+        .message  {
+            &:not(.error) {
+                &:extend(.message-notice all);
+            }
+        }
+    }
+}

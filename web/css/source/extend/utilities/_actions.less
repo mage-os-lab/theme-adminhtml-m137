@@ -1,0 +1,40 @@
+//
+//  Utilities -> Actions
+//  _____________________________________________
+
+//  Used in action dropdown, actions split & all other actions with triangle marker
+.action-toggle-triangle (
+        @_dropdown__padding-right: 1.2rem;
+        @_triangle__height: @button-marker-triangle__height;
+        @_triangle__width: @button-marker-triangle__width;
+        @_triangle__color: unset;
+        @_triangle__hover__color: unset;
+        @_triangle__right: 1.2rem;
+) {
+    .lib-icon-font(
+        @icon-arrowdown__content,
+        @icons-admin__font-name,
+        @_icon-font-size: @_triangle__width,
+        @_icon-font-line-height: 1,
+        @_icon-font-color: inherit,
+        @_icon-font-margin: 0,
+        @_icon-font-position: after
+    );
+
+    &::after {
+        border-width: 0;
+        content: @icon-arrowdown__content !important;
+        border: 0;
+        width: @_triangle__width;
+        height: @_triangle__height;
+        margin-top: -((@_triangle__width / 2));
+        right: @_triangle__right;
+        transition: @smooth__rotate !important;
+    }
+    
+    &:hover {
+        &::after {
+            border-color: transparent !important;
+        }
+    }
+}

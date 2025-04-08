@@ -1,0 +1,198 @@
+//
+//  Variables
+//  _____________________________________________
+
+// @control-table__dragging__outline-color: @color-blue-pure;
+
+// @control-table-row__dragging__background-color: @color-light-gray0;
+ 
+@control-table-cell__background-color: @color-white;
+@control-table-cell__border-color: @neutral-90;
+@control-table-cell__padding-vertical: 1.2rem;
+@control-table-cell__padding-horizontal: .8rem;
+ 
+// @control-table-horizontal-dragover-mark__color: @color-blue-dodger;
+// @control-table-horizontal-dragover-mark__width: 3px;
+
+//
+//  Table
+//  _____________________________________________
+
+.admin__control-table {
+    td,
+    th {
+        transition: @smooth__background-color;
+        padding: @control-table-cell__padding-vertical @control-table-cell__padding-horizontal;
+
+        .save {
+           &:extend(.abs-action-button-as-link all);
+            margin-top: @indent__s;
+        }
+        
+        .delete-option {
+           &:extend(.abs-action-button-as-link all);
+        }
+
+        .add,
+        [data-action='add_new_row'] {
+           &:extend(.abs-action-primary all);
+        }
+    }
+
+    thead {
+        th,
+        td {
+            background-color: @control-table-header__background-color;
+            padding-top: @control-table-cell__padding-horizontal;
+            padding-bottom: @control-table-cell__padding-horizontal;
+            font-size: @font-size__s;
+
+            &:first-child {
+                padding-left: @control-table-cell__padding-vertical;
+            }
+            
+            &:last-child {
+                padding-right: @control-table-cell__padding-vertical;
+                text-align: right;
+            }
+
+            span {
+                line-height: 1.5rem;
+            }
+        }
+    }
+    
+    tbody {
+        td {
+            vertical-align: middle;
+
+            &:first-child {
+                padding-left: @control-table-cell__padding-vertical;
+            }
+            
+            &:last-child {
+                padding-right: @control-table-cell__padding-vertical;
+                text-align: right;
+            }
+        }
+
+        tr {
+            &:nth-child(even) {
+                td {
+                    background-color: @control-table-cell-even__background-color;
+                }
+            }
+
+            &:hover {
+                td {
+                    background-color: @control-table-cell__hover__background-color;
+                }
+            }
+        }
+    }
+    
+    tfoot {
+        th,
+        td {
+            background-color: @control-table-footer__background-color;
+
+            &:first-child {
+                padding-left: @control-table-cell__padding-vertical;
+            }
+            
+            &:last-child {
+                padding-right: @control-table-cell__padding-vertical;
+            }
+
+        }
+        
+        .last {
+            text-align: right;
+        }
+    }
+    
+    //  Draggable column
+    .col-draggable {
+        padding-top: @control-table-cell__padding-vertical;
+    }
+
+    //  Actions
+    .action-delete {
+        padding-top: @field-control__padding-top;
+        padding-bottom: @field-control__padding-bottom;
+        line-height: 1.1;
+        display: inline-flex;
+        align-items: center;
+        gap: @indent__s;
+    }
+    
+    //  Actions column
+    .control-table-actions-cell {
+        padding-top: @control-table-cell__padding-vertical;
+    }
+}
+
+.admin__field-control {
+    //  Pagination select (width height fix)
+    .admin__control-table-pagination {
+        padding-bottom: @indent__l;
+        
+        .admin__data-grid-pager-wrap {
+            .admin__control-select {
+                width: auto;
+                min-width: unset;
+            }
+        }
+    }
+    
+    // Table dynamic rows (stripe rows fix)
+    .admin__control-table.admin__dynamic-rows {
+        tbody {
+            td {
+                &:last-child[style*='none'] {
+                    display: table-cell !important;
+
+                    > * {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.admin__data-grid-pager-wrap {
+    .admin__data-grid-pager {
+        .admin__control-text {
+            width: 4.2rem;
+        }
+    }
+}
+
+.admin__control-table-wrapper {
+    //  Static text in row
+    .data-grid {
+        .control-table-text {
+            a {
+                color: @text__color;
+
+                &:hover {
+                    color: inherit;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Control table
+//  _____________________________________________
+
+.admin__control-table {
+    .admin__field-control {
+        .admin__field-option {
+            padding-top: @indent__2xs;
+        }
+    }
+}

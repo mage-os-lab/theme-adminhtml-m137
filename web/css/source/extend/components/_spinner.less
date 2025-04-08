@@ -1,0 +1,63 @@
+//
+//  Spinner
+//  _____________________________________________
+
+.spinner {
+    width: @spinner__width;
+    height: @spinner__height;
+    background-color: @spinner__background-color;
+    background-image: @spinner__background-image;
+    background-position: @spinner__background-position;
+    background-repeat: @spinner__background-repeat;
+    background-size: @spinner__background-size;
+}
+
+//
+//  Popup Loading
+//  _____________________________________________
+
+.popup-loading {
+    width: @loader-wrapper__width;
+    padding: @loader-wrapper__height 0 0 0;
+    background: @loader__background-color;
+    border-color: unset;
+    border-radius: @loader__border-radius;
+    color: @color-white;
+    font-size: 0;
+    margin-left: 0;
+
+    &::after {
+        width: @loader__width;
+        height: @loader__height;
+        background-image: @loader__background-image;
+        background-position: @loader__background-position;
+        background-repeat: @loader__background-repeat;
+        background-size: @loader__background-size;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        margin: 0;
+    }
+}
+
+//
+//  Popup Mask
+//  _____________________________________________
+
+.loading-old,
+.loading-mask {
+    background-color: transparent;
+    
+    .loader {
+        width: @loader-mask__width;
+        height: @loader-mask__height;
+        background-color: @loader-mask__background-color;
+        background-image: @loader-mask__background-image;
+        background-position: @loader-mask__background-position;
+        background-repeat: @loader-mask__background-repeat;
+        background-size: @loader-mask__background-size;
+        border-radius: @loader-mask__border-radius;
+        color: @color-white;
+        font-size: 0;
+        opacity: 1;
+    }
+}

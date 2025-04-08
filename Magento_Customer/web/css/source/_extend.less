@@ -1,0 +1,93 @@
+//
+//  Customer
+//  _____________________________________________
+
+.customer-index-edit {
+    // Filters content
+    .admin__data-grid-filters-wrap {
+        &._show {
+            padding: @indent__xs 0 0 0;
+        }
+    }
+
+    //  Current Chips
+    .admin__data-grid-filters-current {
+        &._show {
+            padding: @indent__xs 0 0 0;
+        }
+    }
+
+    // Filters Actions
+    .admin__data-grid-header {
+        .admin__data-grid-header-row {
+            & + .admin__data-grid-header-row {
+                padding-top: @indent__s;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+    
+    // Grid Toolbar without Filters Actions
+    .admin__data-grid-toolbar {
+        .admin__data-grid-header-row {
+            & + .admin__data-grid-header-row {
+                padding-top: 0;
+            }
+        }
+    }
+
+    .admin__data-grid-wrap {
+        padding: 0;
+    }
+}
+
+.customer-address-form {
+    .customer-default-address-wrapper {
+        background-color: @color-white;
+        border-radius: @radius__base;
+        
+        width: ~'calc((100% - @{indent__l}) / 2)';
+        margin-bottom: @indent__l;
+
+        & + .customer-default-address-wrapper {
+            margin-left: @indent__l;
+        }
+    }
+
+    .add-new-address-button {
+        margin-bottom: @indent__l;
+    }
+
+    .address-information {
+        margin-bottom: 0;
+
+        address {
+            .address_caption {
+                &:extend(.abs-fieldset-legend all);
+                margin-bottom: @indent__base;
+            }
+        }
+    }
+}
+
+//
+//  Account Information
+//  ---------------------------------------------
+
+.admin__old {
+    .form-inline {
+        [data-index='customer'] {
+            .admin__fieldset-wrapper-content {
+                background-color: @color-white;
+                padding: @indent__l;
+                border-radius: @radius__l;
+
+                .admin__fieldset {
+                    padding-top: @indent__s;
+                    padding-bottom: @indent__s;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+//
+//  Edit Order comments
+//  _____________________________________________
+
+.edit-order-comments {
+    .note-list {
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        & + .edit-order-comments-block {
+            padding-top: @indent__s;
+        }
+    }
+
+    .note-list-item {
+        &:last-child {
+            margin-bottom: 0;
+
+            .note-list-comment {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .note-list-customer-notapplicable,
+    .note-list-customer-not-notified,
+    .note-list-customer-notified {
+        font-weight: @font-weight__heavier;
+    }
+
+    .note-list-comment {
+        &:last-child {
+            margin-top: @indent__s;
+        }
+    }
+
+    .comments-block-item {
+        margin: 0 0 @order-create-sidebar__margin;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    .comments-block-item-date-time {
+        font-size: @font-size__base;
+    }
+}

@@ -1,0 +1,222 @@
+//
+//  Variables
+//  _____________________________________________
+
+@collapsible__border-color: @control-collapsible__border-color;
+
+@collapsible-title-icon__size: 1.6rem;
+// @collapsible-title-support-text__font-size: 1.6rem;
+
+@collapsible-sub-block__indent: 0;
+
+@collapsible-content__indent: 3.2rem;
+
+//
+//  Mixins
+//  _____________________________________________
+
+.__collapsible-block-wrapper-pattern() {
+    margin-bottom: -.1rem;
+}
+
+.__collapsible-title-pattern() {
+    letter-spacing: unset;
+    line-height: 2.4rem;
+    padding: @collapsible-title__padding-top (@collapsible-title-icon__size * 2) @collapsible-title__padding-bottom 0;
+
+    &::before {
+        right: 0;
+        top: 2rem;
+    }
+
+    &:active {
+        &::before {
+            .scale(1);
+        }
+    }
+}
+
+.__collapsible-text-pattern() {
+    line-height: @line-height__base;
+    margin-bottom: @indent__base;
+    margin-top: @indent__base;
+}
+
+// Collapsible sub block
+.__collapsible-sub-block-wrapper-pattern() {
+    border-bottom: 0;
+}
+
+.__collapsible-sub-title-pattern() {
+    padding-left: (@collapsible-title-icon__size * 3);
+    padding-right: 0;
+    background-color: @neutral-95;
+    border-radius: @radius__xl;
+    font-size: @font-size__base;
+    line-height: 1;
+    font-weight: @font-weight__heavier;
+    transition: @smooth__background-color, @smooth__color;
+
+    &::before {
+        top: 1.5rem;
+        left: @indent__base;
+        right: auto;
+    }
+
+    &:hover {
+        background-color: @neutral-90;
+    }
+}
+
+//
+//  Collapsible
+//  _____________________________________________
+
+.admin__collapsible-block-wrapper {
+    &.fieldset-wrapper {
+        border-top: .1rem solid @collapsible__border-color;
+        border-bottom: 0;
+
+        .fieldset-wrapper-title {
+            margin-bottom: 0;
+        }
+
+        &:first-of-type {
+            border-top: 0;
+        }
+    }
+}
+
+//
+//  Accordion
+//  _____________________________________________
+
+.accordion {
+    .config {
+        .scope-label {
+            letter-spacing: unset;
+        }
+
+        .label {
+            font-weight: @font-weight__heavier;
+        }
+    }
+
+    .form-inline {
+        .form-list {
+            .scope-label {
+                padding: @indent__xl @indent__l 0 0;
+            }
+
+            > tbody {
+                > tr {
+                    > td {
+                        padding: @indent__xl @indent__l 0 0;
+                        
+                        &[colspan='4'] {
+                            padding-top: @indent__l;
+                            padding-right: 0;
+                        }
+                    }
+
+                    td.with-tooltip:not(.choice) {
+                        padding-top: @indent__xl;
+                    }
+                }
+
+                .use-default {
+                    padding: @indent__xl @indent__l 0 0;
+                }
+
+                .label {
+                    label {
+                        padding-top: @indent__2xs;
+                        display: inline-block;
+                    }
+                }
+
+                .value {
+                    padding-right: @indent__l;
+                }
+            }
+        }
+
+        .config {
+            .note {
+                color: @neutral-20;
+                font-size: @font-size__s;
+                margin: @indent__s 0 0 0;
+
+                a {
+                    color: @link__color;
+                    font-size: @font-size__s;
+                }
+
+                [style*='color:red'] {
+                    color: @red-50 !important;
+                }
+
+                br {
+                    display: block;
+                    content: '';
+
+                    & + br {
+                        margin-top: @indent__xs;
+                    }
+                }
+            }
+        }
+
+        > .section-config {
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    .config {
+        input {
+            &.input-file {
+                margin-top: 0;
+            }
+        }
+
+        .admin__control-table {
+            td {
+                padding: @control-table-cell__padding-vertical @control-table-cell__padding-horizontal;
+
+                &:first-child {
+                    padding-left: @control-table-cell__padding-horizontal;
+                }
+            }
+
+            thead {
+                .col-actions {
+                    width: 4rem;
+                }
+            }
+            
+            tbody {
+                .col-actions {
+                    text-align: center;
+                }
+            }
+
+            .action-add {
+                &:extend(.abs-action-primary all);
+            }
+        }
+    }
+
+    //  Tooltip
+    .config {
+        .value {
+            &.with-tooltip {
+                .tooltip {
+                    margin-top: @indent__s;
+                    margin-right: -@indent__xl;
+                }
+            }
+        }
+    }
+}

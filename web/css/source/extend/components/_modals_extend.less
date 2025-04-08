@@ -1,0 +1,245 @@
+//
+//  Components -> Modals
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+// @modal__background-color: @color-white;
+@modal__box-shadow: none;
+
+// @modal-popup__indent-vertical: 5rem;
+@modal-popup__padding: 2.4rem;
+// @modal-popup__width: 75%;
+// @modal-popup__z-index: @modal__z-index;
+
+// @modal-slide__first__indent-left: 14.8rem;
+// @modal-slide__indent-left: 4.5rem;
+@modal-slide__padding: 2.4rem;
+// @modal-slide__z-index: @modal__z-index;
+
+@modal-slide-header__padding-vertical: @indent__base;
+
+// @modal-popup-confirm__width: 50rem;
+
+@modal-popup-image-box__border-color: transparent;
+// @modal-popup-image-box__max-width: 78rem;
+
+// @modal-popup-image-box-preview__max-width: @modal-popup-image-box-preview-image__max-height + (2 * @indent__base);
+// @modal-popup-image-box-preview-image__max-height: 54rem;
+
+
+// @modal-title__color: @text__color;
+
+// @modal-title-span__font-size: @font-size__base;
+
+@modal-popup-title__font-size: @h3__font-size;
+
+@modal-slide-title__font-size: @h3__font-size;
+
+@modal-action-close__color: @neutral-10;
+@modal-action-close__font-size: 1.8rem;
+@modal-action-close__active__font-size: 1.8rem;
+@modal-action-close__hover__color: @neutral-20;
+
+// @modal-popup-footer-button__margin: 2rem;
+// @modal-popup-footer-button__padding: 1.4rem;
+// @modal-popup-footer-button__font-size: 1.5rem;
+// @modal-popup-footer-button__color: @color-brownie;
+@modal-popup-colored__background: @color-white;
+// @modal-popup-colorless__background: @color-white;
+// @modal-prompt-message__padding: 2rem;
+
+//
+//  Modal
+//  _____________________________________________
+
+.modal-popup,
+.modal-slide {
+    .modal-title {
+        font-weight: @h3__font-weight;
+        margin-right: @indent__l * 2;
+    }
+
+    .page-main-actions {
+        background: transparent;
+        border-bottom: 0;
+    }
+}
+
+.modal-popup {
+    .modal-inner-wrap {
+        border-radius: @radius__l;
+    }
+}
+
+.modal-slide {
+    .modal-inner-wrap {
+        border-radius: @radius__l 0 0 @radius__l;
+    }
+}
+
+.modal-popup {
+    .lib-modal-popup();
+
+    //  If applied, switching outer popup scroll to inner
+    &._inner-scroll {
+        .modal-content {
+            margin-bottom: @indent__l;
+        }
+    }
+
+    .modal-header {
+        .lib-css(padding-bottom, @modal-popup__padding);
+    }
+
+    .action-close {
+        padding: 1.1rem;
+        line-height: .8;
+        top: @indent__m;
+        right: @indent__m;
+
+        &:active,
+        &:focus {
+            padding: 1.1rem;
+        }
+    }
+}
+
+.modal-slide {
+    .modal-header {
+        .page-main-actions {
+            padding-top: @indent__base;
+            padding-bottom: 0;
+            margin-top: 0;
+        }
+    }
+    
+    .modal-content {
+        .page-main-actions {
+            padding-top: 0 !important;
+            padding-bottom: @indent__base;
+            margin-top: 0;
+        }
+    }
+
+    .magento-message {
+        padding: 0;
+    }
+}
+
+//
+//  Nested elements
+//  ---------------------------------------------
+
+.modal-slide {
+    //  Actions
+    .page-main-actions {
+        margin-bottom: 0;
+        
+        .page-actions-buttons {
+            .action-primary {
+                margin-left: @indent__base;
+            }
+        }
+    }
+
+    //  Messages
+    .modal-header {
+        .page-main-actions + div .messages {
+            .message {
+                margin-top: @indent__base;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .modal-content {
+        .messages {
+            .message {
+                &:last-of-type {
+                    margin-bottom: @indent__l;
+                }
+            }
+        }
+    }
+
+    //  Filters
+    .modal-content {
+        .admin__data-grid-header {
+            .admin__data-grid-filters-wrap {            
+                &._show {
+                    padding-top: @indent__s;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    
+    //  Columns
+    .admin__scope-old  {
+        input[type='checkbox'],
+        input[type='radio'] {
+            &.admin__control-checkbox {
+                margin: 0;
+                position: absolute;
+            }
+        }
+    }
+
+    //  Variables
+    #variables-chooser {
+        .admin__data-grid-header {
+            .admin__data-grid-header-row {
+                & + .admin__data-grid-header-row {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .side-col {
+        overflow: scroll;
+    }
+
+    .main-col {
+        padding-left: @indent__l;
+    }
+}
+
+//
+//  Modal types
+//  _____________________________________________
+
+.modal-popup {
+    &._image-box {
+        .thumbnail-preview {
+            padding-bottom: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+
+            .thumbnail-preview-image-block {
+                padding: 0;
+            }
+
+            .thumbnail-preview-content {
+                text-align: right;
+                order: -1;
+            }
+
+            .thumbnail-preview-link {
+                &:extend(.abs-action-default all);
+            }
+        }
+    }
+
+    .modal-footer {
+        button.action-primary {
+            &:extend(.abs-action-primary all);
+            &:extend(.abs-action-l all);
+        }
+    }
+}

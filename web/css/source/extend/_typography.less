@@ -1,0 +1,87 @@
+//
+//  Typography
+//  _____________________________________________
+
+//
+//  Font Face
+//  ---------------------------------------------
+
+.lib-font-face(
+    @family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/inter/light/inter-300',
+    @font-weight: @font-weight__light,
+    @font-style: normal
+);
+
+.lib-font-face(
+    @family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/inter/regular/inter-400',
+    @font-weight: @font-weight__regular,
+    @font-style: normal
+);
+
+.lib-font-face(
+    @family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/inter/medium/inter-500',
+    @font-weight: @font-weight__heavier,
+    @font-style: normal
+);
+
+.lib-font-face(
+    @family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/inter/semibold/inter-600',
+    @font-weight: @font-weight__semibold,
+    @font-style: normal
+);
+
+.lib-font-face(
+    @family-name: @font-family-name__base,
+    @font-path: '@{baseDir}fonts/inter/bold/inter-700',
+    @font-weight: @font-weight__bold,
+    @font-style: normal
+);
+
+//
+//  Headings
+//  ---------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: @font-weight__bold;
+    color: @heading__color__base;
+}
+
+h1 {
+    font-size: @h1__font-size;
+    line-height: @h1__line-height;
+    font-weight: @h1__font-weight;
+}
+
+h2 {
+    font-size: @h2__font-size;
+    line-height: @h2__line-height;
+    font-weight: @h2__font-weight;
+}
+
+h3 {
+    font-size: @h3__font-size;
+    line-height: @h3__line-height;
+    font-weight: @h3__font-weight;
+}
+
+h4 {
+    font-size: @h4__font-size;
+    line-height: @h4__line-height;
+    font-weight: @h4__font-weight;
+}
+
+h5 {
+    font-size: @h5__font-size;
+    line-height: @h5__line-height;
+    font-weight: @h5__font-weight;
+}
+
+h6 {
+    font-size: @h6__font-size;
+    line-height: @h6__line-height;
+    font-weight: @h6__font-weight;
+}

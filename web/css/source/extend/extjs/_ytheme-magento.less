@@ -1,0 +1,209 @@
+//
+//  Tree
+//  _____________________________________________
+
+.categories-side-col {
+    .sidebar-actions {
+        .action-default {
+           &:extend(.abs-action-secondary all);
+        }
+    }
+
+    .tree-actions {
+        margin-bottom: @indent__base;
+
+        .separator {
+            color: @neutral-80;
+            padding-left: @indent__s;
+            padding-right: @indent__s;
+        }
+    }
+}
+
+.x-tree-root-ct {
+    .x-tree-node-indent {
+        .x-tree-icon {
+            &:nth-child(1) {
+                display: none;
+            }
+        }
+    }
+
+    .x-tree-node-el {
+        padding-top: @indent__xs;
+        padding-bottom: @indent__xs;
+    }
+
+    .x-tree-node {
+        .x-tree-ec-icon,
+        .x-tree-node-icon {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    .x-tree-node-leaf {
+        .x-tree-node-icon {
+            background: transparent url('../images/folder.svg') 50% 50% no-repeat;
+            background-size: 1.6rem;
+        }
+    }
+
+    .x-tree-selected {
+        .x-tree-node-icon {
+            background: transparent url('../images/folder-fill.svg') 50% 50% no-repeat;
+            background-size: 1.6rem;
+        } 
+    }
+
+    .x-tree-node-expanded {
+        .x-tree-elbow-minus,
+        .x-tree-elbow-end-minus {
+            background: transparent url('../images/arrow-up.svg') 50% 50% no-repeat;
+            background-size: 1.3rem;
+        }
+
+        .x-tree-node-icon {
+            background: transparent url('../images/folder-open.svg') 50% 50% no-repeat;
+            background-size: 1.6rem;
+        }
+
+        &.x-tree-selected {
+            .x-tree-node-icon {
+                background: transparent url('../images/folder-fill-open.svg') 50% 50% no-repeat;
+                background-size: 1.6rem;
+            }
+        }
+    }
+
+    .x-tree-node-collapsed {
+        .x-tree-elbow-plus,
+        .x-tree-elbow-end-plus {
+            background: transparent url('../images/arrow-down.svg') 50% 50% no-repeat;
+            background-size: 1.3rem;
+        }
+
+        .x-tree-node-icon {
+            background: transparent url('../images/folder.svg') 50% 50% no-repeat;
+            background-size: 1.6rem;
+        }
+        
+        &.x-tree-selected {
+            .x-tree-node-icon {
+                background: transparent url('../images/folder-fill.svg') 50% 50% no-repeat;
+                background-size: 1.6rem;
+            }
+        }
+    }
+
+    .x-tree-elbow,
+    .x-tree-elbow-line,
+    .x-tree-elbow-end {
+        opacity: 0;
+    }
+
+    .x-tree-node {
+        font-size: @font-size__base;
+
+        .x-tree-node-indent {
+            .x-tree-icon {
+                width: 1.2rem;
+            }
+        }
+        
+        .x-tree-node-el {
+            padding-top: 0;
+            padding-bottom: 0;
+
+            .x-tree-ec-icon,
+            .x-tree-node-icon {
+                position: relative;
+                z-index: 1;
+                top: -1px;
+
+                box-sizing: border-box;
+                padding-top: .6rem;
+                padding-bottom: .6rem;
+            }
+            
+            .x-tree-ec-icon {
+                margin-right: @indent__s;
+            }
+
+            input[type=checkbox] {
+                margin: 0 @indent__xs / 2 0 @indent__s;
+                z-index: 2;
+            }
+        }
+
+        .x-tree-selected {
+            a {
+                color: @neutral-10;
+
+                &::before {
+                    content: '';
+                    background-color: @neutral-90;
+                    border-radius: @radius__l;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: -2.8rem;
+                    right: 0;
+                }
+            
+                span {
+                    background-color: transparent;
+                    color: inherit;
+                }
+            }
+
+            input[type=checkbox] + a {
+                &::before {
+                    left: -5.4rem;
+                }
+            }
+        }
+        
+        a {
+            line-height: 1rem;
+            display: inline-block;
+            color: @neutral-20;
+            position: relative;
+            
+            span {
+                color: inherit;
+                line-height: 2rem;
+                padding: .6rem @indent__s .6rem .6rem;
+                display: inline-block;
+                position: relative;
+            }
+
+            &:hover {
+                color: @neutral-10;
+
+                &::before {
+                    content: '';
+                    background-color: @neutral-90;
+                    border-radius: @radius__l;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: -2.8rem;
+                    right: 0;
+                }
+
+                span {
+                    color: inherit;
+                }
+            }
+        }
+
+        input[type=checkbox] + a {
+            &:hover {
+                &::before {
+                    left: -5.4rem;
+                }
+            }
+        }
+    }
+}

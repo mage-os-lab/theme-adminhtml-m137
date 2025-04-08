@@ -1,0 +1,24 @@
+//
+//  Structure
+//  _____________________________________________
+
+.page-content {
+    padding-bottom: 0;
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-layout-admin-2columns-left {
+        .page-columns {
+            #mix-grid .row();
+
+            .main-col {
+                #mix-grid .width(10,12);
+                float: right;
+            }
+
+            .side-col {
+                #mix-grid .column(2,12);
+            }
+        }
+    }
+}

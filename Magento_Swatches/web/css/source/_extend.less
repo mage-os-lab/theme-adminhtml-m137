@@ -1,0 +1,119 @@
+//
+//  Swatches
+//  _____________________________________________
+
+.swatches-visual-col {
+    .swatch_window {
+        width: 3.4rem !important;
+        height: 3.4rem !important;
+        border-color: @field-control__border-color !important;
+        border-radius: @field-control__border-radius;
+
+        &:hover {
+            border-color: @field-control__hover__border-color !important;
+        }
+
+        &:focus {
+            border-color: @field-control__focus__border-color !important;
+        }
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+
+    &.unavailable {
+        &::after {
+            width: 4.6rem !important;
+            top: 3.1rem !important;
+            transform: rotate(45deg) !important;
+            background: @red-50 !important;
+        }
+    }
+
+    .swatch_sub-menu_container {
+        border-radius: @radius__xs !important;
+        background-color: @action-dropdown__background-color;
+        border: none !important;
+        box-shadow: @component__box-shadow__base !important;
+        line-height: @line-height__base;
+        margin-top: @indent__xs;
+        padding: @indent__s 0;
+        top: 5rem;
+        left: unset;
+
+        &::after {
+            display: none;
+        }
+
+        .swatch_row {
+            padding: 1rem @indent__base !important;
+            border: 0 !important;
+            border-radius: unset !important;
+            background-color: unset;
+            height: auto !important;
+            transition: @smooth__background-color, @smooth__color;
+
+            &:hover {
+                background-color: @user-account-menu__hover__background-color !important;
+                color: @action-dropdown__hover__color !important;
+
+                .swatch_row_name {
+                    background-color: unset !important;
+                }
+            }
+
+            .swatch_row_name {
+                position: unset !important;
+                background-color: unset !important;
+
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Text Swatch
+//  _____________________________________________
+
+#swatch-text-options-panel {
+    .data-table {
+        .col-swatch-min-width {
+            input[type='text'] {
+                padding: @field-control__padding-top @field-control__padding-horizontal @field-control__padding-bottom @field-control__padding-horizontal;
+            }
+        }
+    }
+}
+
+.selected-type-options {
+    .admin__control-table {
+        tfoot {
+            tr:last-child {
+                th {
+                    border-bottom: unset;
+                }
+            }
+        }
+    }
+}
+
+.admin__scope-old {
+    .data-table,
+    .admin__control-table {
+        tfoot {
+            .col-actions-add {
+                padding: 0;
+                
+                > button {
+                    margin: @indent__m;
+                }
+            }
+        } 
+    }
+}

@@ -1,0 +1,266 @@
+//
+//  Imports
+//  _____________________________________________
+
+@import './actions/_actions-dropdown.less';
+@import './actions/_actions-split.less';
+@import './actions/_actions-select.less';
+// @import './actions/_actions-multicheck.less';
+@import './actions/_actions-multiselect.less';
+@import './actions/_actions-switcher.less';
+
+//
+//  Extends
+//  _____________________________________________
+
+.abs-action-pattern {
+    font-weight: @font-weight__heavier;
+    transition: @smooth__background-color, @smooth__color;
+}
+
+.abs-action-l {
+    font-size: @action__font-size;
+    letter-spacing: unset;
+    padding: @button__large__padding-vertical @button__large__padding-horizontal;
+}
+
+.abs-action-delete {
+    font-size: @action__font-size;
+}
+
+//
+//  Abstract Actions, uncomment in case any modifications are added to .action-...
+//  ---------------------------------------------
+
+// .abs-action-default {
+//     .action-default();
+// }
+
+.abs-action-primary {
+    .action-primary();
+}
+
+.abs-action-secondary {
+    .action-secondary();
+}
+
+// .abs-action-tertiary {
+//     .action-tertiary();
+// }
+
+.abs-action-quaternary {
+    .action-quaternary();
+}
+
+//
+//  Default action
+//  ---------------------------------------------
+
+.action-default {
+    border-radius: @radius__xl;
+}
+
+.action-default,
+button {
+    &:hover,
+    &:active,
+    &:focus {
+        color: @button__hover__color;
+    }
+}
+
+//
+//  Primary action
+//  ---------------------------------------------
+
+.action-primary {
+    border-radius: @radius__xl;
+}
+
+//
+//  Secondary action
+//  ---------------------------------------------
+
+.action-secondary {
+    border-radius: @radius__xl;
+    text-shadow: unset;
+    
+    &:active,
+    &:hover,
+    &:focus {
+        color: @button-secondary__hover__color;
+    }
+}
+
+//
+//  Tertiary action
+//  ---------------------------------------------
+
+.action-tertiary {
+    border-radius: @radius__xl;
+
+    &:active,
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: @link__hover__color;
+    }
+}
+
+//
+//  Quaternary action
+//  ---------------------------------------------
+
+.action-quaternary {
+    border-radius: @radius__xl;
+    background-color: @button-quaternary__background-color;
+    color: @button-quaternary__color;
+
+    &:hover {
+        background-color: @button-quaternary__hover__background-color;
+        color: @button-quaternary__hover__color;
+    }
+    
+    &:active,
+    &:focus {
+        background-color: @button-quaternary__active__background-color;
+        color: @button-quaternary__active__color;
+    }
+}
+
+//
+//  Specific actions
+//  ---------------------------------------------
+
+.action-close {
+    &:active {
+        transform: unset;
+    }
+}
+
+//
+//  Action menu
+//  ---------------------------------------------
+
+//  Used in actions split, action select and all other simple (one line) action menu list
+.action-menu {
+    background-color: @action-menu__background-color;
+    border: @action-menu__border-size @action-menu__border-style @action-menu__border-color;
+    border-radius: @action-menu__border-radius;
+    box-shadow: @component__box-shadow__base;
+    margin: @action-menu__margin;
+    padding: @action-menu__padding;
+    line-height: 1.8rem;
+    font-size: @font-size__base;
+
+    &._active {
+        display: block;
+    }
+
+    > li {
+        transition: @smooth__background-color;
+
+        > a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &._visible {
+            background-color: @action-menu-item__active__background-color;
+            color: @action-menu-item__active__color;
+        }
+
+        &:hover {
+            background-color: @action-menu-item__hover__background-color;
+            color: @action-menu-item__hover__color;
+        }
+
+        &:active {
+            background-color: @action-menu-item__active__background-color;
+            color: @action-menu-item__active__color;
+        }
+
+        &._parent {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-direction(row);
+
+            > .action-menu-item {
+                .lib-icon-font(
+                @icon-arrowdown__content,
+                @icons-admin__font-name,
+                @_icon-font-size: .8rem,
+                @_icon-font-line-height: 1,
+                @_icon-font-color: inherit,
+                @_icon-font-margin: -@indent__xs 0 0 0,
+                @_icon-font-position: after
+                );
+
+                position: relative;
+
+                &::after {
+                    transform: rotate(-90deg);
+                    position: absolute;
+                    right: @indent__base;
+                    top: 50%;
+                }
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .item,
+    .action-menu-item {
+        margin: @action-menu-item__margin;
+        padding: @action-menu-item__padding;
+    }
+}
+
+//  Right triangle
+.abs-action-wrap-triangle-right {
+    padding-right: 0;
+
+    .action-default {
+        &.action-next-step {
+           &:extend(.abs-action-primary all);
+        }
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+
+//  Left triangle
+.abs-action-wrap-triangle-left {
+    padding-left: 0;
+
+    .action-default {
+        text-indent: unset;
+
+        &.action-back-step {
+           &:extend(.abs-action-secondary all);
+        }
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+
+//
+//  Nesting structure
+//  _____________________________________________
+
+.messages {
+    .message {
+        button {
+            &:extend(.abs-action-primary all);
+        }
+    }
+}

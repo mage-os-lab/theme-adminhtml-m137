@@ -1,0 +1,76 @@
+//
+//  Variables
+//  _____________________________________________
+
+// @footer__background-color: @body__background-color;
+@footer__border-color: transparent;
+@footer__border-width: 0;
+@footer__color: @neutral-50;
+@footer-version__color: @neutral-10;
+// @footer-copyright__color: @color-gray40;
+
+@footer-link__color: @neutral-10;
+@footer-link__text-decoration: none;
+
+@footer-link__hover__color: @neutral-20;
+@footer-link__hover__text-decoration: none;
+
+//
+//  Footer
+//  _____________________________________________
+
+.page-footer {
+    font-size: 1.3rem;
+    padding: @indent__xl @indent__l;
+    position: sticky;
+    top: 100%;
+
+    a {
+        color: @footer-link__color;
+        text-decoration: @footer-link__text-decoration;
+
+        &:hover {
+            color: @footer-link__hover__color;
+            text-decoration: @footer-link__hover__text-decoration;
+        }
+    }
+}
+
+.magento-version {
+    margin-bottom: @indent__xs;
+    color: @footer-version__color;
+
+    strong {
+        font-weight: @font-weight__regular;
+    }
+}
+
+//
+//  Copyright
+//  ---------------------------------------------
+
+.copyright {
+    row-gap: @indent__xs;
+    align-items: flex-start;
+
+    .link-copyright {
+        &:hover {
+            color: @footer-link__hover__color;
+        }
+    }
+}
+
+.footer-legal {
+    padding-top: 0;
+}
+
+.footer-legal-system {
+    .link-report {
+        margin-left: @indent__s;
+        margin-right: @indent__s;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,163 @@
+//
+//  Main elements -> Actions bar -> Store Switcher
+//  _____________________________________________
+
+.store-switcher {
+    font-size: @font-size__base;
+
+    .admin__action-dropdown {
+        margin-left: 0;
+        background-color: @neutral-90;
+        color: @neutral-10;
+        border-radius: @radius__xl;
+
+        &.active,
+        &:hover {
+            background-color: @color-white;
+            color: @neutral-10;
+        }
+    }
+
+    .actions {
+        .admin__action-dropdown {
+            .lib-vendor-prefix-display(flex) !important;
+
+            font-size: @button__font-size;
+            line-height: 1;
+            font-weight: @font-weight__heavier;
+            letter-spacing: normal;
+            border: 0;
+            padding: 0.9rem @indent__base;
+            align-items: center;
+
+            .lib-icon-font(
+                @icon-stores__content,
+                @icons-admin__font-name,
+                @_icon-font-size: 1.8rem,
+                @_icon-font-line-height: 1,
+                @_icon-font-color: inherit,
+                @_icon-font-margin: 0 @indent__s 0 0
+            );
+
+            &::after {
+                margin-top: 0;
+                margin-left: @indent__s;
+                position: static;
+            }
+        }   
+    }
+
+    .dropdown {
+        .dropdown-menu {
+            line-height: 1.8rem;
+            min-width: 23rem;
+            margin-top: 0;
+            padding-top: @indent__s;
+            padding-bottom: @indent__s;
+            border: 0;
+            border-radius: @radius__xs;
+            
+            li {
+                a,
+                span {
+                    font-size: @font-size__base;
+                    color: @action-dropdown__color;
+                    padding: 1rem @indent__base;
+                    transition: @smooth__background-color;
+                }
+                
+                a {
+                    &:hover {
+                        background: @neutral-90;
+                        color: @action-dropdown__hover__color;
+                    }
+                }
+            }
+
+            .disabled {
+                a,
+                span {
+                    opacity: .5;
+                    padding-top: @indent__xs / 2;
+                    padding-bottom: @indent__xs / 2;
+                }
+            }
+
+            .current {
+                span {
+                    font-size: @font-size__base;
+                    line-height: 1.8rem;
+                    background: @neutral-95;
+                    padding: 1rem @indent__base;
+                    opacity: 1;
+                }
+            }
+
+            .store-switcher-website {
+                a,
+                span {
+                    padding-left: 2.4rem;
+                }
+            }
+
+            .store-switcher-store {
+                a,
+                span {
+                    padding-left: @indent__xl;
+                }
+            }
+
+            .store-switcher-store-view {
+                a,
+                span {
+                    padding-left: 4rem;
+                }
+            }
+        }
+    }
+}
+
+.store-switcher {
+    margin-top: 0;
+}
+
+.store-view {
+    .store-switcher-label {
+        display: none;
+    }
+}
+
+//
+//  Tooltip
+//  ---------------------------------------------
+
+.tooltip {
+    margin-left: 0;
+
+    .help {
+        span,
+        a {
+            &::before {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.store-switcher {
+    .tooltip {
+        margin-top: .6rem;
+        margin-left: @indent__l;
+    }
+
+    .admin__field-tooltip {
+        .admin__field-tooltip-action {
+            color: @neutral-10;
+            
+            &::before {
+                color: inherit;
+            }
+        }
+
+    }
+}

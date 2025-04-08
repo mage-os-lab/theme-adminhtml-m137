@@ -1,0 +1,21 @@
+//
+//  Wysiwyg form control styles
+//  _____________________________________________
+
+.admin__control-wysiwig {
+    .buttons-set {
+        margin: 0 0 @indent__l;
+
+        .action-show-hide {
+           &:extend(.abs-action-secondary all);
+        }
+
+        button {
+            margin-right: @indent__base;
+        }
+    }
+
+    textarea {
+        &:extend(.admin__control-textarea all);
+    }
+}

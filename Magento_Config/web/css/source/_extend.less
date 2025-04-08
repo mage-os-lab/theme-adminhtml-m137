@@ -1,0 +1,38 @@
+//
+//  Stores > | Settings | Configuration
+//  _____________________________________________
+
+.section-config {
+    &:last-of-type {
+        .config {
+            padding-bottom: @indent__s;
+        }
+    }
+
+    &.config-advanced {
+        padding-top: @indent__base;
+    }
+    
+    &.with-button {
+        padding-top: @indent__base;
+        padding-bottom: @indent__base;
+
+        .config-heading {
+            strong {
+                font-weight: @font-weight__semibold;
+                margin-bottom: @indent__s;
+            }
+        }
+    }
+
+    .system-fieldset-sub-head {
+        td {
+            h4 {
+                &:first-child {
+                    padding-top: 0;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

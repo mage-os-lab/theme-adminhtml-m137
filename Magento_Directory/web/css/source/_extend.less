@@ -1,0 +1,35 @@
+//
+//  Extend
+//  _____________________________________________
+
+#row_currency_import_time {
+    td.value {
+        &:extend(.abs-table-form-list-col-3 all);
+    }
+}
+
+#row_reports_dashboard_ytd_start {
+    td.value {
+        select {
+            width: ~'calc((100% - @{indent__l}) / 2)' !important;
+            margin-right: @indent__l;
+            margin-left: -@indent__xs;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+#row_reports_dashboard_mtd_start {
+    td.value {
+        select {
+            width: 100% !important;
+        }
+    }
+}

@@ -1,0 +1,263 @@
+//
+//  UI -> Data Grid -> Header -> Filters
+//  _____________________________________________
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active,
+input:-internal-autofill-selected {
+    -webkit-box-shadow: 0 0 0 100rem @field-control__background-color inset;
+    background: @field-control__background-color;
+}
+
+//
+//  Variables
+//  _____________________________________________
+
+@data-grid-search-action__size: 1.8rem;
+// @data-grid-search-menu-item__background-color: @color-blue-clear-sky;
+
+@data-grid-filters__font-size: 1.4rem;
+@data-grid-filters__background-color: transparent;
+// @data-grid-filters__background-color: @page-wrapper__background-color;
+
+@data-grid-filters-fieldset__inner-side: 2.4rem;
+@data-grid-filters-fieldset__columns: 4;
+
+// @data-grid-filters-label__width: 25%;
+
+@data-grid-filters-action__padding-right: 1.6rem;
+@data-grid-filters-action__padding-left: 1.6rem;
+@data-grid-filters-action__active__border-color: transparent;
+@data-grid-filters-action__active__color: transparent;
+
+@data-grid-filters-current__margin-borrom: 0;
+@data-grid-filters-current-action-remove__background-color: @neutral-10;
+@data-grid-filters-current-action-remove__hover__background-color: @neutral-20;
+@data-grid-filters-current-action-remove__size: 1rem;
+
+// @data-grid-search-menu__z-index: @data-grid-overlay__z-index - 1;
+// @data-grid-search-control-action-menu-item__quantity: 5;
+
+//
+//  Filter action & search
+//  _____________________________________________
+
+//  Data Grid Search
+.catalog-product-index {
+    .admin__data-grid-outer-wrap {
+        > .admin__data-grid-header {
+            .data-grid-search-control-wrap {
+                position: absolute;
+                top: 0;
+            }
+        }
+    }
+}
+
+.data-grid-search-control-wrap {
+    
+    //  Submit/search icon
+    .action-submit {
+        padding: @indent__s;
+        line-height: 1;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+//  Action
+.data-grid-filters-action-wrap {
+    .action-default {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        line-height: 1;
+        padding-top: @action__padding-top;
+        background-color: @data-grid-filters__background-color;
+
+        &._active {
+            margin: 0;
+            padding-top: @action__padding-top;
+            padding-bottom: @action__padding-bottom;
+            background-color: @button__background-color;
+            border-color: @button__background-color;
+            color: @button__color;
+            font-weight: @font-weight__heavier;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &::before {
+            font-size: @action-dropdown-toggle-icon__font-size;
+            margin-right: @indent__s;
+            top: 0;
+        }
+    }
+}
+
+//
+//  Filters content
+//  ---------------------------------------------
+
+.admin__data-grid-filters-wrap {
+    width: 100%;
+
+    &._show {
+        padding: @indent__l;
+        background-color: @color-white;
+        border-radius: @radius__l;
+        margin-top: @indent__base;
+        margin-bottom: 0;
+        float: left;
+        clear: both;
+
+        .admin__data-grid-filters {
+            display: flex;
+            flex-wrap: wrap;
+            min-width: 100%;
+        }
+    }
+
+    //  Field labels
+    .admin__form-field-legend,
+    .admin__form-field-label {
+        font-weight: @font-weight__semibold;
+        margin: 0 0 @indent__s;
+    }
+
+    //  First level field
+    .admin__form-field {
+
+        //  Inner fields
+        .admin__form-field {
+            position: relative;
+            
+            //  Inner field labels
+            .admin__form-field-label {
+                position: absolute;
+                left: @indent__m;
+                color: @neutral-50;
+                padding-right: 0;
+            }
+
+            .admin__form-field-control {
+                margin-left: 0;
+
+                .admin__control-text {
+                    padding-left: 5.6rem;
+                }
+            }
+        }
+    }
+
+    .admin__control-select {
+        padding-top: @field-control__padding-top;
+    }
+}
+
+//  Filters content wrap
+.admin__data-grid-filters {
+    >  .admin__form-field {
+        width: ~'calc(100% / @{data-grid-filters-fieldset__columns})';        
+    }
+}
+
+//  Filters footer
+.admin__data-grid-filters-footer {
+    .admin__footer-main-actions {
+        .action-secondary {
+           &:extend(.abs-action-primary all);
+        }
+    }
+}
+
+//
+//  Chips
+//  _____________________________________________
+
+//  Current chips
+.admin__data-grid-filters-current {
+    border-radius: @radius__xl;
+    background-color: @color-white;
+    border-top: 0;
+    border-bottom: 0;
+    padding: @indent__m;
+
+    &._show {
+        top: 0;
+        margin-top: @indent__base;
+        margin-bottom: @data-grid-filters-current__margin-borrom;
+        float: left;
+        clear: both;
+        z-index: @data-grid-header__z-index - 15;
+
+        + .admin__data-grid-filters-wrap {
+            &._show {
+                padding-top: @indent__l * 2 - @data-grid-filters-current__margin-borrom;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                margin-top: -2.2rem;
+            }
+        }
+    }
+    
+    .admin__current-filters-title {
+        display: none;
+    }
+}
+
+.admin__current-filters-actions-wrap {
+    vertical-align: middle;
+}
+
+.admin__current-filters-list {
+    font-size: @font-size__s;
+    line-height: 1.6rem;
+
+    > li {
+        margin-left: 0;
+        margin-bottom: 0;
+        border-radius: @radius__xl;
+        background-color: @neutral-95;
+        padding-top: @indent__xs;
+        padding-bottom: @indent__xs;
+        padding-left: @indent__m;
+        padding-right: @data-grid-filters-current-action-remove__size + 1.4rem;
+
+        span + span {
+            font-weight: @font-weight__heavier;
+        }
+    }
+
+    .action-remove {
+        top: 0;
+        line-height: 0;
+        padding: .7rem;
+
+        &::before {
+            content: @icon-close-mage__content;
+            line-height: @data-grid-filters-current-action-remove__size;
+        }
+    }
+}
+
+.admin__current-filters-actions-wrap {
+    .action-clear {
+        padding-left: @indent__m;
+        padding-right: @indent__m;
+    }
+}
+
+//  Filters
+.admin__data-grid-filters-wrap {
+    .admin__fieldset {
+        &.admin__data-grid-filters {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}

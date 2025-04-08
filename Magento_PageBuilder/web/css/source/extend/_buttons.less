@@ -1,0 +1,33 @@
+//
+//  Variables
+//  _____________________________________________
+
+// @pagebuilder-button__margin: 0 10px 10px 0;
+// @pagebuilder-button__font-size: 18px;
+// @pagebuilder-button__line-height: @pagebuilder-button__font-size + 4;
+@color-pagebuilder-switcher-light-gray: @neutral-90;
+
+//
+//  Buttons _buttons contains less for generic buttons
+//  _____________________________________________
+
+.page-builder-viewport {
+    background-color: transparent;
+    padding: @button__padding-top @button__large__padding-horizontal @button__padding-bottom @button__large__padding-horizontal;
+    line-height: 0;
+    opacity: 1;
+
+    &[disabled] {
+        background-color: @neutral-90;
+    }
+
+    img {
+        height: 2.4rem;
+        width: 2.4rem;
+        filter: invert(8%) sepia(7%) saturate(6%) hue-rotate(314deg) brightness(90%) contrast(73%);
+    }
+
+    &.desktop-switcher {
+        margin-right: 0;
+    }
+}

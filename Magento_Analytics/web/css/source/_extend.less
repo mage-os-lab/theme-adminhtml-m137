@@ -1,0 +1,65 @@
+//
+//  Variables
+//  _____________________________________________
+
+@button-advanced-reports__background-color: @button-primary__background-color;
+@button-advanced-reports__color: @button-primary__color;
+
+@button-advanced-reports__hover__background-color: @button-primary__hover__background-color;
+@button-advanced-reports__hover__border-color: @button-primary__hover__border-color;
+
+//
+//  Extend
+//  _____________________________________________
+
+#row_analytics_general_collection_time {
+    td.value {
+        &:extend(.abs-table-form-list-col-3 all);
+    }
+}
+
+//
+//  Dashboard section
+//  _____________________________________________
+
+.dashboard-advanced-reports-actions {
+    margin-right: 0;
+}
+
+.dashboard-advanced-reports {
+    padding: 0;
+    border: 0;
+}
+
+.action-advanced-reports {
+    &:extend(.abs-action-primary all);
+    text-shadow: none;
+    
+    &::after {
+        display: none;
+    }
+}
+
+.dashboard-advanced-reports-content {
+    line-height: @line-height__l;
+}
+
+//
+//  Configuration additional comment (system_config/edit/key/.../section/analytics/)
+//  _____________________________________________
+
+.config-additional-comment {
+    border: 0;
+    margin: 0;
+    padding: @indent__m @indent__base;
+    background-color: @blue-90;
+    border-radius: @radius__s;
+}
+
+.config-additional-comment-title {
+    margin-bottom: @indent__s;
+}
+
+.config-additional-comment-content {
+    line-height: @line-height__base;
+}

@@ -1,0 +1,350 @@
+//
+//  Variables
+//  _____________________________________________
+
+// @menu-wrapper__z-index: @menu__z-index - 1;
+@menu__background-color: @neutral-95;
+@menu-logo__padding-bottom: @indent__s;
+// @menu-logo__outer-size: @menu-logo__padding-top + @menu-logo-img__height + @menu-logo__padding-bottom;
+@menu-logo__padding-top: @indent__s;
+@menu-logo-img__height: 2.4rem;
+@menu-logo-img__width: auto;
+@menu-item__color: @neutral-20;
+@menu-item__font-size: 1.1rem;
+@menu-item__active__background-color: @neutral-90;
+@menu-item__active__color: @neutral-10;
+@menu-item__hover__background-color: @neutral-90;
+@menu-item-icon__height: 2.4rem;
+@menu-line-before__background-color: @menu__background-color;
+// @menu-line-before__height: 1px;
+// @menu-overlay__z-index: @menu__z-index - 3;
+@submenu__background-color: @menu__background-color;
+@submenu__padding-horizontal: @indent__base;
+@submenu__padding-vertical: @indent__s;
+// @submenu__z-index: @menu__z-index - 2;
+// @submenu__height: 720px;
+// @submenu-column__width: 23.8rem;
+// @submenu-column__width__l: 19.8rem;
+@submenu-title__color: @neutral-10;
+@submenu-link__color: @neutral-20;
+@submenu-link__padding-vertical: 1.1rem;
+@submenu-link__active__background-color: @neutral-90;
+@submenu-link__focus__background-color: @neutral-90;
+@submenu-section-label__color: @neutral-10;
+@submenu-heading-group__indent-bottom: 4.8rem;
+@submenu-action-close__indent-right: @indent__l;
+
+//
+//  Utilities
+//  _____________________________________________
+
+.admin__menu-link() {
+    font-size: @menu-item__font-size;
+    letter-spacing: unset;
+    padding: @indent__s 0;
+    text-transform: none;
+
+    &::before {
+        font-size: @menu-item-icon__height;
+        height: auto;
+        padding: 0.6rem;
+        margin-bottom: @indent__xs;
+        border-radius: @radius__xl;
+        box-sizing: border-box;
+        transition: @smooth__background-color;
+    }
+}
+
+//
+//  Menu wrapper
+//  _____________________________________________
+
+.menu-wrapper {
+    height: 100%;
+
+    .logo {
+        margin: 1.4rem @indent__s @indent__s @indent__s;
+
+        &:hover {
+            .logo-img {
+                -webkit-filter: unset;
+                filter:  unset;
+            }
+        }
+
+        &:active {
+            .logo-img {
+                transform: unset;
+            }
+        }
+    }
+}
+
+//
+//  First menu level
+//  _____________________________________________
+
+.abs-menu-separator {
+    display: none;
+}
+
+.admin__menu {
+    //  External link marker
+    [target='_blank'] {
+        position: relative;
+
+        &::after {
+            font-size: 1rem;
+            position: absolute;
+            margin-left: @indent__s;
+        }
+    }
+
+    .level-0 {
+        padding: 0 @indent__s @indent__s @indent__s;
+    }    
+
+    .level-0 {
+        &._active,
+        &._current,
+        &:hover {
+            > a {
+                color: @menu-item__active__color;
+            }
+        }
+
+        &._active {
+            > a {
+                background-color: transparent;
+                
+                &::before {
+                    background-color: @menu-item__active__background-color;
+                }
+            }
+        }
+
+        &._current {
+            > a {
+                background-color: transparent;
+                font-weight: @font-weight__semibold;
+                
+                &::before {
+                    background-color: @menu-item__active__background-color;
+                }
+            }
+        }
+
+        &:hover {
+            > a {
+                background-color: transparent;
+
+                &::before {
+                    background-color: @menu-item__hover__background-color;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Second menu level
+//  _____________________________________________
+
+.admin__menu {
+    .level-0 {
+        > .submenu {
+            padding: @indent__xl 0;
+            box-shadow: @submenu-shadow;
+            border-radius: 0 @indent__l @indent__l 0;
+            border-left: .1rem solid @neutral-90;
+        }
+    }
+    
+    .submenu {
+        a {
+            transition: @smooth__background-color;
+        }
+
+        .parent {
+            margin-bottom: @submenu-heading-group__indent-bottom;
+
+            //  Section title
+            .submenu-group-title {
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-bottom: @indent__base;
+            }
+        }
+
+        .submenu-title {
+            font-size: @h3__font-size;
+            line-height: @h3__line-height;
+            font-weight: @h3__font-weight;
+
+            margin-bottom: @indent__xl;
+            margin-right: @submenu-action-close__indent-right * 2;
+        }
+
+        .submenu-sub-title {
+            padding: 0 @submenu__padding-horizontal;
+            margin: 0 0 @indent__base 0;
+        }
+
+        .action-close {
+            color: @submenu-section-label__color;
+            padding: @indent__s;
+            margin-top: @indent__l;
+            margin-right: @submenu-action-close__indent-right;
+
+            &::before {
+                color: inherit;
+                font-size: 1.8rem;
+                line-height: 1rem;
+                width: 1.8rem;
+                height: 1.8rem;
+                display: inline-block;
+            }
+
+            &:hover {
+                color: @neutral-20;
+
+                &::before {
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+    [class*='level-'] {
+        &:not(.level-0) {
+            a {
+                border-radius: @radius__xl;
+                font-size: @font-size__base;
+                line-height: 1.1428571429;
+
+                &:active {
+                    padding-bottom: @submenu-link__padding-vertical;
+                    padding-top: @submenu-link__padding-vertical;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Menu icons
+//  _____________________________________________
+
+.admin__menu {
+    .level-0 {
+        &[class*='item-'] {
+            > a {
+                &::before {
+                    font-size: @menu-item-icon__height;
+                    height: auto;
+                    padding: 0.6rem;
+                }
+            }
+        }
+    }
+
+    .item-dashboard {
+        &._current {
+            > a {
+                &::before {
+                    content: @icon-dashboard-fill__content;
+                }
+            }
+        }
+    }
+
+    .item-sales {
+        &._current {
+            > a {
+                &::before {
+                    content: @icon-sales-fill__content;
+                }
+            }
+        }
+    }
+
+    .item-catalog {
+        &._current {
+            > a {
+                &::before {
+                    content: @icon-product-fill__content;
+                }
+            }
+        }
+    }
+
+    .item-customer {
+        &._current {
+            > a {
+                &::before {
+                    content: @icon-customers-fill__content;
+                }
+            }
+        }
+    }
+
+    .item-marketing {
+        &._current {
+            > a {
+                &::before {
+                    content: @icon-promotions-fill__content;
+                }
+            }
+        }
+    }
+
+    .item-content {
+        &._current {
+            > a {
+                &::before {
+                    content: @icon-cms-fill__content;
+                }
+            }
+        }
+    }
+
+    .item-report {
+        &._current {
+            > a {
+                &::before {
+                    content: @icon-reports-fill__content;
+                }
+            }
+        }
+    }
+
+    .item-stores {
+        &._current {
+            > a {
+                &::before {
+                    content: @icon-stores-fill__content;
+                }
+            }
+        }
+    }
+
+    .item-system {
+        &._current {
+            > a {
+                &::before {
+                    content: @icon-systems-fill__content;
+                }
+            }
+        }
+    }
+
+    .item-partners {
+        &._current {
+            > a {
+                &::before {
+                    content: @icon-lego-fill__content
+                }
+            }
+        }
+    }
+}

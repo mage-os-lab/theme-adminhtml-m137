@@ -1,0 +1,192 @@
+//
+//  Image Management Variables
+//  _____________________________________________
+
+// @image-gallery__margin-bottom: 3rem;
+
+// @image-gallery-image-hidden__z-index: @image-gallery-image__z-index + 1;
+// @image-gallery-image__margin: 1.2rem;
+// @image-gallery-image__z-index: 1;
+@image-gallery-image-title__font-size: 1.4rem;
+// @image-gallery-image-resolution__color: @color-very-dark-gray;
+// @image-gallery-image-resolution__font-size: @font-size__s;
+
+@image-gallery-placeholder-icon__color: @neutral-80;
+@image-gallery-placeholder-icon__size: 9.5rem;
+// @image-gallery-placeholder__background: @color-white;
+@image-gallery-placeholder__border: .1rem solid @neutral-70;
+@image-gallery-placeholder__height: 20rem;
+// @image-gallery-placeholder__width: @image-gallery-placeholder__height;
+
+@image-gallery-icons__color: @neutral-10;
+@image-gallery-icons__hover__color: @neutral-20;
+
+// @image-gallery-action__z-index: @image-gallery-image-hidden__z-index + 1;
+
+// @image-gallery-fade__z-index: @image-gallery-action__z-index + 1;
+
+//
+//  Image Management
+//  _____________________________________________
+
+.image {
+    margin: @indent__base;
+
+    .product-image-wrapper {
+        border-radius: @image-gallery-placeholder__border-radius;
+        transition: @smooth__border-color;
+        margin-bottom: @indent__m;
+
+        &:hover {
+            border-color: @image-gallery-placeholder__hover__border-color;
+
+            .product-image {
+                opacity: .75;
+            }
+        }
+    }
+
+    //  Image Placeholder
+    &.image-placeholder {
+        .product-image-wrapper {
+            &::before {
+                top: @indent__xl;
+            }
+        }
+
+        &::before {
+            .product-image-wrapper {
+                border-color: @image-gallery-placeholder__hover__border-color;
+            }
+        }
+    }
+
+    .image-placeholder-text {
+        padding: 0 @indent__xl;
+        color: @neutral-60;
+        margin-bottom: @indent__xl;
+    }
+
+    .item-description {
+        color: @neutral-30;
+    }
+
+    .item-title {
+        margin-bottom: @indent__xs;
+    }
+
+    .item-role {
+        background: @neutral-95;
+        color: @neutral-20;
+        border-radius: @radius__base;
+        font-weight: @font-weight__heavier;
+        line-height: @line-height__base;
+        margin: 0 @indent__s @indent__s 0;
+        padding: @indent__xs @indent__m;
+    }
+}
+
+//
+//  Gallery image panel
+//  ---------------------------------------------
+
+.image-panel {
+    box-shadow: none;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.image-panel-controls {
+    .image-name {
+        font-size: @h4__font-size;
+        line-height: @h4__line-height;
+        font-weight: @h4__font-weight;
+        margin-bottom: @indent__base;
+        color: @h4__font-color;
+    }
+}
+
+//
+//  Image Panel Controls, Preview
+//  _____________________________________________
+
+.image-panel-preview {
+    -ms-flex-item-align: start;
+    -webkit-align-self: start;
+    align-self: start;
+}
+
+.image-panel-controls {
+    -ms-flex: 0 0 50%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    flex: 0 0 50%;
+    padding-left: @indent__xl;
+}
+
+//
+//  Custom Multiselect
+//  _____________________________________________
+
+.image-panel-controls,
+.gallery {
+    .multiselect-alt {
+        border: none;
+
+        .item {
+            border-top: none;
+            cursor: default;
+            color: @field-control__color;
+
+            &:first-child {
+                border-top: 0;
+            }
+
+            label {
+                line-height: 2rem;
+
+                &::after {
+                    color: @neutral-70;
+                    border: solid 1px;
+                    left: 8px;
+                    position: absolute;
+                    top: 6px;
+                    width: 16px;
+                    height: 16px;
+                    content: '';
+                    border-radius: @radius__xs;
+                }
+            }
+
+            &.selected {
+                background: transparent;
+                color: @field-control__color;
+
+                &:hover {
+                    background: transparent;
+                }
+
+                label {
+                    &::before {
+                        color: @color-white;
+                        z-index: 1;
+                        font-size: 1.1rem;
+                        width: 1.6rem;
+                        top: 4px;
+                    }
+
+                    &::after {
+                        border-color: @blue-50;
+                        background: @blue-50;
+                    }
+                }
+            }
+        }
+
+        label {
+            display: inline-block;
+            padding: .6rem @indent__m .5rem @indent__xl;
+        }
+    }
+}

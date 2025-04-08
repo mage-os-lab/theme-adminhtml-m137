@@ -1,0 +1,91 @@
+//
+//  Page header -> Actions group -> Global search
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+// @search-global__z-index: @user-account-menu__z-index - 10;
+
+// @search-global-field__width: @search-global-input__width;
+
+// @search-global-input__font-size: @font-size__base;
+@search-global-input__height: 3.6rem;
+@search-global-input__padding-bottom: .3rem;
+@search-global-input__padding-top: .3rem;
+@search-global-input__padding-side: .3rem;
+// @search-global-input__width: @search-global-icon__width + @search-global-input__padding-side * 2;
+
+// @search-global-input__active__padding-right: @search-global-icon__height + 2rem;
+@search-global-input__active__width: 33.5rem;
+
+@search-global-label-icon__color: @action-dropdown-toggle__color;
+@search-global-icon__height: 2.4rem;
+@search-global-icon__width: 2.4rem;
+
+// @search-global-action__width: @search-global-input__active__padding-right;
+
+//
+//  Global search
+//  _____________________________________________
+
+.search-global-field {
+    &._active {
+        .search-global-input {
+            box-shadow: unset;
+        }
+    }
+
+    //  Autocomplete
+    .autocomplete-results {
+        right: -@indent__s;
+    }
+
+    .search-global-menu {
+        background-color: @action-dropdown__background-color;
+        border: none;
+        border-radius: @radius__xs;
+        margin-top: -@indent__2xs;
+        padding: @indent__s 0;
+
+        > li {
+            background-color: unset;
+            border-top: none;
+            padding: 1rem @indent__base;
+            line-height: 1.8rem;
+
+            &._active {
+                background-color: @action__hover__background-color;
+            }
+        }
+    }
+}
+
+.search-global-label {
+    height: unset;
+    top: .1rem;
+
+    &:active {
+        .scale(1);
+    }
+
+    &:hover {
+        &::before {
+            color: @action-dropdown-toggle__hover__color;
+        }
+    }
+
+    &::before {
+        transition: @smooth__color;
+    }
+}
+
+.search-global-input {
+    border-radius: @radius__xl;
+    height: @search-global-input__height;
+    padding: @indent__s @indent__base 1rem @indent__base;
+    right: -@indent__s;
+    top: -@indent__2xs;
+    transition: @smooth__background-color, @smooth__width;
+}

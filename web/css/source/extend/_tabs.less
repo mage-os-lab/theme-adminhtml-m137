@@ -1,0 +1,41 @@
+//
+//  Horizontal tabs
+//  _____________________________________________
+
+.tabs-horiz {
+    //  Default tab
+    .ui-state-default {
+        background: transparent;
+        border: 0;
+        letter-spacing: unset;
+        margin-right: 0;
+        font-weight: @font-weight__semibold;
+    }
+
+    //  Active tab
+    .ui-state-active {
+        background: transparent;
+
+        .ui-tabs-anchor {
+            border-top: 0;
+            border-bottom: .2rem solid @neutral-10;
+            padding-top: 1rem;
+            padding-bottom: @indent__s;
+        }
+    }
+
+    .ui-tabs-anchor {
+        color: @neutral-20;
+        padding: 1rem @indent__l;
+        line-height: 2rem;
+
+        &:hover {
+            color: @neutral-10;
+        }
+    }
+}
+
+//  Tabs content
+.ui-tabs-panel {
+    padding: @indent__l 0 0 0;
+}

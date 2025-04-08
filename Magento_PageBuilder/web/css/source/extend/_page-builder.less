@@ -1,0 +1,116 @@
+//
+//  Extend
+//  _____________________________________________
+
+//
+//  Stage
+//  ---------------------------------------------
+
+.pagebuilder-stage-wrapper {
+    &.stage-full-screen {
+        .pagebuilder-header {
+            background: @neutral-95;
+            border-bottom: none;
+            justify-content: flex-start;
+            padding: @indent__base;
+            left: 24rem;
+            width: calc(~'100% - 240px');
+
+            .template-buttons {
+                transform: unset;
+                right: @indent__base;
+
+                button {
+                   &:extend(.abs-action-quaternary all);
+                    padding: @button__large__padding-vertical @button__large__padding-horizontal;
+                }
+            }
+
+            .icon-pagebuilder-fullscreen-exit {
+               &:extend(.abs-action-primary all);
+                margin-left: @indent__base;
+                padding: @button__padding-top @button__large__padding-horizontal @button__padding-bottom @button__large__padding-horizontal;
+                line-height: 1;
+            }
+        }
+
+        .pagebuilder-canvas {
+            padding: @indent__l;
+            border-radius: @indent__l;
+            margin-left: @indent__base;
+            margin-right: @indent__base;
+        }
+
+        .pagebuilder-stage {
+            margin-left: 24rem;
+        }
+    }
+}
+
+//
+//  Sortable
+//  ---------------------------------------------
+
+.pagebuilder-placeholder-sortable {
+    background: @blue-50;
+    height: .2rem;
+
+    &::before,
+    &::after {
+        background: @blue-50;
+        height: 1.2rem;
+        margin-top: -.6rem;
+        content: '1';
+    }
+}
+
+//
+//  Overlay
+//  ---------------------------------------------
+
+.pagebuilder-wysiwyg-overlay {
+    border-radius: @indent__xs;
+    left: 0;
+    transition: @smooth__background-color, @smooth__border-color;
+
+    &.visible {
+        border-radius: @indent__xs;
+        border-width: .1rem;
+        width: 100%;
+        height: 100%;
+        transform: unset;
+    }
+
+    &._hover {
+        box-shadow: 0 0 0 .1rem @field-control__active__border-color;
+    }
+}
+
+//
+//  Snapshot
+//  ---------------------------------------------
+
+.stage-content-snapshot {
+    .pagebuilder-stage {
+        .pagebuilder-canvas {
+            margin: 0;
+            padding-top: 0;
+        }
+    }
+}
+
+.pagebuilder-wysiwyg-snapshot {
+    .element-children.content-type-container.root-container-container {
+        background-color: unset;
+    }
+
+    .pagebuilder-stage-wrapper {
+        &.stage-full-screen {
+            background-color: @neutral-95 !important;
+
+            .pagebuilder-stage {
+                width: calc(~'100% - 240px');
+            }
+        }
+    }
+}

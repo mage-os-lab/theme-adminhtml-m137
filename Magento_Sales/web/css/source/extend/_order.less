@@ -1,0 +1,152 @@
+//
+//  Imports
+//  _____________________________________________
+
+@import 'order/_address.less';
+// @import 'order/_discounts.less';
+// @import 'order/_gift-options.less';
+@import 'order/_info.less';
+@import 'order/_items.less';
+@import 'order/_order-account.less';
+// @import 'order/_payment-shipping.less';
+@import 'order/_sidebar.less';
+// @import 'order/_sku.less';
+// @import 'order/_total.less';
+@import 'order/_order-comments.less';
+
+//
+//  Variables
+//  _____________________________________________
+
+// @order-create-icon-refresh__font-size: 2rem;
+@order-create-icon-refresh__color: @link__color;
+@order-create-icon-refresh__hover__color: @link__hover__color;
+
+// @order-create-icon-add__content: @icon-arrow-right__content;
+// @order-create-icon-configure__content: @icon-systems__content;
+// @order-create-icon-remove__content: @icon-delete__content;
+// @order-create-icon-reset__content: @icon-remove-small__content;
+// @order-create-icon-refresh__content: @icon-refresh__content;
+// @order-create-icon-plus__content: @icon-plus__content;
+@order-create-icon-plus__hover__color: @neutral-10;
+
+//
+//  Crosspage components
+//  _____________________________________________
+
+//
+//  Layout
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    //  Default normalize
+    .page-create-order {
+        display: flex;
+        gap: @indent__l;
+        
+        .order-details {
+            width: unset;
+            flex: auto;
+            order: 10;
+        }
+
+    }
+}
+
+.order-view {
+    .admin__data-grid-pager-wrap {
+        .selectmenu {
+            margin-bottom: 0;
+        }
+    }
+
+    .data-grid-search-control-wrap {
+        margin-bottom: 0;
+    }
+}
+
+//
+//  Order sections
+//  ---------------------------------------------
+
+.admin__old {
+    form.admin__fieldset {
+        padding-top: @indent__s;
+        padding-bottom: @indent__s;
+
+        > .admin__field {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+//
+//  Page sections
+//  ---------------------------------------------
+
+.admin__old {
+    .admin__page-section {
+        margin-bottom: @indent__l;
+
+        &.inventory {
+            margin-bottom: @indent__l;
+        }
+    }
+
+    .admin__page-section-title {
+        border-bottom: 0;
+        margin-bottom: @indent__l;
+        padding: 0;
+        
+        strong,
+        .title {
+            &:extend(h3);
+            margin-bottom: 0;
+        }
+    }
+
+    .admin__page-section-item-title,
+    .admin__page-section-content .admin__page-section-title {
+        margin-bottom: @indent__base;
+
+        .title {
+            &:extend(.abs-fieldset-legend all);
+        }
+    }
+}
+
+.admin__page-section {
+    background-color: @color-white;
+    border-radius: @radius__l;
+    padding: @indent__l;
+        
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    
+    &:first-of-type {
+        margin-bottom: @indent__l;
+    }
+
+    .admin__data-grid-header {
+        .admin__data-grid-header-row {
+            & + .admin__data-grid-header-row {
+                margin-top: 0;
+                padding-top: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    .admin__data-grid-wrap {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .field-email {
+        margin-top: 0;
+    }
+}

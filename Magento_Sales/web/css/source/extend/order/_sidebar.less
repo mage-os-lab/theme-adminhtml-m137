@@ -1,0 +1,130 @@
+//
+//  Variables
+//  _____________________________________________
+
+// @order-create-sidebar__font-size: 1.5rem;
+@order-create-sidebar__font-size__xs: @font-family__base;
+@order-create-sidebar__color: @neutral-20;
+@order-create-sidebar__margin: @indent__base;
+@order-create-sidebar__padding: 0;
+@order-create-sidebar__margin__s: @indent__s;
+@order-create-sidebar__margin__m: @indent__m;
+@order-create-sidebar__margin__reqular: @indent__base;
+@order-create-sidebar__border-color: @border__color;
+
+// @order-create-sidebar-scroll__height: 24rem;
+
+//
+//  Order sidebar
+//  _____________________________________________
+
+.order-sidebar {
+    padding-top: 0;
+
+    .order-currency {
+        background-color: @color-white;
+        border-radius: @radius__m;
+        padding: @indent__l;
+        margin-bottom: @indent__l;
+        
+        .admin__field-label {
+            &:extend(h4);
+        }
+    }
+
+    .customer-current-activity {
+        background-color: @color-white;
+        border-radius: @radius__m;
+        padding: @indent__l;
+
+        .data-table {
+            thead {
+                .col-remove {
+                    text-align: center;
+                }
+
+                .col-add {
+                    .icon-add {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            tbody {
+                .col-remove {
+                    .admin__field-label {
+                        padding-left: @control-checkbox-radio__size;
+
+                        &::before {
+                            margin-left: -@control-checkbox-radio__size;
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                .col-add {
+                    .icon-configure {
+                        margin-right: 0;
+                        margin-top: -.5rem;
+                    }
+                }
+            }
+        }
+
+        .admin__table-primary {
+            thead {
+                .col-remove {
+                    text-align: center;
+                }
+
+                .col-add {
+                    .icon-add {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            tbody {
+                .col-add {
+                    .admin__field-label {
+                        padding-left: @control-checkbox-radio__size;
+
+                        &::before {
+                            margin-left: -@control-checkbox-radio__size;
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .actions {
+            margin-top: @order-create-sidebar__margin;
+            padding-top: @order-create-sidebar__padding;
+        }
+    }
+
+    .admin__control-select {
+        margin-bottom: 0;
+    }
+
+    .customer-activity-title {
+        &:extend(h4);
+        border-bottom: 0;
+        margin-bottom: @indent__l;
+        padding-bottom: 0;
+    }
+    
+    .order-sidebar-block {
+        border-bottom: 0;
+        border-top: .1rem solid @order-create-sidebar__border-color;
+        margin: @order-create-sidebar__margin 0 0 0;
+        padding: @order-create-sidebar__margin 0 0 0;
+
+        &:first-of-type {
+            border-top: 0;
+            padding-top: 0;
+            margin-top: 0;
+        }
+    }
+}

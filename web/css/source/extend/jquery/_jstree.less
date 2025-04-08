@@ -1,0 +1,220 @@
+//
+//  Js Tree
+//  _____________________________________________
+
+.jstree {
+    &.jstree-default {
+        margin-bottom: 0;
+
+        .jstree-node,
+        .jstree-icon,
+        .jstree-icon {
+            background-image: unset;
+        }
+
+        .jstree-clicked {
+            background-color: @neutral-95;
+        }
+        
+        .jstree-checkbox {
+            width: 2rem;
+            height: 2rem;
+            margin-right: @indent__xs;
+            background: unset !important;
+            color: @color-white;
+            position: relative;
+
+            &::before,
+            &::after {
+                position: absolute;
+                width: 1.6rem;
+                height: 1.6rem;
+                content: '';
+                top: .3rem;
+                left: @indent__2xs;
+                border: @field-control__border-width solid transparent;
+            }
+
+            &::after {
+                font-family: 'Admin Icons';
+                content: '\e62d';
+                display: inline-block;
+                position: absolute;
+                bottom: 0;
+                margin: 0;
+                background-color: inherit;
+                color: inherit;
+                -webkit-font-smoothing: antialiased;
+                font-size: 1.1rem;
+                line-height: 140%;
+                text-align: center;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            &::before {
+                background-color: @field-control__background-color;
+                border-color: @field-control__border-color;
+                border-radius: @field-control__border-radius;
+            }
+        }
+
+        .jstree-clicked {
+            .jstree-checkbox {
+                &::before {
+                    background-color: @control-checkbox-radio__focus__background-color;
+                    border-color: @control-checkbox-radio__focus__background-color;
+                    color: @control-checkbox-radio-mark__focus__color;
+                }
+            }
+        }
+    }
+
+    &.jstree-checkbox-selection {
+        .jstree-ocl {
+            margin-top: @indent__xs !important;
+            margin-bottom: @indent__xs !important;
+        }
+    }
+
+    .jstree-container-ul {
+        .jstree-anchor {
+            color: @neutral-20;
+            height: unset;
+            padding: @indent__xs @indent__s;
+            border-radius: @radius__l;
+            box-shadow: unset;
+            display: inline-block;
+
+            &.jstree-disabled {
+                color: @neutral-20;
+            }
+
+            &.jstree-hovered {
+                background-color: @neutral-90;
+                color: @neutral-10;
+                
+                &.jstree-disabled {
+                    background-color: @neutral-95;
+                    color: @neutral-20;
+                    cursor: default;
+                }
+            }
+        }
+
+        .jstree-node {
+            > .jstree-icon {
+                margin-top: @indent__xs;
+            }
+        }
+
+        .jstree-leaf {
+            > .jstree-anchor {
+                > .jstree-icon {
+                    background: transparent url('../images/folder.svg') 50% 50% no-repeat;
+                    background-size: 1.6rem;
+                }    
+            }
+        }
+
+        .jstree-anchor {
+            &.jstree-clicked {
+                > .jstree-icon {
+                    background: transparent url('../images/folder-fill.svg') 50% 50% no-repeat;
+                    background-size: 1.6rem;
+                }
+            }
+        }
+
+        .jstree-open {
+            > .jstree-icon {
+                background: transparent url('../images/arrow-up.svg') 50% 50% no-repeat;
+                background-size: 1.3rem;
+            }
+
+            > .jstree-anchor {
+                > .jstree-icon {
+                    background: transparent url('../images/folder-open.svg') 50% 50% no-repeat;
+                    background-size: 1.6rem;
+                }  
+                
+                &.jstree-clicked {
+                    > .jstree-icon {
+                        background: transparent url('../images/folder-fill-open.svg') 50% 50% no-repeat;
+                        background-size: 1.6rem;
+                    }
+                }
+            }
+        }
+
+        .jstree-closed {
+            > .jstree-icon {
+                background: transparent url('../images/arrow-down.svg') 50% 50% no-repeat;
+                background-size: 1.3rem;
+            }
+
+            > .jstree-anchor {
+                > .jstree-icon {
+                    background: transparent url('../images/folder.svg') 50% 50% no-repeat;
+                    background-size: 1.6rem;
+                } 
+                
+                &.jstree-clicked {
+                    > .jstree-icon {
+                        background: transparent url('../images/folder-fill.svg') 50% 50% no-repeat;
+                        background-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Catalog > | Catalog | Categories
+//  _____________________________________________
+
+.categories-side-col {
+    .jstree-container-ul {
+        > .jstree-node {
+            margin-left: 0;
+        }
+
+        ul {
+            .jstree-node {
+                margin-left: @indent__m;
+            }  
+        }
+    }
+
+    .jstree-default {
+        .jstree-icon {
+            width: 2rem;
+            height: 2rem;
+            position: relative;
+            z-index: 1;
+            top: .2rem;
+            box-sizing: border-box;
+            padding-top: .6rem;
+            padding-bottom: .6rem;
+            
+            &.jstree-themeicon {
+                margin-right: .6rem;
+            }
+        }
+        
+        .no-active-category {
+            > a,
+            > a:hover {
+                color: @neutral-60;
+            }
+        }
+
+        .jstree-anchor {
+            &.jstree-clicked {
+                background-color: @neutral-90;
+                border-radius: @radius__l;
+            }
+        }
+    }
+}

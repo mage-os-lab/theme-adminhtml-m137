@@ -1,0 +1,182 @@
+//
+//  Dashboard
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+@dashboard__font-size__base: 1.4rem;
+@dashboard__font-size-l: @h3__font-size;
+// @dashboard-tabs__padding: 2rem;
+@dashboard-tabs__background-color: transparent;
+
+//  Secondary column
+// @dashboard-secondary-table__width-px: 235px;
+// @dashboard-secondary-table-col-name__width-px: 135px;
+// @dashboard-secondary-table-col-value__width-px: 50px;
+
+// @dashboard-secondary-table-col-name__width-pct: @dashboard-secondary-table-col-name__width-px * 100% / @dashboard-secondary-table__width-px;
+// @dashboard-secondary-table-col-value__width-pct: @dashboard-secondary-table-col-value__width-px * 100% / @dashboard-secondary-table__width-px;
+
+//
+//  Tables
+//  ---------------------------------------------
+
+.dashboard-data {
+    th,
+    td {
+        padding: @indent__m 0 @indent__m @indent__m;
+     
+        &:first-child {
+            padding-left: 0;
+        }
+    }
+}
+
+//
+//  Primary column
+//  _____________________________________________
+
+//
+//  Diagram
+//  ---------------------------------------------
+
+.dashboard-diagram-container {
+    padding-bottom: @indent__m;
+}
+
+//  Diagram disabled
+.dashboard-diagram-disabled {
+    padding: @indent__base 0;
+}
+
+//  Range switcher
+.dashboard-diagram-switcher {
+    border-top: .1rem solid @neutral-80;
+    margin-top: 0;
+    padding: @indent__l 0 0 0;
+}
+
+//
+//  Totals: Revenue, Tax, Shipping, Quantity
+//  ---------------------------------------------
+
+.dashboard-totals {
+    margin: @indent__l 0;
+}
+
+.dashboard-totals-list {
+    .lib-vendor-prefix-display(flex);
+    
+    &:extend(.abs-clearfix-reset all);
+    gap: @indent__l;
+}
+
+.dashboard-totals-item {
+    padding: @indent__base;
+    background-color: @neutral-90;
+    border-radius: @radius__m;
+
+    &:first-child {
+        .price {
+            color: @neutral-10;
+        }
+    }
+}
+
+.dashboard-totals-label {
+    font-size: @font-size__s;
+    font-weight: @font-weight__semibold;
+    margin-bottom: @indent__s;
+}
+
+.dashboard-totals-value {
+    font-size: @h4__font-size;
+    font-weight: @font-weight__bold;
+    color: @neutral-10;
+}
+
+//
+//  Tabs
+//  ---------------------------------------------
+
+.dashboard-store-stats {
+    .dashboard-item-content {
+        min-height: 1.8rem;
+        background: url(../images/ajax-loader-small.gif) no-repeat 50% 50%;
+
+        &:has(*) {
+            background: unset;
+        }
+    }
+
+    .ui-tabs-panel {
+        background: unset;
+    }
+}
+
+//
+//  Secondary column
+//  _____________________________________________
+
+.dashboard-container {
+    .dashboard-main {
+        width: 75%;
+        left: 25%;
+
+        background-color: @color-white;
+        border-radius: @radius__l;
+        padding: @indent__l;
+    }
+    
+    .dashboard-secondary {
+        width: 25%;
+        padding-right: @indent__l;
+        right: 75%;
+    }
+}
+
+.dashboard-secondary {
+    .dashboard-item-primary:first-of-type {
+        background-color: @neutral-20;
+    }
+}
+
+.dashboard-item {
+    background-color: @color-white;
+    border-radius: @radius__m;
+    margin-bottom: @indent__base;
+    padding: @indent__l;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.dashboard-item-title {
+    font-size: @h4__font-size;
+    font-weight: @font-weight__bold;
+    margin-bottom: @indent__base;
+}
+
+.dashboard-item-primary {
+    background-color: @neutral-30;
+    color: @color-white;
+
+    &:first-child {
+        .dashboard-sales-value {
+            color: @color-white;
+        }
+    }
+
+    &:nth-last-child(1 of &) {
+        margin-bottom: @indent__l;
+    }
+
+    .dashboard-item-title {
+        font-size: 1.3rem;
+        font-weight: @font-weight__semibold;
+        margin-bottom: @indent__s;
+    }
+}

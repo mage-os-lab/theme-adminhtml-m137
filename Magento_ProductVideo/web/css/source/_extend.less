@@ -1,0 +1,75 @@
+﻿//
+//  Video
+//  _____________________________________________
+
+#new-video {
+    &:extend(.abs-clearfix all);
+    padding-top: @indent__xs;
+}
+
+#new_video_form_fieldset {
+    padding: 0;
+
+    > .admin__field {
+        .admin__field-control {
+            [type='text'] {
+                width: 100%;
+            }
+
+            [type='file'] {
+                padding-top: @field-control__padding-top;
+                padding-bottom: @field-control__padding-bottom;
+            }
+        }
+    }
+}
+
+.mage-new-video-dialog {
+    .admin__scope-old {
+        .admin__field {
+            &.field-role,
+            &.field-video_image,
+            &.field-video_small_image,
+            &.field-video_thumbnail,
+            &.field-video_swatch_image,
+            &.field-new_video_disabled {
+                .admin__field-label {
+                    padding-left: 5rem;
+                    font-weight: @font-weight__regular;
+                }
+
+                .admin__field-control {
+                    input[type='checkbox'] {
+                        border-color: @neutral-70;
+                        border-radius: @radius__xs;
+
+                        .lib-icon-font(
+                            @icon-check-mage__content,
+                            @_icon-font: @icons-admin__font-name,
+                            @_icon-font-size: 1.1rem,
+                            @_icon-font-line-height: 1.4rem,
+                            @_icon-font-position: after
+                        );
+
+                        &::before {
+                            position: absolute;
+                            width: 1.6rem;
+                            height: 1.6rem;
+                            content: '';
+                        }
+
+                        &:checked {
+                            color: @color-white;
+                            border-color: @blue-50;
+                            background: @blue-50;
+                            
+                            &::after {
+                                content: @icon-check-mage__content;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

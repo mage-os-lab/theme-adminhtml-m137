@@ -1,0 +1,114 @@
+//
+//  Variables
+//  _____________________________________________
+
+@grid-severity-critical-background: @red-90;
+@grid-severity-critical-color: @text__color;
+@grid-severity-critical-border-color: @red-90;
+
+@grid-severity-major-background: @yellow-98;
+@grid-severity-major-color: @text__color;
+@grid-severity-major-border-color: @yellow-98;
+
+@grid-severity-notice-background: @blue-90;
+@grid-severity-notice-color: @text__color;
+@grid-severity-notice-border-color: @blue-90;
+
+@grid-severity-minor-background: @neutral-90;
+@grid-severity-minor-color: @text__color;
+@grid-severity-minor-border-color: @neutral-90;
+
+@additional-cache-management-border: 0;
+
+// @additional-cache-management-heading-color: #303030;
+// @additional-cache-management-heading-size: 1.7rem;
+
+@additional-cache-management-text-color: @text__color;
+// @additional-cache-management-text-size: 14px;
+
+@additional-cache-management-font-weight: @font-weight__regular;
+
+//
+//  Extend
+//  _____________________________________________
+
+.adminhtml-cache-index {
+    .page-actions {
+        .page-actions-buttons {
+            button.primary {
+                &:extend(.abs-action-primary all);
+                background: @neutral-10;
+                border-color: @neutral-10;
+            }
+        }
+    }
+
+    .admin__grid-massaction {
+        .action-default {
+            &:extend(.abs-action-secondary all);
+        }
+    }
+}
+
+//
+//  Section
+//  _____________________________________________
+
+.additional-cache-management {
+    border-radius: @radius__l;
+    padding: @indent__l;
+    background-color: @color-white;
+    margin-top: @indent__l;
+
+    h2 {
+        &:extend(.abs-fieldset-legend all);
+        
+        span {
+            margin: 0;
+            padding: 0;
+            font-weight: @font-weight__semibold;
+        }
+    }
+
+    p {
+        margin-bottom: @indent__base;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    
+    button {
+        &:extend(.abs-action-secondary all);
+        margin-right: @indent__base;
+    }
+}
+
+//
+//  Labels
+//  _____________________________________________
+
+.grid-severity-critical,
+.grid-severity-major,
+.grid-severity-notice,
+.grid-severity-minor {
+    font-weight: @font-weight__regular;
+    text-transform: unset;
+    border-radius: @radius__l;
+    font-size: @font-size__s;
+    line-height: @font-size__base;
+    padding: @indent__xs @indent__m;
+    display: inline-block;
+}
+
+.grid-severity-major {
+    background: @grid-severity-major-background none repeat scroll 0 0;
+    border-color: @grid-severity-major-border-color;
+    color: @grid-severity-major-color;
+}
+
+.grid-severity-minor {
+    background: @grid-severity-minor-background none repeat scroll 0 0;
+    border-color: @grid-severity-minor-border-color;
+    color: @grid-severity-minor-color;
+}

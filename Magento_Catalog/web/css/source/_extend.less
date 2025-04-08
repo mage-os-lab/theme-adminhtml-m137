@@ -1,0 +1,80 @@
+//
+//  Imports
+//  _____________________________________________
+
+@import './extend/_attribute.less';
+
+//
+//  Extend
+//  _____________________________________________
+
+#row_catalog_custom_options_date_fields_order {
+    td.value {
+        &:extend(.abs-table-form-list-col-3 all);
+    }
+}
+
+#row_catalog_custom_options_year_range {
+    td.value {
+        position: relative;
+
+        .label {
+            position: absolute;
+            margin-top: @indent__s;
+            margin-left: @indent__m;
+            padding: 0;
+            color: @neutral-50;
+            font-weight: @font-weight__regular;
+        }
+
+        .input-text {
+            width: ~'calc((100% - @{indent__l}) / 2)' !important;
+            margin-right: @indent__l;
+            margin-left: -@indent__xs;
+            padding-left: 5.6rem;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+        label.mage-error {
+            position: absolute;
+            top: 100%;
+        }
+    }
+}
+
+//
+//  Custom options on product page
+//  _____________________________________________
+
+[data-index='custom_options'] {
+    .admin__fieldset-wrapper-content {
+        .admin__fieldset {
+            &:last-child {
+                padding-bottom: @indent__l;
+            }
+        }
+    }
+
+    .admin__control-collapsible {
+        .data-row {
+            &:last-of-type {
+                .admin__collapsible-block-wrapper {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .admin__collapsible-content {
+            .admin__collapsible-block-wrapper {
+                padding-bottom: @indent__base;    
+            }
+        }
+    }
+}

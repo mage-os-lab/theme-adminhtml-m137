@@ -1,0 +1,20 @@
+//
+//  Page Builder full width field
+//  _____________________________________________
+
+.admin__fieldset {
+    > .admin__field.admin__field-wide.admin__field-page-builder[class]:not(.admin__field-option),
+    .admin__field.admin__field-wide.admin__fieldset-page-builder .admin__field-page-builder {
+        > .admin__field-label {
+            min-height: 4.8rem;
+        }
+    }
+}
+
+.admin__field-wide.admin__field-page-builder {
+    margin-bottom: 0;
+
+    button.action-default {
+       &:extend(.abs-action-secondary all);
+    }
+}

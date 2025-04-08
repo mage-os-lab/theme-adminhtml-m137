@@ -1,0 +1,235 @@
+//
+//  Rule tree component
+//  _____________________________________________
+
+.rule-tree {
+    .rule-tree-wrapper {
+        line-height: 1;
+
+        .rule-param-children {
+            padding: @indent__m 0 0 @indent__xl;
+            margin: 0 0 0 1.7rem;
+            border-left: .2rem solid @neutral-90;
+
+            > li {
+                padding-top: @indent__m;
+                padding-bottom: @indent__m;
+                margin: 0;
+
+                &::first-letter {
+                    padding-left: 4.2rem;
+                    background-image: url('../images/condition.svg');
+                    background-repeat: no-repeat;
+                    background-size: 3.6prem;
+                    background-position: 0 50%;
+                    padding-top: .9rem;
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+
+        &::first-letter {
+            padding-left: 4.2rem;
+            background-image: url('../images/condition.svg');
+            background-repeat: no-repeat;
+            background-size: 3.6rem;
+            background-position: 0 50%;
+            padding-top: .9rem;
+            padding-bottom: 1rem;
+        }
+
+        .rule-param-edit {
+            .addafter {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.rule-tree {
+    fieldset.fieldset {
+        padding: 0;
+    }
+
+    .rule-param:not(.rule-param-new-child) {
+        .label {
+            &:extend(.abs-action-default all);
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .rule-param {
+        position: relative;
+        
+        .label {
+            display: inline-block;
+        }
+
+        .element {
+            background-color: @color-white;
+            box-shadow: @shadow-level-2;
+            border-radius: @radius__xs;
+            padding: @indent__base;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            gap: @indent__base;
+
+            select {
+                min-width: unset;
+            }
+        }
+
+        img {
+            max-width: unset;
+        }
+    }
+
+    .rule-param-edit {
+        .element {
+            display: flex;
+            margin-top: @indent__m;
+            left: 0;
+            transform: unset;
+        }
+
+        .rule-chooser-trigger {
+            .lib-icon-font(
+                @icon-list-menu__content,
+                @_icon-font: @icons-admin__font-name,
+                @_icon-font-size: 2.4rem,
+                @_icon-font-line-height: 3.6rem,
+                @_icon-font-color: @neutral-10,
+                @_icon-font-color-hover: @neutral-20,
+                @_icon-font-color-active: @neutral-20,
+                @_icon-font-position: after
+            );
+             
+            color: @neutral-20;
+            width: 3.6rem;
+            height: 3.6rem;
+            text-align: center;
+    
+            img {
+                display: none;
+            }
+        }
+
+        .rule-param-apply {
+            .lib-icon-font(
+                @icon-check-mage__content,
+                @_icon-font: @icons-admin__font-name,
+                @_icon-font-size: 1.4rem,
+                @_icon-font-line-height: 1,
+                @_icon-font-position: after
+            );
+            
+            &:extend(.abs-action-primary all);
+    
+            img {
+                display: none;
+            }
+        }
+    }
+
+    .rule-param-remove {
+        .lib-icon-font(
+            @icon-delete__content,
+            @_icon-font: @icons-admin__font-name,
+            @_icon-font-size: 1.8rem,
+            @_icon-font-line-height: 3.6rem,
+            @_icon-font-position: after
+        );
+
+        width: 3.6rem;
+        height: 3.6rem;
+        text-align: center;
+        margin-bottom: -@indent__2xs;
+        
+        img {
+            display: none;
+        }
+    }
+
+    .rule-param-new-child {
+        .label {
+            .lib-icon-font(
+                @icon-plus__content,
+                @_icon-font: @icons-admin__font-name,
+                @_icon-font-size: 1.4rem,
+                @_icon-font-line-height: 1,
+                @_icon-font-position: after
+            );
+
+            &:extend(.abs-action-primary all);
+            margin-left: -@indent__m;
+            border-radius: @radius__xl;
+
+            &::after {
+                font-weight: @font-weight__bold;
+            }
+
+            img {
+                display: none;
+            }
+        }
+
+        .element {
+            left: -@indent__m;
+        }
+    }
+
+    .rule-chooser {
+        border: none;
+        margin: 0;
+        padding: @indent__s * 9 0 0 @indent__base;
+    }
+}
+
+//
+//  Legend
+//  _____________________________________________
+
+.rule-tree {
+    .fieldset {
+        .legend {
+            > span {
+                &:extend(h4);
+                margin-bottom: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+//
+//  Attribute Category
+//  _____________________________________________
+
+.rule-tree {
+    .x-tree,
+    .jstree {
+        background: @neutral-95;
+        padding: @indent__l;
+        border-radius: @radius__base;
+    }
+
+    .x-tree-root-ct {
+        .x-tree-node-indent {
+            .x-tree-icon {
+                &:nth-child(1) {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+//
+//  Navigation Bar in Steps Wizard
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+// @nav__background-color: @color-white-fog;
+// @nav__border-color: @color-gray89;
+// @nav__indent-right: 1.5rem;
+
+@nav-bar__color: @neutral-30;
+// @nav-bar__font-size: 1.2rem;
+
+// @nav-bar__height__base: ((@button__font-size * @button__line-height) +
+//     (@button__font-size * @button__padding-top) +
+//     (@button__font-size * @button__padding-top));
+
+// @nav-bar__indent-top: 3rem;
+// @nav-bar__min-height: 5.8rem;
+
+// @nav-bar-bullet-wrap__background-color: @color-gray84;
+// @nav-bar-bullet-wrap__border-bottom-color: @color-gray85;
+// @nav-bar-bullet-wrap__border-top-color: @color-gray75;
+
+@nav-bar-dot__size: 3.2rem;
+// @nav-bar-items__indent-bottom: 1.7rem;
+// @nav-bar-item__color: @color-gray65;
+
+@nav-bar-point__border-width: .2rem;
+@nav-bar-point__size: 3.2rem;
+
+@nav-bar-step__width: 12.8rem;
+
+//
+//  Navigation
+//  _____________________________________________
+
+//  Buttons panel
+.nav-bar-outer-actions {
+    .action-wrap {
+        margin-left: @indent__base;
+        margin-right: 0;
+    }
+}
+
+//
+//  Progress bar
+//  _____________________________________________
+
+.nav-bar {
+    //  Progress line tunnel
+    &::before {
+        height: .2rem;        
+        top: (@nav-bar-point__size / 2) - .1rem;
+    }
+
+    //  Step link wrap
+    > li {
+        //  Progress line
+        &::after {
+            height: .2rem;
+            top: (@nav-bar-point__size / 2) - .1rem;
+        }
+
+        //  Active step link wrap
+        &.active,
+        &.ui-state-active {
+            //  Active link
+            a {
+                color: @nav-bar__color;
+
+                //  Active step link bullet
+                &::after {
+                    z-index: 1;
+
+                    &:extend(.abs-icon all);
+                    content: @admin__page-nav-icon-changed__content;
+                    font-size: @font-size__base;
+                    line-height: @nav-bar-point__size;
+                    color: @nav-bar__color;
+                }
+            }
+        }
+    }
+
+    //  Visited step link
+    a {
+        font-weight: @font-weight__heavier;
+        padding-top: 4.8rem;
+
+        //  Visited step link bullet
+        &::after {
+            margin-left: -@nav-bar-point__size / 2;
+            border: .2rem solid @nav-bar__color;
+            font-size: @font-size__base;
+            font-weight: @font-weight__heavier;
+            line-height: @nav-bar-point__size;
+            top: 0;
+        }
+
+        //  Visited step link bullet wrap
+        &::before {
+            height: @nav-bar-dot__size;
+            margin-left: -(@nav-bar-dot__size / 2);
+            width: @nav-bar-dot__size;
+        }
+    }
+}
+
+//
+//  Steps
+//  _____________________________________________
+
+.steps-wizard {
+    .nav-bar {
+        margin: @indent__s 0 0;
+    }
+}

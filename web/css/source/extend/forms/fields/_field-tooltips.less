@@ -1,0 +1,96 @@
+//
+//  Variables
+//  _____________________________________________
+
+@field-tooltip__margin-top: .8rem;
+@field-tooltip__width: 4.8rem;
+
+@field-tooltip-icon__color: @neutral-10;
+// @field-tooltip-icon__size: 2.2rem;
+
+// @field-tooltip-content-arrow__margin: 2rem;
+@field-tooltip-content-arrow__size: 1.2rem;
+
+@field-tooltip-content__background-color: @neutral-95;
+@field-tooltip-content__border-color: transparent;
+@field-tooltip-content__padding: @indent__m @indent__base;
+// @field-tooltip-content__width: 32rem;
+// @field-tooltip-content__z-index: 1;
+
+// @field-tooltip-action__margin-left: 0;
+
+//
+//  Form fields
+//  _____________________________________________
+
+.admin__field-tooltip {
+    .admin__field-tooltip-content {
+        left: 0;
+        right: unset;
+
+        &::after,
+        &::before {
+            display: none;
+        }
+    }
+}
+
+._with-tooltip {
+    .admin__field-tooltip {
+        display: inline-block;
+    }
+    
+    .admin__control-multiselect,
+    .admin__control-text {
+        & + .admin__field-tooltip {
+            margin-left: 0;
+
+            .admin__field-tooltip-content {
+                left: 0;
+                right: unset;
+            }
+        }
+    }
+
+    .admin__control-select {
+        & + .admin__field-tooltip {
+            .admin__field-tooltip-content {
+                left: 0;
+                right: unset;
+            }
+        }
+    }
+
+    .admin__field-option {
+        & + .admin__field-tooltip {
+            margin-top: .5rem;
+            margin-left: @indent__base;
+
+            .admin__field-tooltip-content {
+                left: 0;
+                right: unset;
+            }
+        }
+    }
+}
+
+.abs-admin__field-tooltip-content {
+    border: 0;
+    border-radius: @radius__m;
+}
+
+//
+//  Collapsible panel
+//  _____________________________________________
+
+.admin__collapsible-title {
+    .admin__field-tooltip {
+        margin-left: @indent__base;
+
+        .admin__field-tooltip-action {
+            &::before {
+                font-size: 2rem;
+            }
+        }
+    }
+}

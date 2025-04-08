@@ -1,0 +1,81 @@
+﻿//
+//  Extend
+//  _____________________________________________
+
+.tax-rule-edit {
+    .entry-edit.form-inline {
+        margin-bottom: @indent__l; 
+    }
+}
+
+.import-export-tax-rates {
+    background-color: @color-white;
+    padding: @indent__l;
+    border-radius: @radius__l;
+}
+
+.import-tax-rates {
+    margin-bottom: @indent__base;
+
+    .input-file {
+        margin-right: 0 !important;
+        color: @neutral-40;
+        cursor: pointer;
+
+        &::file-selector-button {
+           &:extend(.abs-action-secondary all);
+            
+            margin-right: @indent__base;
+            cursor: pointer;
+        }
+    }
+
+    .import-submit {
+       &:extend(.abs-action-primary all);
+    }
+}
+
+.export-tax-rates {
+    .action-default {
+       &:extend(.abs-action-secondary all);
+    }
+}
+
+.block.mselect-list.paginated {
+    .admin__action-multiselect-search-wrap {
+        border: 0;
+    }
+}
+
+//
+//  Checkbox
+//  _____________________________________________
+
+#calculate_subtotal {
+    &:extend(.abs-control-checkbox all);
+    margin-top: .9rem;
+}
+
+//
+//  Modal
+//  _____________________________________________
+
+.tax-rate-popup {
+    .admin__field-control {
+        .admin__control-text {
+            width: 100%;
+        }
+    }
+
+    .admin__fieldset {
+        .messages {
+            &:last-child {
+                .message {
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

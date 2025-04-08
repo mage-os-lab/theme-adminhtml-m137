@@ -1,0 +1,84 @@
+//
+//  Colorpicker
+//  _____________________________________________
+
+#html-body {
+    .colorpicker {
+        background-color: @color-white;
+
+        input {
+            font-family: @font-family__base;
+            color: @text__color;
+            font-weight: @font-weight__heavier;
+            line-height: 1rem;
+            top: .6rem;
+            right: 1.4rem;
+        }
+        
+        .colorpicker_hue div {
+            background: url(../jquery/colorpicker/images/colorpicker_indic.png) left top;
+        }
+        
+        .colorpicker_color div div {
+            width: 1.6rem;
+            height: 1.6rem;
+            background: unset;
+            border: solid .1rem @color-white;
+            border-radius: @radius__l;
+            box-shadow: inset 0 0 0 .1rem @neutral-20;
+            margin: -@indent__s 0 0 -@indent__s;
+        }
+        
+        .colorpicker_hex {
+            width: 6.2rem;
+            background-position: left top;
+        
+            input {
+                right: .7rem;
+            }
+        }
+    }
+}
+
+.colorpicker {
+    border-radius: @radius__s;
+    box-shadow: @shadow-level-3;
+    
+    .colorpicker_color,
+    .colorpicker_new_color,
+    .colorpicker_current_color {
+        border-radius: @radius__xs;
+    }
+
+    .colorpicker_new_color,
+    .colorpicker_current_color {
+        box-shadow: inset 0 0 0 .1rem @field-control__border-color;
+    }
+
+    .colorpicker_field,
+    .colorpicker_hex {
+        background-color: @neutral-95;
+
+        &:hover {
+            background-color: @color-white;
+            box-shadow: 0 0 0 .1rem @field-control__active__border-color;
+        }
+    }
+
+    .colorpicker_focus,
+    .colorpicker_slider {
+        background-color: @color-white;
+        box-shadow: 0 0 0 .1rem @field-control__active__border-color;
+    }
+
+    .colorpicker_field,
+    .colorpicker_hex,
+    .colorpicker_submit {
+        border-radius: @radius__xs;
+        transition: @smooth__background-color, @smooth__box-shadow;
+    }
+
+    .colorpicker_submit {
+        cursor: pointer;
+    }
+}

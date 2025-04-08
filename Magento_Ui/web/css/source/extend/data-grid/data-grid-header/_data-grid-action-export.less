@@ -1,0 +1,30 @@
+//
+//  UI -> Data Grid -> Header -> Export
+//  _____________________________________________
+
+.admin__data-grid-action-export {
+    .admin__action-dropdown {
+        &::before {
+            font-size: @action-dropdown-toggle-icon__font-size;
+            margin-right: @indent__s;
+        }
+    }
+}
+
+.admin__data-grid-action-export-menu {
+    padding: @action-export-menu__padding;
+
+    .admin__field.admin__field-option {
+        margin: @action-export-menu-item__margin;
+        padding: @action-export-menu-item__padding;
+    }
+
+    .admin__action-dropdown-footer-main-actions {
+        margin: @action-export-menu-actions__margin;
+        padding: @action-export-menu-actions__padding;
+
+        .action-secondary {
+           &:extend(.abs-action-primary all);
+        }
+    }
+}

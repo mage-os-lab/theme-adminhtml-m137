@@ -1,0 +1,29 @@
+//
+//  Extend
+//  _____________________________________________
+
+.admin__collapsible-block {
+    #three_d_secure_cardinal-head {
+        &::after {
+            width: 100%;
+            height: 3rem;
+            background-color: @neutral-95;
+            border-radius: @radius__l;
+            content: '';
+            display: inline-block;
+            transition: @smooth__background-color;
+        }
+
+        &:hover {
+            &::after {
+                background-color: @neutral-90;
+            }
+        }
+    }
+    
+    #row_three_d_secure_cardinal_config {
+        td[colspan='4'] {
+            padding-top: 0;
+        }
+    }
+}

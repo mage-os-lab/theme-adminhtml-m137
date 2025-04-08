@@ -1,0 +1,192 @@
+//
+//  Admin section wrapper title
+//  _____________________________________________
+
+.fieldset-wrapper-title,
+.admin__fieldset-wrapper-title {
+    &:extend(.abs-clearfix all);
+    border-bottom: 0;
+    line-height: @h4__line-height;
+    padding: @indent__s 0 @indent__base;
+
+    .title {
+        font-size: @h4__font-size;
+        font-weight: @h4__font-weight;
+
+        .admin__fieldset-wrapper-content & {
+            font-size: @h5__font-size;
+            font-weight: @h5__font-weight;
+        }
+    }
+}
+
+.admin__fieldset-wrapper-content {
+    .admin__fieldset {
+        padding-top: @indent__s;
+        padding-bottom: @indent__xl;
+
+        > .admin__collapsible-block-wrapper {
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        > *:first-child {
+            + [data-index='is_active'] {
+                margin-top: 0;
+            }
+        }
+
+        > *:last-child {
+            margin-bottom: @indent__s;
+        }
+    }
+}
+
+.fieldset-wrapper {
+    &:last-child {
+        .admin__fieldset {
+            &:last-child {
+                padding-bottom: @indent__s;
+            }
+        }
+    }
+}
+
+.mass-select-wrap {
+    margin-left: @data-grid-cell__padding-vertical;
+    margin-top: .7rem;
+}
+
+//
+//  Data grid
+//  _____________________________________________
+
+.data-grid {
+    .data-grid-filters,
+    .col-actions {
+        select,
+        select:not([multiple]),
+        input[type='text'] {
+            font-size: 1.3rem;
+            height: 2.8rem;
+            padding: @indent__2xs @indent__s;
+            width: 100%;
+        }
+
+        select,
+        select:not([multiple]) {
+            background-position+: ~'calc(100% - 8px)' -37px;
+            background-size+: auto;
+            background-position+: 100%;
+            background-size+: 18px 100%;
+            background-position+: ~'calc(100% - 24px)' 0;
+            background-size+: 1px 100%;
+            height: 2.8rem !important;
+            padding: @indent__2xs @indent__l @indent__2xs @indent__s;
+        }
+
+        td {
+            ._has-datepicker {
+                + .ui-datepicker-trigger {
+                    height: 2.8rem;
+                    margin-left: -3rem;
+                    width: 2.8rem;
+
+                    &::after {
+                        font-size: 1.4rem;
+                        line-height: 2.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Data grid toolbar
+//  _____________________________________________
+
+.admin__data-grid-toolbar {
+    .admin__data-grid-header-row {
+        .action-select-multiselect {
+            &:hover {
+                + label {
+                    border-color: @field-control__hover__border-color;
+                
+                    &::before {
+                        border-color: @field-control__hover__border-color;
+                    }
+                }    
+            }
+
+            + label {
+                height: 1.8rem;
+                padding: 0 0 0 @indent__xl;
+                border-radius: @field-control__border-radius;
+                border: .1rem solid @field-control__border-color;
+    
+                &::before {
+                    height: 1.8rem;
+                    width: 1.8rem;
+                }
+
+                &::after {
+                    right: @indent__xs;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Data grid filter actions
+//  _____________________________________________
+
+.reports-report_customer-totals,
+.reports-report_customer-orders,
+.reports-report_customer-accounts,
+.reports-report_product-sold {
+    .admin__data-grid-toolbar {
+        & + .admin__data-grid-wrap-static {
+            padding-top: @indent__l;
+            border-top-left-radius: @radius__l;
+            border-top-right-radius: @radius__l;
+        }
+    }
+}
+
+.admin__data-grid-toolbar {
+    .admin__data-grid-header-row {
+        .admin__filter-actions {
+            .field-row:not(.admin__control-filter) {
+                position: relative;
+                margin-right: @indent__base;
+                
+                .admin__control-support-text {
+                    position: absolute;
+                    left: @indent__m;
+                    color: @neutral-50;
+                    padding-right: 0;
+                    margin-left: 0;
+                }
+                
+                .input-text {
+                    width: 20rem;
+                    padding-left: 5.6rem;
+                    margin-left: 0;
+
+                    &[name='report_to'] {
+                        padding-left: 4rem;
+                    }
+                }
+            }
+
+            .field-row {
+                .action-default.task {
+                   &:extend(.abs-action-secondary all);
+                }
+            }
+        }
+    }
+}

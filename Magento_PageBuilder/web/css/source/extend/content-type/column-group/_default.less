@@ -1,0 +1,29 @@
+//
+//  Default appearance styles
+//  _____________________________________________
+
+.pagebuilder-content-type {
+    .pagebuilder-column-group {
+        .drop-placeholder {
+            background: fade(@blue-50, 50%);
+            bottom: @indent__2xs;
+            top: @indent__2xs;
+
+            &.left {
+                border-left: @indent__base solid fade(@blue-50, 50%);
+                left: @indent__2xs !important;
+            }
+
+            &.right {
+                border-right: @indent__base solid fade(@blue-50, 50%);
+                right: @indent__2xs !important;
+            }
+        }
+
+        .move-placeholder {
+            background: fade(@blue-50, 50%);
+            bottom: @indent__2xs;
+            top: @indent__2xs;
+        }
+    }
+}

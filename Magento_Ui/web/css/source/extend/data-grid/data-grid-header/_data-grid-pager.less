@@ -1,0 +1,48 @@
+//
+//  UI -> Data Grid -> Header -> Pager
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+@data-grid-pager-action__width: 3.6rem;
+
+//
+//  Extend
+//  _____________________________________________
+
+.admin__data-grid-pager-wrap {
+    display: inline-flex;
+}
+
+.admin__data-grid-pager {
+    display: inline-flex;
+    margin-left: @indent__xl;
+}
+
+.action-previous,
+.action-next {
+   &:extend(.abs-action-quaternary all);
+    padding: @indent__s;
+    font-size: 2rem;
+    line-height: 1rem;
+
+    &::before {
+        font-weight: inherit;
+        font-size: inherit;
+        width: 2rem;
+        height: 2rem;
+        display: inline-block;
+    }
+}
+
+.action-previous {
+    margin-right: @indent__base;
+    text-indent: unset;
+}
+
+.action-next {
+    margin-left: @indent__base;
+    text-indent: unset;
+}

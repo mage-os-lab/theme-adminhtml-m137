@@ -1,0 +1,247 @@
+//
+//  Extend
+//  _____________________________________________
+
+//
+//  Empty placeholder
+//  _____________________________________________
+
+.pagebuilder-content-type {
+    &.children-min-height {
+        > .element-children {
+            min-height: 20rem;
+        }
+        
+        > div {
+            > .element-children {
+                min-height: 20rem;
+            }
+        }
+    }
+
+    .pagebuilder-empty-container {
+        &.empty-placeholder-background {
+            background-position: center 5.8rem;
+            background-size: 19.6rem 5.4rem;
+            padding-top: 12.4rem;
+            height: 20rem;
+        }
+    }
+}
+
+//
+//  Label
+//  _____________________________________________
+
+.pagebuilder-display-label {
+    line-height: 1;
+    transform: translate(-50%, 0);
+    letter-spacing: unset;
+    font-weight: @font-weight__semibold;
+}
+
+//
+//  System border
+//  _____________________________________________
+
+.pagebuilder-system-border {
+    border: 0;
+    transition: @smooth__box-shadow !important;
+}
+
+.pagebuilder-system-border-hover {
+    box-shadow: @pagebuilder-affordance-box-shadow-active;
+    outline: solid .2rem rgba(0, 0, 0, .1);
+    transition: @smooth__box-shadow !important;
+    z-index: 20;
+
+    &.type-container {
+        box-shadow: @pagebuilder-affordance-box-shadow-active;
+    }
+}
+
+.pagebuilder-content-type {
+    &.pagebuilder-content-type-affordance {
+        outline: solid .2rem transparent;
+        transition: @smooth__outline !important;
+        transition: @smooth__box-shadow !important;
+    }
+
+    &.pagebuilder-content-type-active:hover:not(.no-system-border) {
+        &.pagebuilder-content-type-affordance {
+            outline-color: @neutral-90;
+            border-color: @neutral-90;
+        }
+    }
+
+    &.pagebuilder-content-type-affordance {
+        &.pagebuilder-column-group {
+            width: calc(~'100% - @{indent__2xs} * 2');
+            margin: @indent__2xs;
+        }
+
+        .pagebuilder-column-line {
+            border: none;
+            padding: @indent__2xs @indent__2xs / 2 @indent__2xs @indent__2xs;
+
+            + .pagebuilder-column-line {
+                padding-top: 0;
+            }
+
+            > .element-children {
+                gap: @indent__2xs / 2;
+            }
+        }
+    }
+}
+
+//
+//  Label
+//  _____________________________________________
+
+.pagebuilder-content-type-affordance {
+    border: 1.6rem solid @neutral-95;
+    box-shadow: none;
+
+    > .pagebuilder-display-label {
+        line-height: 1rem;
+        transform: translate(-50%, -16px);
+        overflow: hidden;
+        width: auto;
+        background: @color-white;        
+        padding: 0.3rem @indent__s;
+        border-radius: @radius__base;
+        color: @neutral-40;
+    }
+}
+
+//
+//  Display the hover state when the stage is being interacted with
+//  _____________________________________________
+
+.pagebuilder-stage.interacting .pagebuilder-content-type.pagebuilder-content-type-active:hover {
+    border-color: @neutral-95;
+    outline: none;
+    box-shadow: none;
+
+    &.type-container {
+        box-shadow: none;
+    }
+}
+
+//
+//  Options Panel
+//  _____________________________________________
+
+.pagebuilder-options {
+    height: 5.2rem;
+
+    &.pagebuilder-options-visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .pagebuilder-options-wrapper {
+        border-radius: @radius__xl;
+        border: none;
+        box-shadow: @shadow-level-3;
+        background: @color-white;
+
+        .pagebuilder-options-links {
+            border-radius: @radius__xl;
+            overflow: hidden;
+
+            .pagebuilder-options-link {
+                vertical-align: middle;
+
+                > a {
+                    padding: @indent__base;
+                    transition: @smooth__background-color, @smooth__color;
+                    width: 5.2rem;
+                    height: 5.2rem;
+
+                    i {
+                        font-size: 2rem;
+                        line-height: 2rem;
+                    }
+
+                    &.move-structural,
+                    &.move-column {
+                        padding: @indent__base;
+                        width: 5.2rem;
+                    }
+                }
+
+                > .option-title {
+                    font-size: @font-size__l;
+                    height: 5.2rem;
+                    line-height: 2rem;
+                    padding: @indent__base;
+                    font-weight: @font-weight__heavier;
+                }
+            }
+        }
+    }
+}
+
+.focus-options {
+    .pagebuilder-options {
+        transition: @smooth__opacity, @smooth__visibility, @smooth__transform;
+        top: -@indent__xl;
+
+        .pagebuilder-options-wrapper {
+            &::after {
+                border: 0;
+                border-radius: @radius__xs;
+                box-shadow: @shadow-level-3;
+                bottom: -@indent__m;
+                height: 1.6rem;
+                left: calc(50% - 1px);
+                position: absolute;
+                transform: rotate(45deg) translateX(-50%);
+                width: 1.6rem;
+            }
+        }
+    }
+}
+
+
+.pagebuilder-image-uploader-container {
+    overflow: visible;
+
+    .pagebuilder-options-wrapper {
+        background: transparent;
+        box-shadow: none;
+        padding: @indent__base @indent__s @indent__s @indent__s;
+        
+        .pagebuilder-options-links {
+            background: transparent;
+            padding-left: @indent__s;
+            padding-right: @indent__s;
+            padding-bottom: @indent__s;
+            border-radius: 0;
+        }
+    }
+}
+
+//
+//  Modal
+//  _____________________________________________
+
+.pagebuilder_modal_form_pagebuilder_modal_form_modal {
+    .admin__fieldset {
+        > .admin__field.admin__field-medium,
+        > .admin__field.admin__field-small {
+            > .admin__field-control {
+                width: calc((100%)* 0.5 - 24px);
+            }
+        }
+    }
+
+    .admin__field.admin__field-medium,
+    .admin__field.admin__field-small {
+        > .admin__field-control {
+            width: calc((100%)* 0.5 - 24px);
+        }
+    }
+}

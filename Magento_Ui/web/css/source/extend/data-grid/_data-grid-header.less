@@ -1,0 +1,103 @@
+//
+//  UI -> Data Grid -> Header
+//  _____________________________________________
+
+//
+//  Imports
+//  _____________________________________________
+
+@import './data-grid-header/_data-grid-filters.less';
+@import './data-grid-header/_data-grid-pager.less';
+
+//  Actions group
+@import './data-grid-header/_data-grid-action-bookmarks.less';
+@import './data-grid-header/_data-grid-action-columns.less';
+@import './data-grid-header/_data-grid-action-export.less';
+@import './data-grid-header/_data-grid-sticky-header.less';
+
+//
+//  Extend
+//  _____________________________________________
+
+.admin__data-grid-header {
+    .admin__data-grid-header-row {
+        &:first-child {
+            margin-bottom: @indent__base;
+
+            .admin__data-grid-export {
+                .action-default {
+                   &:extend(.abs-action-primary all);
+                }
+            }
+        }
+
+        & + .admin__data-grid-header-row {
+            border-radius: @radius__l @radius__l 0 0;
+            margin-top: 0;
+            padding: @indent__l;
+            background-color: @color-white;
+        }
+
+        &.row-gutter {
+            margin-left: 0;
+            margin-right: 0;
+
+            > [class*='col-'] {
+                &:first-of-type {
+                    padding-left: 0;
+                }
+                
+                &:last-of-type {
+                    padding-right: 0;
+                }
+            }
+            
+            [class*='col-'] {
+                .admin__control-support-text {
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.admin__data-grid-toolbar {
+        .admin__data-grid-header-row {
+            &:first-child {
+                margin-bottom: 0;
+
+                .admin__filter-actions,
+                .admin__data-grid-export {
+                    margin-bottom: @indent__l;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Data grid header actions group
+//  _____________________________________________
+
+.admin__data-grid-actions-wrap {
+    margin-top: 0;
+
+    .admin__action-dropdown-wrap {
+        &._active {
+            .admin__action-dropdown {
+                background-color: @button__background-color;
+                border-color: @button__background-color;
+                color: @button__color;
+            }
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .admin__action-dropdown {
+        padding: @action-dropdown__padding-top @action-dropdown__padding-right @action-dropdown__padding-bottom @action-dropdown__padding-horizontal;
+    }
+}
