@@ -1,15 +1,39 @@
 # M137 Admin Theme
 
-This is the Mage-OS Admin Theme.
+This is the Mage-OS Admin Theme
 
-It is based on top of out of the box `Magento/backend` theme.
+It is based on top of out of the box `Magento/backend` theme
 
 Design reference: [M137 Design System](https://www.figma.com/community/file/1486802857979032188)
 
 ![M137 - Building Better Commerce](./docs/m137-cover.png)
 
 
+## Installation
+
+Theme requires [module-theme-adminhtml-switcher](https://github.com/mage-os-lab/module-theme-adminhtml-switcher) to be installed
+
+```
+composer require mage-os/theme-adminhtml-m137
+bin/magento module:enable MageOS_ThemeAdminhtmlSwitcher
+bin/magento setup:upgrade
+```
+
+## Contribution
+
+Install the theme and the module locally
+
+```
+git clone git@github.com:mage-os-lab/theme-adminhtml-m137.git ./app/design/adminhtml/MageOS/theme-adminhtml-m137/
+git clone git@github.com:mage-os-lab/module-theme-adminhtml-switcher.git ./app/code/MageOS/ThemeAdminhtmlSwitcher/
+```
+
 ## Features
+
+- UI update, minimalism and the aesthetic of the interface
+- New typography: `Inter` font family
+- New color schema, Hue Chroma Tone (HCT) color space
+- Brand new icons: Mage-OS, Magento Open Source, Page Builder
 
 ### Feature/Page Coverage
 
