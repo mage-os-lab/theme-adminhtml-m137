@@ -21,6 +21,7 @@
 .message-system-inner {
     box-shadow: @message-system__box-shadow;
     border-radius: @message-system__border-radius;
+    border: 0;
     margin: @message-system__margin;
     padding: @message-system__padding;
 
@@ -34,6 +35,11 @@
         &::before {
             left: @alert__padding-left;
         }
+    }
+
+    ._active & {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
     }
 }
 
@@ -65,7 +71,6 @@
     }
 
     ._active & {
-        margin-top: -@message-system-short__padding-vertical;
         box-shadow: @message-system__box-shadow;
         border-radius: @message-system__border-radius;
         border-top-left-radius: 0;
