@@ -64,6 +64,10 @@
         margin: 0;
         transform: translateY(-50%);
     }
+
+    [style*='background-color'] {
+        border-radius: @radius__xs;
+    }
 }
 
 .message-notice {
@@ -116,4 +120,24 @@
     min-height: unset;
     margin-right: @page-content__margin-horizontal;
     margin-left: @page-content__margin-horizontal;
+
+    .admin__data-grid-outer-wrap {
+        min-height: 4.3rem;
+        margin-top: @indent__base;
+
+        & + .message {
+            margin-top: @indent__base;
+        }
+    }
+
+    > .messages,
+    > .message {
+        &:first-of-type {
+            margin-top: @indent__base;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
 }
