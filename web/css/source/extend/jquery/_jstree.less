@@ -75,6 +75,12 @@
             margin-top: @indent__xs !important;
             margin-bottom: @indent__xs !important;
         }
+
+        > button[type='button'] {
+            &:extend(.action-secondary all);
+            margin-right: @indent__base;
+            margin-bottom: @indent__base;
+        }
     }
 
     .jstree-container-ul {
