@@ -53,11 +53,6 @@
     }
 }
 
-.mass-select-wrap {
-    margin-left: @data-grid-cell__padding-vertical;
-    margin-top: .7rem;
-}
-
 //
 //  Data grid
 //  _____________________________________________
@@ -133,6 +128,65 @@
 
                 &::after {
                     right: @indent__xs;
+                }
+            }
+        }
+
+        //  Mass select
+        .mass-select-wrap {
+            margin-left: @data-grid-cell__padding-vertical;
+            margin-top: .7rem;
+
+            select {
+                + label {
+                    transition: @smooth__background-color, @smooth__border-color;
+                    
+                    &::before {
+                        width: 1.7rem;
+                        line-height: 1.7rem;
+                        border-radius: @radius__xs;
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        transition: @smooth__background-color, @smooth__border-color, @smooth__color;
+                        color: @control-checkbox-radio-mark__color;
+                    }
+
+                    &::after {
+                        width: @button-marker-triangle__height;
+                        height: @button-marker-triangle__width;
+                        border: unset;
+                        top: .5rem !important;
+                        right: .5rem;
+                        transition: @smooth__rotate;
+                    }
+                }
+
+                &:hover {
+                    + label {
+                        background-color: @button__hover__background-color;
+                    }
+                }
+            
+                //  Checked state
+                &._checked {
+                    + label {
+                        &::before {
+                            background-color: @control-checkbox-radio__focus__background-color;
+                            border-color: @control-checkbox-radio__focus__background-color;
+                            border-right-color: @field-control__border-color;
+                            color: @control-checkbox-radio-mark__focus__color;
+                            line-height: 1.7rem;
+                        }
+                    }
+            
+                    &:hover {
+                        + label {
+                            &::before {
+                                border-color: @control-checkbox-radio__focus__background-color;
+                                border-right-color: @field-control__hover__border-color;
+                            } 
+                        } 
+                    }
                 }
             }
         }

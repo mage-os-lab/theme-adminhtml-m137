@@ -148,6 +148,13 @@
 
 //  Action multicheck is a combining of checkbox and dropdown elements
 .action-multicheck-wrap {
+    &._active {
+        .admin__control-checkbox + label:before,
+        .action-multicheck-toggle {
+            border-color: @action__active__border-color !important;
+        }
+    }
+
     &:hover {
         .admin__control-checkbox {
             &:checked {
@@ -157,6 +164,12 @@
                     }
                 }
             }
+        }
+    }
+
+    .action-multicheck-toggle {
+        &:after {
+            right: @indent__xs;
         }
     }
 }

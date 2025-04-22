@@ -144,7 +144,7 @@
         .mass-select-wrap select + label:before {
             height: 1.8rem;
             width: 1.8rem;
-            line-height: 1.8rem;
+            line-height: 1.6rem;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
@@ -166,6 +166,7 @@
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             border: .1rem solid @field-control__border-color;
+            transition: @smooth__background-color, @smooth__border-color, @smooth__color;
 
             &:hover {
                 border-color: @field-control__hover__border-color;
