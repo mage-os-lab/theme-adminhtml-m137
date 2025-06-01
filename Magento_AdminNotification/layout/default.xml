@@ -1,0 +1,6 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <uiComponent name="notification_area"/>
+        <move element="notification_area" destination="header.inner.right" after="-"/>
+    </body>
+</page>
