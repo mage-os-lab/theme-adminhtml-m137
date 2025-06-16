@@ -122,25 +122,18 @@
 
 .page-header-actions {
     .admin__data-grid-outer-wrap {
+        min-width: @page-header-action__height;
+        margin-right: @indent__xl;
         float: right;
         min-height: unset;
-        
-        .message-system {
-            padding-right: @indent__xl;
-        }
 
         .admin__data-grid-loading-mask {
             width: @page-header-action__height;
             height: @page-header-action__height !important;
-            left: unset;
-            right: @indent__xl;
         }
         
         .spinner {
-            width: @spinner__width-small;
-            height: @spinner__height-small;
-            margin: 0;
-            transform: translate(-50%, -50%);
+            display: none;
         }
         
         .message-system-inner {
