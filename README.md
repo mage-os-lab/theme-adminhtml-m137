@@ -326,7 +326,7 @@ git clone git@github.com:mage-os-lab/module-theme-adminhtml-switcher.git ./app/c
 - [x] Stores > Configuration: Customers > Wish List > General Option > Enabled: No -> borders
 - [x] Stores > Configuration: Catalog > Catalog > Catalog Search > Button:Test Connection
 - [x] Catalog > Products > Product > Customizable Options: gaps, state bgc
-- [ ] Stores > Attributes > Attribute Set > Icons
+- [x] Stores > Attributes > Attribute Set > Icons
 - [ ] Refactor Switch
 
 

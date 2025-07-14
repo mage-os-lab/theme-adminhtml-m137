@@ -224,3 +224,81 @@
         }
     }
 }
+
+
+//
+//  Attribute Set
+//  _____________________________________________
+
+.attribute-set-col {
+    .jstree {
+        .jstree-container-ul {
+            .jstree-leaf {
+                > .jstree-anchor {
+                    > .jstree-icon {
+                        background: transparent url('../images/attributes.svg') 50% 50% no-repeat;
+                        background-size: 1.6rem;
+                        margin-right: @indent__xs;
+                        width: 2.4rem;
+                        height: 2.4rem;
+                    }
+                }
+            }
+
+            .system-leaf {
+                > .jstree-anchor {
+                    > .jstree-icon {
+                        background: transparent url('../images/system-attributes.svg') 50% 50% no-repeat;
+                        background-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#vakata-dnd {
+    background-color: @neutral-95;
+    box-shadow: @shadow-level-2;
+    border-radius: @radius__l;
+    color: @neutral-20;
+    padding: @indent__xs @indent__s;
+    line-height: 2.4rem;
+    padding: @indent__xs @indent__s @indent__xs @indent__xs !important;
+}
+
+#jstree-marker {
+    background-color: @blue-50;
+    border: unset;
+    border-radius: @radius__base;
+    width: 20%;
+    height: .2rem;
+    display: block;
+    margin: -@indent__3xs 0 0 0;
+
+    &::before {
+        background-color: @blue-50;
+        border-radius: @radius__base;
+        width: 1.2rem;
+        height: 1.2rem;
+        left: 0;
+        top: -.5rem;
+        content: '';
+        display: block;
+        position: relative;
+    }
+}
+
+#jstree-dnd {
+    &.jstree-default {
+        .jstree-ok {
+            background: transparent url('../images/check.svg') 50% 50% no-repeat;
+            background-size: 1.6rem;
+        }
+
+        .jstree-er {
+            background: transparent url('../images/error.svg') 50% 50% no-repeat;
+            background-size: 1.6rem;
+        }
+    }
+}
