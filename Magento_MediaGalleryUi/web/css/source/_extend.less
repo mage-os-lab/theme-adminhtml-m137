@@ -53,6 +53,12 @@
     .media-directory-container {
         width: 18%;
         padding-right: 0;
+
+        &:has(.jstree.jstree-default) {
+            padding: @indent__base;
+            border-radius: @radius__base;
+            background-color: @neutral-95;
+        }
     }
 
     .masonry-image-grid {
