@@ -4,16 +4,22 @@
 
 .adminhtml-url_rewrite-edit {
     .main-col {
-        .form-inline {
-            + .form-inline {
-                margin-top: @indent__base;
+        [data-ui-id='category-selector'] {
+            background-color: @color-white;
+            padding: @indent__l;
+            border-radius: @radius__l;
+
+            & + .action-default {
+                &:extend(.abs-action-secondary all);
+                margin-top: @indent__l;
             }
-            
-            + [data-ui-id='category-selector'] {
-                background-color: @color-white;
-                padding: @indent__l;
-                border-radius: @radius__l;
-                margin-top: @indent__base;
+        }
+
+        > .form-inline {
+            margin-bottom: @indent__base;
+
+            .field-entity-type-selector {
+                margin-bottom: 0;
             }
         }
     }
