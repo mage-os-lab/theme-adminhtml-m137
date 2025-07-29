@@ -110,6 +110,8 @@ git clone git@github.com:mage-os-lab/module-theme-adminhtml-switcher.git ./app/c
     - Communications
     - [x] Email Templates
         - [x] Email Template
+            - [x] Insert Variable Modal
+            - [x] Preview Template
     - [x] Newsletter Templates
         - [x] New Newsletter Template
         - [ ] Newsletter Template

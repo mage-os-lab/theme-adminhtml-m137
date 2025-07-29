@@ -1,0 +1,40 @@
+/**
+ * Variables
+ */
+
+:root {
+    /* Indents */
+    --indent__base: 1.6rem;
+    --indent__l: 2.4rem;    
+    
+    /* Radius */
+    --radius__l: 24px;
+    
+    /* Colours */
+    --base-white: #FFFFFF;
+    --neutral-95: #F1F1F1;
+}
+
+/**
+ * Email Preview
+ */
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+.adminhtml-email_template-preview {
+    background-color: var(--neutral-95);
+    height: calc(100% - (var(--indent__base) * 2));
+    padding: var(--indent__base);
+    margin: unset;
+}
+
+.adminhtml-email_template-preview .cms-revision-preview {
+    background-color: var(--base-white);
+    height: calc(100% - (var(--indent__l) * 2));
+    border-radius: var(--radius__l);
+    padding: var(--indent__l);
+    overflow-y: auto;
+}
