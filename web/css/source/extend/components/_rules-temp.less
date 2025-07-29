@@ -96,7 +96,7 @@
     .rule-param-edit {
         .element {
             display: flex;
-            margin-top: @indent__m;
+            margin-top: 1.8rem;
             left: 0;
             transform: unset;
         }
@@ -136,6 +136,18 @@
     
             img {
                 display: none;
+            }
+        }
+        
+        //  Datepicker
+        .element {
+            .input-date {
+                width: 18rem !important;
+                margin-left: 0 !important;
+                
+                & + .ui-datepicker-trigger {
+                    left: 19.7rem;
+                }
             }
         }
     }
@@ -190,7 +202,40 @@
     .rule-chooser {
         border: none;
         margin: 0;
-        padding: @indent__s * 9 0 0 @indent__base;
+        padding: 10.1rem 0 0 @indent__base;
+
+        .admin__data-grid-header {
+            .admin__data-grid-header-row {
+                .admin__filter-actions {
+                    .action-tertiary {
+                        &:extend(.abs-action-tertiary all);
+                    }
+                }
+            }
+        }
+
+        .admin__data-grid-pager-wrap {
+            .admin__control-select {
+                width: auto;
+                min-width: 8.5rem;
+            }
+        }
+        
+        .admin__data-grid-pager-wrap {
+            .admin__data-grid-pager {
+                .admin__control-text {
+                    width: 4.2rem;
+                }
+            }
+        }
+
+        .data-grid {
+            .head-massaction {
+                .admin__control-select {
+                    min-width: 6rem;
+                }
+            }
+        }
     }
 }
 
