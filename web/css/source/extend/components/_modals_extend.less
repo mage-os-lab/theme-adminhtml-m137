@@ -177,8 +177,8 @@
             }
         }
     }
-    
-    //  Columns
+
+    //  Controls
     .admin__scope-old  {
         input[type='checkbox'],
         input[type='radio'] {
@@ -189,7 +189,7 @@
         }
     }
 
-    //  Variables
+    //  Variables, modal insert variable
     #variables-chooser {
         .admin__data-grid-header {
             .admin__data-grid-header-row {
@@ -198,14 +198,50 @@
                 }
             }
         }
+
+        .data-grid {
+            th {
+                &:first-child {
+                    width: 3.2rem;
+                }
+            }
+
+            td {
+                &:first-child {
+                    width: 3.2rem;
+                    text-align: center;
+                }
+
+                //  Checkbox & radio
+                .admin__control-radio {
+                    + .admin__field-label {
+                        padding-left: 0;
+
+                        &:before {
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //  Columns
+    .columns {
+        display: flex;
     }
 
     .side-col {
+        width: 25%;
         overflow: scroll;
+        float: unset;
     }
-
+    
     .main-col {
+        width: 75%;
         padding-left: @indent__l;
+        float: unset;
     }
 }
 
