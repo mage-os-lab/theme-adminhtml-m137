@@ -1,0 +1,80 @@
+//
+//  Newsletter Templates, Newsletter Queue
+//  _____________________________________________
+
+.newsletter-template-edit,
+.newsletter-queue-edit {
+    .main-col {
+        form + form {
+            > .entry-edit.form-inline {
+                margin-top: @indent__l;
+            }
+        }
+    }
+    
+    .admin__fieldset {
+        .admin__field {
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            .admin__field-control {
+                button.action-default {
+                   &:extend(.abs-action-secondary all);
+                }
+            }
+        }
+    }
+
+    .field-insert_variable {
+        #insert_variable {
+            padding-top: 0;
+        }
+    }
+
+    //  Conditions
+    .admin__field {
+        &[class*='_condition'] {
+            .admin__field-control {
+                #mix-grid .column(9,12);
+            }
+        }
+    }
+}
+
+//
+//  Preview
+//  _____________________________________________
+
+.newsletter-template-preview,
+.newsletter-queue-preview {
+    min-width: unset;
+    
+    .cms-revision-preview {
+        padding: @indent__base;
+
+        .toolbar {
+            &:extend(.abs-clearfix all);
+            margin-bottom: @indent__base;
+        }
+
+        .preview_iframe {
+            background-color: @color-white;
+            padding: @indent__l;
+            border-radius: @radius__l;
+            height: calc(~'100% - 52px');
+        }
+    }
+}
+
+.newsletter-queue-preview {
+    height: 100%;
+    
+    .cms-revision-preview {
+        height: 100%;
+    }
+}

@@ -100,7 +100,7 @@ git clone git@github.com:mage-os-lab/module-theme-adminhtml-switcher.git ./app/c
     - [x] Login as Customer Log
     - [x] Customer Groups
         - [x] Group
-- [ ] Marketing
+- [x] Marketing
     - Promotions
     - [x] Catalog Price Rule
         - [x] Price Rule
@@ -114,14 +114,43 @@ git clone git@github.com:mage-os-lab/module-theme-adminhtml-switcher.git ./app/c
             - [x] Preview Template
     - [x] Newsletter Templates
         - [x] New Newsletter Template
-        - [ ] Newsletter Template
-            - [x] Insert Widget Modal
-            - [ ] Insert Widget Modal, Insert Widget, Catalog Product List, Conditions, Category
-            - [x] Insert Image Modal
-            - [x] Insert Variable Modal
+        - [x] Newsletter Template
+            - [x] Insert Widget Button / TinyMCE
+                - [x] CMS Page Link
+                - [x] Catalog Category Link
+                - [x] Catalog New Products List
+                - [x] Catalog Product Link
+                - [x] Catalog Products List
+                    - Conditions (field types, rule content)
+                    - [x] Input
+                    - [x] Datepicker
+                    - [x] Category
+                    - [x] Select
+                    - [x] Data Grid
+                - [x] Orders and Returns
+            - [x] Insert Image Button
+            - [x] Insert Variable Button / TinyMCE
             - [x] Loader overlay BGC inside modal
     - [x] Newsletter Queue
         - [x] Newsletter Queue
+            - [x] Insert Widget Button / TinyMCE
+                - [x] CMS Page Link
+                - [x] CMS Static Block
+                - [x] Catalog Category Link
+                - [x] Catalog New Products List
+                - [x] Catalog Product Link
+                - [x] Catalog Products List
+                    - Conditions (field types, rule content)
+                    - [x] Input
+                    - [x] Datepicker
+                    - [x] Category
+                    - [x] Select
+                    - [x] Data Grid
+                - [x] Orders and Returns
+                - [x] Recently Compared Products
+                - [x] Recently Viewed Products
+            - [x] Insert Image Button
+            - [x] Insert Variable Button / TinyMCE
         - [x] Admin Data Grid Header Row
     - [x] Newsletter Subscribers
         - [x] Subscriber Grid Mass Action Select
