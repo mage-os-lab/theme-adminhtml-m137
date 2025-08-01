@@ -81,7 +81,7 @@ git clone git@github.com:mage-os-lab/module-theme-adminhtml-switcher.git ./app/c
         - [x] Category
             - [x] Sidebar
             - [x] Icons (folder, chevron)
-                - [ ] Disabled Category Icons Color
+                - [x] Category State Icons / Colour
             - [x] Media Gallery
 - [ ] Customers
     - [x] All Customers

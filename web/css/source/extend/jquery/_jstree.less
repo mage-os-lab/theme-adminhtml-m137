@@ -114,40 +114,75 @@
             }
         }
 
-        .jstree-leaf {
+        .jstree-node {
             > .jstree-anchor {
                 > .jstree-icon {
-                    background: transparent url('../images/folder.svg') 50% 50% no-repeat;
-                    background-size: 1.6rem;
+                    background: transparent url('../images/folder.svg') center/1.6rem no-repeat;
                 }    
+                
+                &.not-active-category {
+                    > .jstree-icon {
+                        background: transparent url('../images/folder-disabled.svg') center/1.6rem no-repeat;
+                    }
+                }  
+            }
+
+            &.no-active-category {
+                > .jstree-anchor {
+                    > .jstree-icon {
+                        background: transparent url('../images/folder-disabled.svg') center/1.6rem no-repeat;
+                    }
+                }
             }
         }
 
         .jstree-anchor {
             &.jstree-clicked {
                 > .jstree-icon {
-                    background: transparent url('../images/folder-fill.svg') 50% 50% no-repeat;
-                    background-size: 1.6rem;
+                    background: transparent url('../images/folder-fill.svg') center/1.6rem no-repeat;
+                }
+
+                &.not-active-category {
+                    > .jstree-icon {
+                        background: transparent url('../images/folder-fill-disabled.svg') center/1.6rem no-repeat;
+                    }
                 }
             }
         }
 
         .jstree-open {
             > .jstree-icon {
-                background: transparent url('../images/arrow-up.svg') 50% 50% no-repeat;
-                background-size: 1.3rem;
+                background: transparent url('../images/arrow-up.svg') center/1.3rem no-repeat;
             }
 
             > .jstree-anchor {
                 > .jstree-icon {
-                    background: transparent url('../images/folder-open.svg') 50% 50% no-repeat;
-                    background-size: 1.6rem;
-                }  
+                    background: transparent url('../images/folder-open.svg') center/1.6rem no-repeat;
+                }
+                
+                &.not-active-category {
+                    > .jstree-icon {
+                        background: transparent url('../images/folder-open-disabled.svg') center/1.6rem no-repeat;
+                    }
+                }
                 
                 &.jstree-clicked {
                     > .jstree-icon {
-                        background: transparent url('../images/folder-fill-open.svg') 50% 50% no-repeat;
-                        background-size: 1.6rem;
+                        background: transparent url('../images/folder-fill-open.svg') center/1.6rem no-repeat;
+                    }
+
+                    &.not-active-category {
+                        > .jstree-icon {
+                            background: transparent url('../images/folder-fill-open-disabled.svg') center/1.6rem no-repeat;
+                        }
+                    }
+                }
+            }
+
+            &.no-active-category {
+                > .jstree-anchor {
+                    > .jstree-icon {
+                        background: transparent url('../images/folder-open-disabled.svg') center/1.6rem no-repeat;
                     }
                 }
             }
@@ -155,22 +190,53 @@
 
         .jstree-closed {
             > .jstree-icon {
-                background: transparent url('../images/arrow-down.svg') 50% 50% no-repeat;
-                background-size: 1.3rem;
+                background: transparent url('../images/arrow-down.svg') center/1.3rem no-repeat;
             }
 
             > .jstree-anchor {
                 > .jstree-icon {
-                    background: transparent url('../images/folder.svg') 50% 50% no-repeat;
-                    background-size: 1.6rem;
-                } 
+                    background: transparent url('../images/folder.svg') center/1.6rem no-repeat;
+                }
+
+                &.not-active-category {
+                    > .jstree-icon {
+                        background: transparent url('../images/folder-disabled.svg') center/1.6rem no-repeat;
+                    }
+                }
                 
                 &.jstree-clicked {
                     > .jstree-icon {
-                        background: transparent url('../images/folder-fill.svg') 50% 50% no-repeat;
-                        background-size: 1.6rem;
+                        background: transparent url('../images/folder-fill.svg') center/1.6rem no-repeat;
+                    }
+
+                    &.not-active-category {
+                        > .jstree-icon {
+                            background: transparent url('../images/folder-fill-disabled.svg') center/1.6rem no-repeat;
+                        }
                     }
                 }
+            }
+
+            &.no-active-category {
+                > .jstree-anchor {
+                    > .jstree-icon {
+                        background: transparent url('../images/folder-disabled.svg') center/1.6rem no-repeat;
+                    }
+                }
+            }
+        }
+
+        .not-active-category {
+            color: @neutral-70;
+
+            &.jstree-hovered {
+                color: @neutral-70;
+            }
+        }
+
+        .no-active-category {
+            > .jstree-anchor {
+                color: @neutral-70;
             }
         }
     }
@@ -271,10 +337,11 @@
     background-color: @blue-50;
     border: unset;
     border-radius: @radius__base;
-    width: 20%;
+    width: 3.2rem;
     height: .2rem;
     display: block;
     margin: -@indent__3xs 0 0 0;
+    z-index: 0;
 
     &::before {
         background-color: @blue-50;
