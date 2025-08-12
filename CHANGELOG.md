@@ -6,6 +6,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.3.0] - 2025-08-12
+
+### Added
+
+- System messages UI improvement: moved to page header actions section, added system icon trigger
+- Update `.data-grid...` action columns icon
+- Attribute and state icons for attribute set
+- Styles for `Email Templates`, `View`, `Edit`, `Preview`
+- Styles for `Newsletter Templates`, `Add`, `Edit`, `Preview` in tab, window
+- Styles for `Newsletter Queue`, `Add`, `Edit`, `Preview` in tab, window
+- State icons for `Category` three, colour, jstree-marker size
+
+### Changed
+
+- `Url Rewrites`, `Url Rewrite` and `Add`, `Edit` actions, `Rewrite` types
+- `Media Gallery` jstree
+- `Jstree` in modal slide
+- `Rule` tree, conditions types, fields, elements
+- `Data-grid...` inside modals, first column size, control element, columns inside modals
+
+### Fixed
+
+- Division in `.less` files when `parens-division` is default
+
 ## [1.2.0] - 2025-06-17
 
 ### Added
