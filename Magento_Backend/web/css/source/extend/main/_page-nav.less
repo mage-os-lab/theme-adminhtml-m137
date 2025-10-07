@@ -74,7 +74,7 @@
     border-bottom: 0;
     border-radius: @radius__xl;
     background: none;
-    color: inherit;
+    color: @admin__page-nav-title__color;
     line-height: 2rem;
     margin: 0;
     text-transform: unset;
@@ -83,10 +83,21 @@
         font-weight: @font-weight__heavier;
     }
 
+    &:not(._collapsible) {
+        font-size: 1.6rem;
+
+        strong {
+            font-weight: @font-weight__semibold;
+        }
+    }
+
     &._collapsible {
         padding-right: @indent__xl;
-        background: @admin__page-nav-title__collapsible__active__background-color;
-        color: @admin__page-nav-title__active__color;
+        
+        &._show {
+            background: @admin__page-nav-title__collapsible__active__background-color;
+            color: @admin__page-nav-title__active__color;
+        }
 
         + .admin__page-nav-items {
             margin-top: 0;
