@@ -70,23 +70,23 @@
 //  _____________________________________________
 
 .admin__page-nav-title {
-    background: @admin__page-nav-title__collapsible__active__background-color;
-    color: @admin__page-nav-title__active__color;
-
     padding: 1rem @indent__base;
     border-bottom: 0;
     border-radius: @radius__xl;
+    background: none;
+    color: inherit;
     line-height: 2rem;
     margin: 0;
     text-transform: unset;
 
     strong {
-        color: @admin__page-nav-title__active__color;
         font-weight: @font-weight__heavier;
     }
 
     &._collapsible {
         padding-right: @indent__xl;
+        background: @admin__page-nav-title__collapsible__active__background-color;
+        color: @admin__page-nav-title__active__color;
 
         + .admin__page-nav-items {
             margin-top: 0;
