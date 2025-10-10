@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.0.0] - 2025-10-XX
+
+### Changed
+
+- Clean up pagebuilder transitions
+- Refactor state pagebuilder `.menu-section-title` to global ui logic
+- Refactor state of `.admin__page-nav-title` if current
+- Refactor `.media-gallery-image-block` state color
+- Allow page action buttons to wrap
+- Remove double background and border colors
+- Remove autofill background css hack
+- Fix background color if the `.admin__page-nav-title` is not collapsible
+
 ## [1.3.1] - 2025-09-09
 
 ### Changed
